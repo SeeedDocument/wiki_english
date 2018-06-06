@@ -536,7 +536,7 @@ make
 
 - Step 2. Get [ODAS Studio](https://github.com/introlab/odas_web/releases)  and open it.
 
-- Step 3. The odascore will be at odas/bin/odascore, the config file is [odas.cfg](https://github.com/respeaker/usb_4_mic_array/blob/master/odas.cfg). Please change odas.cfg based on your sound card number.
+- Step 3. The ODAS Core file is odas/bin/odaslive, the config file is [odas.cfg](https://github.com/respeaker/usb_4_mic_array/blob/master/odas.cfg). Please change odas.cfg based on your sound card number.
 
 ```
 interface: {
