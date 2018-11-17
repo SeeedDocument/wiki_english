@@ -38,13 +38,15 @@ The Grove – Voltage Divider provides an interface for measuring external volta
 
 | Arduino                                                                                             | Raspberry Pi                                                                                             | BeagleBone                                                                                      | Wio                                                                                               | LinkIt ONE                                                                                         |
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
+| ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
     The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 ## Getting Started
----
+
+### Play with Arduino
+
 When measuring the external voltage, connect the external voltage to J1 and then connect the on-board Grove connector to analog port of Arduino/Seeeduino:
 - Connect the module to A0 port of [Grove - Base Shield](http://wiki.seeedstudio.com/Base_Shield_V2) with a universal Grove Cable.
 - Connect [Grove - Base Shield](http://wiki.seeedstudio.com/Base_Shield_V2) to Arduino/Seeeduino.
@@ -59,38 +61,34 @@ And When voltage divider output voltage is higher than VCC (The Grove Operating 
 
 - Using the serial monitor of Arduino, you can measure the input voltage value. Demo code as show below:
 
-```
-void setup()
-{
-    Serial.begin(9600);
-}
 
-void loop()
-{
-    long  sensorValue=analogRead(A0);
-    long  sum=0;
-    for(int i=0;i<1000;i++)
-    {
-        sum=sensorValue+sum;
-        sensorValue=analogRead(A0);
-        delay(2);
+```c++
+    void setup() {
+      Serial.begin(9600);
     }
-    sum=sum/1000;
 
-    Serial.print("if you set the Gain to 10,the input voltage:");
-    Serial.println(10*sum*4980/1023.00);
-
-    Serial.print("if you set the Gain to 3,the input voltage:");
-    Serial.println(3*sum*4980/1023.00);
-
-    delay(1000);
-}
+    void loop() {
+      Serial.println(3 * analogRead(A0) * 5 / 1023.0); // must match dial switch setting
+    }
 ```
 
-## Resource
----
+### Play with Raspberry Pi
+
+```python
+    from grovepi import *
+
+    PIN = 2
+
+    pinMode(PIN, 'INPUT')
+
+    while True:
+      print 3 * analogRead(PIN) * 5 / 1023.0
+```
+
+## Resources
+
 - [Grove - Voltage Divider Eagle File](https://github.com/SeeedDocument/Grove-Voltage_Divider/raw/master/res/Grove-Voltage_Divider_Eagle_File.zip)
 - [LMV358ID Datasheet](https://github.com/SeeedDocument/Grove-Voltage_Divider/raw/master/res/LMV358ID_Datasheet.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
