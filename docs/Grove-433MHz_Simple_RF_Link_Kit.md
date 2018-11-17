@@ -174,7 +174,7 @@ Error creating thumbnail: Invalid thumbnail parameters
 -   Download the [RadioHead library](https://github.com/adafruit/RadioHead) and unzip it into the libraries folder of the Arduino IDE. 
 -   Upload the code below for transmitter module:
 
-```
+```c++
     #include <RH_ASK.h>
 
     const int BIT_RATE = 2000; // same as default
@@ -206,7 +206,7 @@ Error creating thumbnail: Invalid thumbnail parameters
 
 -   Upload the code below for receiver module:
 
-```
+```c++
     #include <RH_ASK.h>
 
     const int BIT_RATE = 2000; // same as default
