@@ -159,7 +159,7 @@ Platforms Supported
 Getting Started
 ---------------
 
-The transmitter and receiver modules both rely on a single wire for communication. Though using the UART supplied by the Arduino platform can work, it is recommended, instead, to use the VirtualWire library which uses Amplitude Shift Keying for modulation which provides better communication.
+The transmitter and receiver modules both rely on a single wire for communication. Though using the UART supplied by the Arduino platform can work, it is recommended, instead, to use the RadioHead library which uses Amplitude Shift Keying for modulation which provides better communication.
 
 Both the transmitter and receiver modules require three wires: Vcc, Ground, and signal. Pin 2 of both parts of the kit are not connected.
 
@@ -171,72 +171,63 @@ Error creating thumbnail: Invalid thumbnail parameters
 
 Error creating thumbnail: Invalid thumbnail parameters
 
--   Download the [VirtualWire library](https://raw.githubusercontent.com/SeeedDocument/Grove-433MHz_Simple_RF_Link_Kit/master/res/VirtualWire_Library.zip) and unzip it into the libraries file of Arduino IDE by the path: ..\\arduino-1.0\\libraries. Please reference [here](http://www.pjrc.com/teensy/td_libs_VirtualWire.html).
+-   Download the [RadioHead library](https://github.com/adafruit/RadioHead) and unzip it into the libraries folder of the Arduino IDE. 
 -   Upload the code below for transmitter module:
 
-```
-    #include <VirtualWire.h>
+```c++
+    #include <RH_ASK.h>
 
-    //Grove - 315(433) RF link kit Demo v1.0
-    //by :http://www.seeedstudio.com/
-    //connect the sent module to D2 to use  
-    #include <VirtualWire.h>
-     
-    int RF_TX_PIN = 2;
-     
-    void setup()
-    {
-      vw_set_tx_pin(RF_TX_PIN); // Setup transmit pin
-      vw_setup(2000); // Transmission speed in bits per second.
+    const int BIT_RATE = 2000; // same as default
+
+    const int RX_PIN = 2;
+
+    RH_ASK driver(BIT_RATE, RX_PIN);
+
+    void setup() {
+      Serial.begin(9600);
+
+      driver.init();
     }
-     
-    void loop()
-    {
-      const char *msg = "hello";
-      vw_send((uint8_t *)msg, strlen(msg));  // Send 'hello' every 400ms.
-      delay(400);
-     
+
+    void loop() {
+      uint8_t buf[RH_ASK_MAX_MESSAGE_LEN];
+      uint8_t buflen = sizeof(buf);
+
+      if (driver.recv(buf, &buflen)) {
+
+        for (int i = 0; i < buflen; i++)
+          Serial.print((char) buf[i]);
+
+        Serial.println("");
+      }
+
     }
 ```
 
 -   Upload the code below for receiver module:
 
+```c++
+    #include <RH_ASK.h>
+
+    const int BIT_RATE = 2000; // same as default
+
+    const int RX_PIN = 11; // same as default
+    const int TX_PIN = 2;
+
+    RH_ASK driver(BIT_RATE, RX_PIN, TX_PIN);
+
+    void setup() {
+      driver.init();
+    }
+
+    void loop() {
+      char str[] = "Hello, World!";
+
+      driver.send((uint8_t *) str, strlen(str));
+
+      driver.waitPacketSent();
+    }
 ```
-    //Grove - 315(433) RF link kit Demo v1.0
-    //by :http://www.seeedstudio.com/
-    //connect the receive module to D2 to use ..
-    #include <VirtualWire.h>
-     
-    int RF_RX_PIN = 2;
-     
-    void setup()
-    {
-      Serial.begin(9600);
-      Serial.println("setup");
-      vw_set_rx_pin(RF_RX_PIN);  // Setup receive pin.
-      vw_setup(2000); // Transmission speed in bits per second.
-      vw_rx_start(); // Start the PLL receiver.
-    }
-     
-    void loop()
-    {
-      uint8_t buf[VW_MAX_MESSAGE_LEN];
-      uint8_t buflen = VW_MAX_MESSAGE_LEN;
-      if(vw_get_message(buf, &buflen)) // non-blocking I/O
-      {
-        int i;
-        // Message with a good checksum received, dump HEX
-        Serial.print("Got: ");
-        for(i = 0; i < buflen; ++i)
-        {
-          Serial.print(buf[i], HEX);
-          Serial.print(" ");
-          //Serial.print(buf[i]);
-        }
-        Serial.println("");
-      }
-    }
-```        
 
 -   Open the serial monitor of receiver module to see the result.
 
@@ -247,15 +238,12 @@ This is just a simple transmitter and receiver instance as a reference.
 Resources
 ---------
 
--   [VirtualWire Library.zip](https://raw.githubusercontent.com/SeeedDocument/Grove-433MHz_Simple_RF_Link_Kit/master/res/VirtualWire_Library.zip)
 -   [433MHz\_demo.zip](https://raw.githubusercontent.com/SeeedDocument/Grove-433MHz_Simple_RF_Link_Kit/master/res/315MHz_Demo.zip)
--   [VirtualWire Documentation](http://www.open.com.au/mikem/arduino/VirtualWire.pdf)
 -   [TI:LM358PSR](https://raw.githubusercontent.com/SeeedDocument/Grove-433MHz_Simple_RF_Link_Kit/master/res/1110010P1.pdf)
+-   [RadioHead documentation](http://www.airspayce.com/mikem/arduino/RadioHead/)
 -   [R433A Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-433MHz_Simple_RF_Link_Kit/master/res/ADI;ACTR433A.pdf)
-
-
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_433MHz_Simple_RF_Link_Kit -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
