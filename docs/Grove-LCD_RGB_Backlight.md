@@ -146,41 +146,21 @@ Here are some projects for your reference.
 Here is the code of HelloWorld.ino.
 
 ```c++
-#include <Wire.h>
-#include "rgb_lcd.h"
+    #include <rgb_lcd.h>
 
-rgb_lcd lcd;
+    rgb_lcd lcd;
 
-const int colorR = 255;
-const int colorG = 0;
-const int colorB = 0;
+    void setup() {
+      lcd.begin(16, 2);
 
-void setup() 
-{
-    // set up the LCD's number of columns and rows:
-    lcd.begin(16, 2);
-    
-    lcd.setRGB(colorR, colorG, colorB);
-    
-    // Print a message to the LCD.
-    lcd.print("hello, world!");
+      lcd.print("Hello, World!");
+    }
 
-    delay(1000);
-}
-
-void loop() 
-{
-    // set the cursor to column 0, line 1
-    // (note: line 1 is the second row, since counting begins with 0):
-    lcd.setCursor(0, 1);
-    // print the number of seconds since reset:
-    lcd.print(millis()/1000);
-
-    delay(100);
-}
+    void loop() {
+    }
 ```
 
-- **Step 4.** We will see the hello world on LCD.
+- **Step 4.** We will see the "Hello, World!" on the LCD.
 
 ### Play With Raspberry Pi
 
@@ -222,92 +202,74 @@ python grove_rgb_lcd.py
 Here is the grove_rgb_lcd.py code.
 
 ```python
-import time,sys
-
-if sys.platform == 'uwp':
-    import winrt_smbus as smbus
-    bus = smbus.SMBus(1)
-else:
     import smbus
-    import RPi.GPIO as GPIO
-    rev = GPIO.RPI_REVISION
-    if rev == 2 or rev == 3:
-        bus = smbus.SMBus(1)
-    else:
-        bus = smbus.SMBus(0)
+    import time
 
-# this device has two I2C addresses
-DISPLAY_RGB_ADDR = 0x62
-DISPLAY_TEXT_ADDR = 0x3e
+    # I2C addresses
 
-# set backlight to (R,G,B) (values from 0..255 for each)
-def setRGB(r,g,b):
-    bus.write_byte_data(DISPLAY_RGB_ADDR,0,0)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,1,0)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,0x08,0xaa)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,4,r)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,3,g)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,2,b)
+    LCD_ADDRESS = 0x3e
+    RGB_ADDRESS = 0x62
 
-# send command to display (no need for external use)    
-def textCommand(cmd):
-    bus.write_byte_data(DISPLAY_TEXT_ADDR,0x80,cmd)
+    # Commands
 
-# set display text \n for second line(or auto wrap)     
-def setText(text):
-    textCommand(0x01) # clear display
+    LCD_CLEARDISPLAY = 0x01
+    LCD_DISPLAYCONTROL = 0x08
+    LCD_ENTRYMODESET = 0x04
+    LCD_FUNCTIONSET = 0x20
+    LCD_SETCGRAMADDR = 0x40
+    LCD_SETDDRAMADDR = 0x80
+
+    # Flags
+
+    LCD_2LINE = 0x08
+
+    LCD_DISPLAYON = 0x04
+    LCD_CURSOROFF = 0x00
+    LCD_BLINKOFF = 0x00
+
+    LCD_ENTRYLEFT = 0x02
+    LCD_ENTRYSHIFTDECREMENT = 0x00
+
+    # Registers
+
+    REG_MODE1 = 0x00 # backlight on
+    REG_MODE2 = 0x01 # control LEDs by PWM registers
+    REG_OUTPUT = 0x08 # blinky mode
+
+    REG_RED = 0x04 # PWM2
+    REG_GREEN = 0x03 # PWM1
+    REG_BLUE = 0x02 # PWM0
+
+    # The next block is equivalent to the "begin" call in the Arduino library
+
     time.sleep(.05)
-    textCommand(0x08 | 0x04) # display on, no cursor
-    textCommand(0x28) # 2 lines
-    time.sleep(.05)
-    count = 0
-    row = 0
-    for c in text:
-        if c == '\n' or count == 16:
-            count = 0
-            row += 1
-            if row == 2:
-                break
-            textCommand(0xc0)
-            if c == '\n':
-                continue
-        count += 1
-        bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))
 
-#Update the display without erasing the display
-def setText_norefresh(text):
-    textCommand(0x02) # return home
-    time.sleep(.05)
-    textCommand(0x08 | 0x04) # display on, no cursor
-    textCommand(0x28) # 2 lines
-    time.sleep(.05)
-    count = 0
-    row = 0
-    while len(text) < 32: #clears the rest of the screen
-        text += ' '
-    for c in text:
-        if c == '\n' or count == 16:
-            count = 0
-            row += 1
-            if row == 2:
-                break
-            textCommand(0xc0)
-            if c == '\n':
-                continue
-        count += 1
-        bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))
+    bus = smbus.SMBus(1)
 
-# example code
-if __name__=="__main__":
-    setText("Hello world\nThis is an LCD test")
-    setRGB(0,128,64)
-    time.sleep(2)
-    for c in range(0,255):
-        setText_norefresh("Going to sleep in {}...".format(str(c)))
-        setRGB(c,255-c,0)
-        time.sleep(0.1)
-    setRGB(0,255,0)
-    setText("Bye bye, this should wrap onto next line")
+    bus.write_byte_data(LCD_ADDRESS, LCD_SETDDRAMADDR, LCD_FUNCTIONSET | LCD_2LINE)
+
+    time.sleep(.0045)
+
+    bus.write_byte_data(LCD_ADDRESS, LCD_SETDDRAMADDR, LCD_DISPLAYCONTROL | LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF)
+
+    bus.write_byte_data(LCD_ADDRESS, LCD_SETDDRAMADDR, LCD_CLEARDISPLAY)
+
+    time.sleep(.002)
+
+    bus.write_byte_data(LCD_ADDRESS, LCD_SETDDRAMADDR, LCD_ENTRYMODESET | LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT)
+
+    bus.write_byte_data(RGB_ADDRESS, REG_MODE1, 0)
+    bus.write_byte_data(RGB_ADDRESS, REG_OUTPUT, 0xFF)
+    bus.write_byte_data(RGB_ADDRESS, REG_MODE2, 0x20)
+
+    # Set color to white
+    bus.write_byte_data(RGB_ADDRESS, REG_RED, 255)
+    bus.write_byte_data(RGB_ADDRESS, REG_GREEN, 255)
+    bus.write_byte_data(RGB_ADDRESS, REG_BLUE, 255)
+
+    # The next line is equivalent to the "print" call in the Arduino library
+
+    bus.write_i2c_block_data(LCD_ADDRESS, LCD_SETCGRAMADDR, list('Hello, World!'.encode()))
 ```
 
 - **Step 4.** We will see the Grove-LCD RGB Backlight display as Going to sleep in 1...
@@ -335,4 +297,4 @@ if __name__=="__main__":
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tbdTTC3Jmgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
