@@ -10,13 +10,13 @@ sku: 113990010
 
 ![](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/img/113990010%201.jpg)
 
-The kit is consisted of transmitter and receiver, popular used for remote control.
+This kit is consists of a transmitter and receiver pair, often used for a remote control.
 
 [![](https://github.com/SeeedDocument/Seeed-WiKi/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png)](http://www.seeedstudio.com/depot/433mhz-rf-link-kit-p-127.html?cPath=139_140)
 
 ## Specification
 ---
-- Frequency: 433Mhz.
+- Frequency: 433Mhz
 - Modulation: ASK
 - Receiver Data Output: High - 1/2 Vcc, Low - 0.7v
 - Transmitter Input Voltage: 3-12V (high voltage = more transmitting power)
@@ -24,26 +24,26 @@ The kit is consisted of transmitter and receiver, popular used for remote contro
 
 ## Usage
 ---
-The popular link is like this: MCU -> Encoder -> Transmitter ------ Receiver -> Decoder -> MCU
+A popular arrangement for this kit is: MCU -> Encoder -> Transmitter ------ Receiver -> Decoder -> MCU
 
-PT2262(Encoder) and PT2272(Decoder) are optional, their existence is to 1)avoid confusing when multiple RF links in range 2) isolate disturbance. You can integrate the encoding and decoding work to the MCUs on both side. Whenever there is no 315Mhz devices around, you may use it as direct cable connection.
+PT2262 (Encoder) and PT2272 (Decoder) are optional, but you can use them to avoid confusing whith multiple RF links and block interference. You can also integrate the encoding and decoding into the MCUs on both sides. Whenever there is no 315Mhz devices around, you can use it as a direct cable connection.
 
-Excuse for the documentation, we will work on them. Before that, please consult us for any details, we are happy to find the answer for you ^^ We tried them using the guide from Sparkfun, it's compatible. The only difference is in package, of some excess GND pins.
+Excuse us for the documentation, we are working on it. Meanwhile, please consult us for any information, we are happy to find the answer for you ^^. We tried this RF Link Kit using the guide from Sparkfun and it's compatible. The only difference is package in the guide, which has some excess GND and VCC pins.
 
-More over, we will make more RF modules ourselves with different frequency and capacity. The next one in plan is based on cc1100 Please suggest us about your need :)
+More over, we will make more RF modules ourselves with different frequency and capacity. The next one in plan is based on cc1100 Please consult us about your needs :)
 
 ## Support
 
-If you have questions or other better design ideas, you can go to our [forum](https://community.seeedstudio.com/) discuss.
+If you have any questions or better design ideas, you can go to our [forum](https://community.seeedstudio.com/) to discuss.
 
 ## Resources
 
-- [Demo Scheme](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/315MRFlink.pdf)
-- [VirtualWire 1.3](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/VirtualWire.rar)
-- [Documentation For 1.3](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/VirtualWire.pdf)
-- [example from sparkfun](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/KLP_Walkthrough.pdf)
-- [example running rf modules](http://winavr.scienceprog.com/example-avr-projects/running-tx433-and-rx433-rf-modules-with-avr-microcontrollers.html)
-
+- [Demo scheme](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/315MRFlink.pdf)
+- [VirtualWire 1.3 Arduino library (unmaintained)](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/VirtualWire.rar)
+- [VirtualWire 1.3 documentation](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/VirtualWire.pdf)
+- [RadioHead 1.92 Arduino library](http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.92.zip)
+- [RadioHead documentation](http://www.airspayce.com/mikem/arduino/RadioHead/)
+- [Example from Sparkfun](https://github.com/SeeedDocument/433Mhz_RF_Link_Kit/raw/master/res/KLP_Walkthrough.pdf)
 
 ## Licensing
 
