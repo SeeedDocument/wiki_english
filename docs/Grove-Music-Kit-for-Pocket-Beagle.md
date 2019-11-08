@@ -1,4 +1,4 @@
-# Grove Music Kit for Pocket Beagle
+# BeagleBoard.org PocketBeagle Grove Kit
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/_DAS6325.jpg)
