@@ -9,12 +9,12 @@ PocketBeagle is an ultra-tiny-yet-complete open-source USB-key-fob computer. Poc
 
 Grove is a modular, standardized connector prototyping system. Consisting of Sensor, Actuator, Display, Communication, and Other function modules. Grove takes a building block approach to assemble electronics. Compared to the jumper or solder based system, it is easier to connect, experiment and build and simplifies the learning system. 
 
-The Grove Music Kit for Pocket Beagle combines the Grove sensor modules with the powerful programming capabilities of Pocket Beagle, allowing students to interact with music using real-world information such as light, touch, keyboard, Slide Potentiometer, posture and so on, to create cool projects.
+BeagleBoard.org PocketBeagle Grove Kit combines the Grove sensor modules with the powerful programming capabilities of PocketBeagle, allowing students to interact with music using real-world information such as light, touch, keyboard, Slide Potentiometer, posture and so on, to create cool projects.
 
 
 
 
-## Haedware Overview
+## Hardware Overview
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/pin.jpg)
 
@@ -32,7 +32,7 @@ The Grove Music Kit for Pocket Beagle combines the Grove sensor modules with the
 - <font size="4" color="red">⑧</font> [Grove - 3 Axis Digital Accelerometer](http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Accelerometer-16g/)
 - <font size="4" color="red">⑨</font> [Grove – Speaker](http://wiki.seeedstudio.com/Grove-Speaker/)
 - <font size="4" color="red">⑩</font> [Grove – 16x2 LCD](http://wiki.seeedstudio.com/Grove-16x2_LCD_Series/)
-- <font size="4" color="red">⑪</font> [Pocket Beaglebone with Grove shield](https://www.seeedstudio.com/PocketBeagle-OSD3358ARM-Cortex-A8-512MB-RAM-p-2888.html)
+- <font size="4" color="red">⑪</font> [PocketBeagle and PocketBeagle Grove Cape](https://www.seeedstudio.com/PocketBeagle-OSD3358ARM-Cortex-A8-512MB-RAM-p-2888.html)
 - <font size="4" color="red">⑫</font> [10pcs Alligator Cable](https://www.seeedstudio.com/10pcs-alligator-clip-test-lead-500mm-22awg-p-3087.html)
 - <font size="4" color="red">⑬</font> SD+TF Card Reader
 - <font size="4" color="red">⑭</font> WiFi Dongle
@@ -62,7 +62,7 @@ In this lesson, students will light up the RGB LED, and learn how to use sound a
 - Plug the Grove - Slide Potentiometer into **A2** port
 - Plug the Grove - Rotary Angle Sensor into **A0** port
 - Grove - RGB LED in to **PWM** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/_DAS6312.jpg)
@@ -99,7 +99,7 @@ In this lesson, students can move their hand in front of the ultrasonic distance
 - Plug the Grove - Ultrasonic Distance Sensor into **PWM** port
 - Plug the Grove – 16x2 LCD into **I2C** port
 - Plug the Grove – Speaker into **A5** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 
@@ -140,7 +140,7 @@ In this lesson, students will learn how to use the 2 buttons to select the next 
 - Plug the Grove – Button into **A2** and **A0** port
 - Plug the Grove – 16x2 LCD into **I2C** port
 - Plug the Grove – Speaker into **A5** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/project-3.jpg)
@@ -179,7 +179,7 @@ In this lesson, students will learn how to download mp3 files from the Internet 
 - Plug the Grove – 16x2 LCD into **I2C** port
 - Plug the Grove – Speaker into **A5** port
 - Plug the WiFi dongle into the **USB** Port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/project-4.jpg)
@@ -214,7 +214,7 @@ In this lesson, students will learn how to use the capacitive touch sensor to pl
  
 - Plug the Grove – Speaker into **A5** port
 - Plug the Grove - 12 Key Capacitive I2C Touch Sensor V2 into **I2C** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/project-5.jpg)
@@ -256,7 +256,7 @@ In this lesson, students will learn how to use the capacitive touch sensor to pl
 - Plug the Grove - 12 Key Capacitive I2C Touch Sensor V2 into **I2C** port
 - Plug the Grove - Slide Potentiometer into **A2** port
 - Plug the Chainable RGB LED into **PWM** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/project-6.jpg)
@@ -296,7 +296,7 @@ In this lesson, students will learn how to use the Grove – 3-Axis Acceleromete
 - Plug the Grove – Speaker into **A5** port
 - Plug the Grove - 3 Axis Digital Accelerometer into **A2** port
 - Plug the Chainable RGB LED into **PWM** port
-- Power the Pocket Beagle via the **micro USB** port
+- Power PocketBeagle via the **micro USB** port
 
 ![](https://github.com/SeeedDocument/Grove-Music-Kit-for-Pocket-Beagle/raw/master/img/project-7.jpg)
 
