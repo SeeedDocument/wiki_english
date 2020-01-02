@@ -1,5 +1,5 @@
 ---
-title: BeagleBone Green HDMI Cape
+name: BeagleBone Green HDMI Cape
 category: BeagleBone
 bzurl: https://seeedstudio.com/SeeedStudio-BeagleBone-Green-HDMI-Cape-p-2570.html
 oldwikiname: BeagleBone_Green_HDMI_Cape
@@ -146,8 +146,9 @@ Resources
 ---------
 
 - [Schematic files](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green_HDMI_Cape/master/res/Schematic_Files.zip)
+- [HDMI Cape Beaglebone Image](https://drive.google.com/open?id=15wXOtG4pZMifNoldoSvdOX9sBrev733L)
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/BeagleBone_Green_HDMI_Cape -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

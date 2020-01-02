@@ -1,5 +1,5 @@
 ---
-title: Grove - SPDT Relay(30A)
+name: Grove - SPDT Relay(30A)
 category: Others
 bzurl: https://www.seeedstudio.com/Grove-SPDT-Relay(30A)-p-1473.html
 oldwikiname: Grove - SPDT Relay(30A)
@@ -113,4 +113,4 @@ while True:
 - [SLA-05VDC-SL-C Datasheet](https://github.com/SeeedDocument/Grove-SPDT_Relay_30A/raw/master/res/SLA-05VDC-SL-C_Datasheet.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

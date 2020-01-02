@@ -1,5 +1,5 @@
 ---
-title: LCD 8*2 Characters- Blue back light
+name: LCD 8*2 Characters- Blue back light
 category: MakerPro
 bzurl: https://www.seeedstudio.com/lcd-82-characters-blue-back-light-p-120.html?cPath=163_164
 oldwikiname:  LCD 8*2 Characters- Blue back light
@@ -446,4 +446,4 @@ L:Write
 *   [Datasheet](http://www.seeedstudio.com/depot/datasheet/LMB0820-info.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

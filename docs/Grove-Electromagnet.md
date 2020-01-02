@@ -1,5 +1,5 @@
 ---
-title: Grove - Electromagnet
+name: Grove - Electromagnet
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Electromagnet-p-1820.html
 oldwikiname: Grove_-_Electromagnet
@@ -14,7 +14,7 @@ tags: grove_digital, io_5v, plat_duino, plat_wio
 
 An electromagnet is a type of magnet in which the magnetic field is produced by electric current. An electric current flowing in a wire creates a magnetic field around the wire, due to Ampere's law(see drawing below). To concentrate the magnetic field, in an electromagnet the wire is wound into a coil with many turns of wire lying side by side. The magnetic field of all the turns of wire passes through the center of the coil, creating a strong magnetic field there. Grove - Electromagnet can suck 1KG weight and hold on. It is easy to use, to learn electromagnet principle.
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/Grove-Electromagnet-p-1820.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/Grove-Electromagnet-p-1820.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 ## Features
 
@@ -41,7 +41,7 @@ An electromagnet is a type of magnet in which the magnetic field is produced by 
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 ## Getting Started
 
@@ -86,7 +86,7 @@ An electromagnet is a type of magnet in which the magnetic field is produced by 
   This example code is in the public domain.
 */
 
-int Electromagnet = 0;
+int Electromagnet = 2;
 int LED = 13;
 
 // the setup routine runs once when you press reset:
@@ -110,6 +110,32 @@ void loop() {
 - **Step 2.** Grove-Electromagnet worked.
 
 ![](https://github.com/SeeedDocument/Grove-Electromagnet/raw/master/img/Grove_Electromagnet-3.png)
+
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect Grove - Electromagnet to port D2 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-Electromagnet/master/img/cc_Electromagnet.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you can try to bring the ironwork close to the electromagnet. The LED on the Arduino 13 pin will be lighted up when the electromagnet is working.
 
 ### Play With Raspberry Pi
 
@@ -202,8 +228,10 @@ Resources
 
 - [**Eagle**][Grove Electromagnet v1.0 SCH PCB.zip](https://raw.githubusercontent.com/SeeedDocument/Grove-Electromagnet/master/res/Grove_Electromagnet_v1.0_SCH_PCB.zip "File:Grove Electromagnet v1.0 SCH PCB.zip")
 - [**Datasheet**][Datasheet ZYE1-P20-15 PDF](https://github.com/SeeedDocument/Bazaar_file/raw/master/101020073/ZYE1-P%20electro%20holding%20magnets.pdf)
+- [**Codecraft**][CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-Electromagnet/master/res/Grove_Electromagnet_CDC_File.zip)
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Electromagnet -->
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

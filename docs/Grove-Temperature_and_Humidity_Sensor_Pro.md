@@ -1,5 +1,5 @@
 ---
-title: Grove - Temperature&Humidity Sensor Pro
+name: Grove - Temperature&Humidity Sensor Pro
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Temperature%26Humidity-Sensor-Pro-p-838.html
 oldwikiname: Grove - Temperature and Humidity Sensor Pro
@@ -16,7 +16,7 @@ tags: io_3v3, io_5v, plat_duino, plat_pi
 
  This is a powerful sister version of our Grove - Temperature&Humidity Sensor Pro. It has more complete and accurate performance than the basic version. The detecting range of this sensor is 5% RH - 99% RH, and -40°C - 80°C. And its accuracy reaches up to 2% RH and 0.5°C. A professional choice for applications that have relatively strict requirements.
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Temperature%26Humidity-Sensor-Pro%EF%BC%88AM2302%EF%BC%89-p-838.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Temperature%26Humidity-Sensor-Pro%EF%BC%88AM2302%EF%BC%89-p-838.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 ## Specification
 
@@ -53,7 +53,7 @@ tags: io_3v3, io_5v, plat_duino, plat_pi
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -142,7 +142,99 @@ The result should be like:
 
 
 
-### Play With Raspberry Pi
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Temp & Hum Sensor Pro|
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-Temperature_and_Humidity_Sensor_Pro/raw/master/img/Thumbnail.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-Pro-AM230-p-838.html)|
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the temperature and humidity sensor pro to port 12 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-Temperature_and_Humidity_Sensor_Pro/raw/master/img/Temp&Hum_Pro_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the temperature and humidity sensor pro to **any GPIO Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/Seeed_Python_DHT.git
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd Seeed_Python_DHT
+sudo python setup.py install
+cd ~/Seeed_Python_DHT/examples
+nano dht_simpleread.py 
+```
+
+Change the sensor = seeed_dht.DHT("11", 12) to sensor = seeed_dht.DHT("22", 12), Following is the dht_simpleread.py code.
+
+```python
+import time
+import seeed_dht
+def main():
+
+    # for DHT11/DHT22
+    sensor = seeed_dht.DHT("22", 12)
+    # for DHT10
+    # sensor = seeed_dht.DHT("10")
+    
+    while True:
+        humi, temp = sensor.read()
+        if not humi is None:
+            print('DHT{0}, humidity {1:.1f}%, temperature {2:.1f}*'.format(sensor.dht_type, humi, temp))
+        else:
+            print('DHT{0}, humidity & temperature: {1}'.format(sensor.dht_type, temp))
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result by running python dht_simpleread.py
+    
+```python
+
+pi@raspberrypi:~/Seeed_Python_DHT/examples $ python dht_simpleread.py 
+DHT22, humidity 39.2%, temperature 29.1*
+DHT22, humidity 39.2%, temperature 29.1*
+DHT22, humidity 39.2%, temperature 29.1*
+DHT22, humidity 39.1%, temperature 29.1*
+DHT22, humidity 40.0%, temperature 29.1*
+DHT22, humidity 39.9%, temperature 29.1*
+DHT22, humidity 40.3%, temperature 29.1*
+DHT22, humidity 42.0%, temperature 29.1*
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 #### Hardware
 
@@ -309,3 +401,4 @@ Please do not hesitate to contact [techsupport@seeed.cc](techsupport@seeed.cc) i
 
 
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove - 6-Axis Accelerometer&Gyroscope(BMI088)
+name: Grove - 6-Axis Accelerometer&Gyroscope(BMI088)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -13,7 +13,7 @@ tags:
 
 The Grove - 6-Axis Accelerometer&Gyroscope(BMI088) is a 6 DoF(degrees of freedom) High-performance Inertial Measurement Unit(IMU) .This sensor is based on BOSCH BMI088, which is a high-performance IMU with high vibration suppression. The 6-axis sensor combines a 16 bit triaxial gyroscope and a 16 bit triaxial accelerometer. Specialy, you can use this sensor on the drone and robotics application in demanding environments. 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-6-Axis-Accelerometer%26Gyroscope-(BMI088)-p-3188.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-6-Axis-Accelerometer%26Gyroscope-(BMI088)-p-3188.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 ## Features
@@ -73,7 +73,7 @@ This is a typical Bi-directional level shifter circuit to connect two different 
 
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -224,6 +224,12 @@ BMI088 is connected
 395.51,-384.52,824.71,1.46,3.17,10.86,27
 ```
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-6-Axis_Accelerometer-Gyroscope-BMI088/raw/master/res/Grove%20-%206-Axis%20Accelerometer%26Gyroscope(BMI088).zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
 
 ## Resources
 
@@ -245,4 +251,4 @@ This is the introduction Video of this product, simple demos, you can have a try
 
 ## Tech Support
 
-Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)
+Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

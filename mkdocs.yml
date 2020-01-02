@@ -38,7 +38,7 @@ theme_dir: material
 
 # Icon
 # site_favicon: 'images/favicon.ico'
-site_favicon: https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/favicon.ico
+#site_favicon: https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/favicon.ico
 
 # Options
 extra:
@@ -115,18 +115,23 @@ pages:
           - Rainbowduino LED driver platform - ATmega328: Rainbowduino_LED_driver_platform-ATmega328.md
           - Rainbowduino v3.0: Rainbowduino_v3.0.md
           - Seeeduino Cloud: Seeeduino_Cloud.md
+          - Seeeduino Cortex M0: Seeeduino-Cortex-M0.md
           - Seeeduino Ethernet: Seeeduino_Ethernet.md
           - Seeeduino GPRS: Seeeduino_GPRS.md
           - Seeeduino Lite: Seeeduino_Lite.md
           - Seeeduino LoRaWAN: Seeeduino_LoRAWAN.md
           - Seeeduino Lotus: Seeeduino_Lotus.md
+          - Seeeduino Lotus Cortex-M0+: Seeeduino_Lotus_Cortex-M0-.md
           - Seeeduino Mega: Seeeduino_Mega.md
           - Seeeduino Mega Protoshield Kit: Seeeduino_Mega_Protoshield_Kit.md
+          - Seeeduino Nano: Seeeduino-Nano.md
           - Seeeduino Stalker V3 - Waterproof Solar Kit: Seeeduino_Stalker_V3-Waterproof_Solar_Kit.md
           - Seeeduino Stalker V3.1: Seeeduino_Stalker_V3.1.md
           - Seeeduino Stalker v3 enclosure: Seeeduino_Stalker_v3_enclosure.md
           - Seeeduino v4.0‏‎: Seeeduino_v4.0.md
           - Seeeduino v4.2: Seeeduino_v4.2.md
+          - SeeedStudio GD32 RISC-V Dev Board: SeeedStudio-GD32-RISC-V-Dev-Board.md
+          - Seeeduino Crypto (ATmega4809 ECC608): Seeeduino-Crypto-ATmega4809-ECC608.md
           - Shield Bot V1.1: Shield_Bot_V1.1.md
           - Shield Bot V1.2: Shield_Bot_V1.2.md
           - Sidekick Basic Kit for Arduino V2: Sidekick_Basic_Kit_for_Arduino_V2.md
@@ -138,18 +143,31 @@ pages:
           - UartSBee V4: UartSBee_V4.md
           - UartSBee v5: UartSBee_v5.md
 
+
       - Raspberry Pi:
           - Raspberry Pi Introduction: Raspberry_Pi.md
+          - 3D Gesture Tracking Shield for Raspberry Pi MGC3130: 3D-Gesture-Tracking-Shield-for-Raspberry-Pi-MGC3130.md
           - Grove Base HAT: Grove_Base_HAT.md
-          - GrovePi&#43;: GrovePi_Plus.md
+          - GrovePi Plus: GrovePi_Plus.md
           - Raspberry Pi Breakout Board v1.0: Raspberry_Pi_Breakout_Board_v1.0.md
           - Raspberry Pi Motor Driver Board v1.0: Raspberry_Pi_Motor_Driver_Board_v1.0.md
+          - Pi RTC (DS1307): Pi_RTC-DS1307.md
+          - High Accuracy Pi RTC (DS3231): High_Accuracy_Pi_RTC-DS3231.md
           - Raspberry Pi RS232 Board v1.0: Raspberry_Pi_R232_Board_v1.0.md
           - Raspberry Pi Relay Board v1.0: Raspberry_Pi_Relay_Board_v1.0.md
           - Grove Base Hat for Raspberry Pi: Grove_Base_Hat_for_Raspberry_Pi.md
           - Grove Base Hat for Raspberry Pi Zero: Grove_Base_Hat_for_Raspberry_Pi_Zero.md
           - Skeleton Box for Raspberry Pi Compute Module Development Kit: Skeleton_Box_for_Raspberry_Pi_Compute_Module_Development_Kit.md
           - Skeleton box for Raspberry Pi: Skeleton_box_for_Rasberry_Pi.md
+          - 8-Channel 12-Bit ADC for Raspberry Pi (STM32F030): 8-Channel_12-Bit_ADC_for_Raspberry_Pi-STM32F030.md
+          - 4-Channel 16-Bit ADC for Raspberry Pi (ADS1115): 4-Channel_16-Bit_ADC_for_Raspberry_Pi-ADS1115.md
+          - RS-485 Shield for Raspberry Pi: RS-485_Shield_for_Raspberry_Pi.md
+          - Grove AI HAT for Edge Computing: Grove_AI_HAT_for_Edge_Computing.md
+          - Grove Base Kit for Raspberry Pi: Grove_Base_Kit_for_Raspberry_Pi.md
+          - 2 Channel CAN BUS FD Shield for Raspberry Pi: 2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi.md
+
+
+          
 
 
       - BeagleBone:
@@ -157,14 +175,20 @@ pages:
           - BeagleBone Solutions: Beaglebone_Solutions.md
           - BeagleBone Blue: BeagleBone_Blue.md
           - BeagleBone Case: Beaglebone_Case.md
-          - BeagleBone Green: BeagleBone_Green.md
-          - BeagleBone Green HDMI Cape: BeagleBone_Green_HDMI_Cape.md
-          - BeagleBone Green Wireless: BeagleBone_Green_Wireless.md
-          - Grove Base Cape for BeagleBone v2: Grove_Base_Cape_for_BeagleBone_v2.md
+          - Seeed Studio BeagleBone Green: BeagleBone_Green.md
+          - Seeed Studio BeagleBone Green HDMI Cape: BeagleBone_Green_HDMI_Cape.md
+          - Seeed Studio BeagleBone Green Wireless: BeagleBone_Green_Wireless.md
+          - Grove Base Cape for Seeed Studio BeagleBone Green v2: Grove_Base_Cape_for_BeagleBone_v2.md
           - Grove Cape for BeagleBone Series: Grove_Cape_for_BeagleBone_Series.md
-          - Grove Starter Kit for BeagleBone Green: Grove_Starter_Kit_for_BeagleBone_Green.md
+          - Grove Starter Kit for Seeed Studio BeagleBone Green: Grove_Starter_Kit_for_BeagleBone_Green.md
           - Motor Bridge Cape v1.0: Motor_Bridge_Cape_v1.0.md
           - Skeleton box for Beaglebone: Skeleton_box_for_Beaglebone.md
+          - Seeed Studio BeagleBone Green Gateway Baseboard: BeagleBone_Green_Gateway_Baseboard.md
+          - Seeed Studio BeagleBone Green LCD Cape with Resistive Touch: Seeed-Studio-BeagleBone-Green-LCD-Cape-with-Resistive-Touch.md
+   
+      
+      - SenseCap:
+          - Sensecap LoRaWAN Gateway and Wireless Sensor User Guide: Sensecap-LoRaWAN-Gateway-and-Wireless-Sensor-User-Guide.md
 
       - ReSpeaker:
           - ReSpeaker Introduction: ReSpeaker.md
@@ -179,21 +203,31 @@ pages:
           - ReSpeaker Drive Unit: ReSpeaker_Drive_Unit.md
           - ReSpeaker Mic Array: ReSpeaker_Mic_Array.md
           - ReSpeaker Mic Array v2.0: ReSpeaker_Mic_Array_v2.0.md
+          - ReSpeaker USB Mic Array: ReSpeaker-USB-Mic-Array.md
+          - ReSpeaker USB Mic Array: respeaker-USB-Mics.md
+          - Snips Voice Interaction Satellite Kit: Snips_Voice_Interaction_Satellite_Kit.md
+          - Snips Voice Interaction Base Kit: Snips_Voice_Interaction_Base_Kit.md
 
       - Azure Sphere:
           - Azure Sphere MT3620 Development Kit: Azure_Sphere_MT3620_Development_Kit.md
           - Grove Starter Kit for Azure Sphere MT3620 Development Kit: Grove_Starter_Kit_for_Azure_Sphere_MT3620_Development_Kit.md
-
+          - MT3620 Ethernet Shield v1.0: MT3620_Ethernet_Shield_v1.0.md
+          - MT3620 Mini Dev Board: MT3620_Mini_Dev_Board.md
+          - MT3620 Grove Breakout: MT3620_Grove_Breakout.md
+      
+      
       - Artik:
           - Artik Introduction: Artik.md
           - Eagleye 530s: Eagleye_530s.md
 
       - micro:bit:
-          - microbit wiki Page: microbit_wiki_page.md 
+          - microbit wiki Page: microbit_wiki_page.md
+          - Grove Inventor Kit for micro:bit: Grove_Inventor_Kit_for_microbit.md
+
 
       - Shield:
           - Shield Introduction: Shield.md
-          - 2.8&#39;&#39; TFT Touch Shield v2.0: 2.8inch_TFT_Touch_Shield_v2.0.md
+          - 2.8 inch TFT Touch Shield v2.0: 2.8inch_TFT_Touch_Shield_v2.0.md
           - 4A Motor Shield: 4A_Motor_Shield.md
           - Base Shield V2: Base_Shield_V2.md
           - Bluetooth Shield V2.0: Bluetooth_Shield_V2.md
@@ -206,6 +240,7 @@ pages:
           - GPRS Shield V3.0: GPRS_Shield_V3.0.md
           - Mbed Shield: mbed_Shield.md
           - Motor Shield V2.0: Motor_Shield_V2.0.md
+          - Brushless Motor Shield (TB6605FTG): Brushless-Motor-Shield-TB6605FTG.md
           - Music Shield V2.2: Music_Shield_V2.2.md
           - NFC Shield V2.0: NFC_Shield_V2.0.md
           - Protoshield Kit for Arduino: Protoshield_Kit_for_Arduino.md
@@ -215,6 +250,7 @@ pages:
           - Seeed BLE Shield v1: Seeed_BLE_Shield.md
           - Small e-Paper Shield V2: Small_e-Paper_Shield_V2.md
           - Solar Charger Shield V2.2: Solar_Charger_Shield_V2.2.md
+          - Spartan Edge Accelerator Board: Spartan-Edge-Accelerator-Board.md
           - W5500 Ethernet Shield v1.0: W5500_Ethernet_Shield_v1.0.md
           - Wifi Shield (Fi250) V1.1: Wifi_Shield_Fi250_V1.1.md
           - Wifi Shield V2.0: Wifi_Shield_V2.0.md
@@ -226,6 +262,7 @@ pages:
           - Wio Tracker - GPS, BT3.0, GSM, Arduino Compatible: wio_gps_board.md
           - LTE Cat 1 Pi HAT: LTE_Cat_1_Pi_HAT.md
           - Wio LTE Cat M1/NB-IoT Tracker: Wio_LTE_Cat_M1_NB-IoT_Tracker.md
+          - Wio Extension RTC: Wio-Extension-RTC.md
 
       - Wio:
           - Wio Introduction: Wio.md
@@ -237,13 +274,23 @@ pages:
           - Wio Link Event Kit: Wio_Link_Event_Kit.md
           - Wio Link Starter Kit: Wio_Link_Starter_Kit.md
           - Wio Node: Wio_Node.md
+          - Wio W600: Wio-W600.md
           - Grovev Starter Kit for Wio LTE: Grove_Starter_Kit_for_Wio_LTE.md
+          - Grove-Shield-for-Wio-Lite: Grove-Shield-for-Wio-Lite.md
+          - Wio Lite W600: Wio-Lite-W600.md
+          - Wio Lite MG126: Wio-Lite-MG126.md
 
       
       - Air Serial:
           - Air602 WiFi Development Board: Air602_WiFi_Development_Board.md
           - Air602 Firmware Programming Manual: Air602_Firmware_Programming_Manual.md
 
+      - W600:
+          - W600 Module: W600_Module.md
+
+     
+      - Arch:
+          - Arch_Mix.md
 
 
       - LinkIt:
@@ -306,7 +353,7 @@ pages:
           - Xadow - Storage: Xadow_Storage.md
           - Xadow - UV Sensor: Xadow_UV_Sensor.md
           - Xadow - Vibrator Motor: Xadow_Vibrator_Motor.md
-          - Xadow - 1.54&#39;&#39; Touchscreen: Xadow_1.54_inch_Touchscreen.md
+          - Xadow - 1.54 inch Touchscreen: Xadow_1.54_inch_Touchscreen.md
           - Xadow - Audio: Xadow_Audio.md
           - Xadow - BLE: Xadow_BLE.md
           - Xadow - Barometer: Xadow_Barometer.md
@@ -369,15 +416,24 @@ pages:
           - Sensor - Sound: Sensor_sound.md
           - Sensor - Distance: Sensor_distance.md
           - Sensor - Others: Sensor_Others.md
+          - Grove - 2 Channel Inductive Sensor (LDC1612): Grove-2_Channel_Inductive_Sensor-LDC1612.md
+          - Grove - 2.5A DC Current Sensor(ACS70331): Grove-2.5A-DC-Current-Sensor-ACS70331.md
+          - Grove - ±5A DC/AC Current Sensor (ACS70331): Grove-5A_DC_AC_Current_Sensor-ACS70331.md
+          - Grove - 10A DC Current Sensor (ACS725): Grove-10A_DC_Current_Sensor-ACS725.md
           - Grove - 3 Axis Digital Accelerometer(±16g): Grove-3-Axis_Digital_Accelerometer-16g.md
           - Grove - 3-Axis Analog Accelerometer: Grove-3-Axis_Analog_Accelerometer.md
           - Grove - 3-Axis Compass V1.0: Grove-3-Axis_Compass_V1.0.md
           - Grove - 3-Axis Digitial Compass v2.0: Grove-3-Axis_Digitial_Compass_v2.0.md
           - Grove - 3-Axis Digital Accelerometer(±1.5g): Grove-3-Axis_Digital_Accelerometer-1.5g.md
           - Grove - 3-Axis Digital Accelerometer(±400g): Grove-3-Axis_Digital_Accelerometer-400g.md
+          - Grove - 3-Axis Analog Accelerometer 20g (ADXL356B): Grove-3-Axis_Analog_Accelerometer_20g-ADXL356B.md
+          - Grove - 3-Axis Analog Accelerometer 40g (ADXL356C): Grove-3-Axis_Analog_Accelerometer_40g-ADXL356C.md
+          - Grove - 3-Axis Digital Accelerometer 40g (ADXL357): Grove-3-Axis_Digital_Accelerometer_40g-ADXL357.md
+          - Grove - 3-Axis Digital Accelerometer 200g (ADXL372): Grove-3-Axis_Digital_Accelerometer_200g-ADXL372.md
           - Grove - 3-Axis Digital Gyro: Grove-3-Axis_Digital_Gyro.md
           - Grove - 6-Axis Accelerometer&amp;Compass V2.0: Grove-6-Axis_AccelerometerAndCompass_V2.0.md
           - Grove - 6-Axis Accelerometer&amp;Gyroscope: Grove-6-Axis_AccelerometerAndGyroscope.md
+          - Grove - Adjustable PIR Motion Sensor: Grove-Adjustable_PIR_Motion_Sensor.md
           - Grove - 80cm Infrared Proximity Sensor: Grove-80cm_Infrared_Proximity_Sensor.md
           - Grove - Air Quality Sensor v1.3: Grove-Air_Quality_Sensor_v1.3.md
           - Grove - Alcohol Sensor: Grove-Alcohol_Sensor.md
@@ -390,8 +446,10 @@ pages:
           - Grove - Button: Grove-Button.md
           - Grove - LED Button: Grove-LED_Button.md
           - Grove - CO2 Sensor: Grove-CO2_Sensor.md
+          - Grove - CO2 & Temperature & Humidity Sensor (SCD30): Grove-CO2_Temperature_Humidity_Sensor-SCD30.md
           - Grove - Chest Strap Heart Rate Sensor: Grove-Chest_Strap_Heart_Rate_Sensor.md
           - Grove - Collision Sensor: Grove-Collision_Sensor.md
+          - Grove - Capacitive Moisture Sensor (Corrosion-Resistant): Grove-Capacitive_Moisture_Sensor-Corrosion-Resistant.md
           - Grove - Differential Amplifier v1.0: Grove-Differential_Amplifier_v1.0.md
           - Grove - Digital Infrared Temperature Sensor: Grove-Digital_Infrared_Temperature_Sensor.md
           - Grove - Digital Light Sensor: Grove-Digital_Light_Sensor.md
@@ -417,6 +475,7 @@ pages:
           - Grove - Hall Sensor: Grove-Hall_Sensor.md
           - Grove - Heelight Sensor: Grove-Heelight_Sensor.md
           - Grove - High Temperature Sensor: Grove-High_Temperature_Sensor.md
+          - Grove - Human Presence Sensor (AK9753): Grove-Human_Presence_Sensor-AK9753.md
           - Grove - I2C Color Sensor: Grove-I2C_Color_Sensor.md
           - Grove - I2C Touch Sensor: Grove-I2C_Touch_Sensor.md
           - Grove - 12 Key Capacitive I2C Touch Sensor V2(MPR121): Grove-12_Key_Capacitive_I2C_Touch_Sensor_V2-MPR121.md
@@ -430,10 +489,12 @@ pages:
           - Grove - Infrared Reflective Sensor: Grove-Infrared_Reflective_Sensor.md
           - Grove - Infrared Temperature Sensor: Grove-Infrared_Temperature_Sensor.md
           - Grove - Infrared Temperature Sensor Array(AMG8833): Grove-Infrared_Temperature_Sensor_Array-AMG8833.md
+          - Grove - Integrated Pressure Sensor Kit: Grove-Integrated-Pressure-Sensor-Kit.md
           - Grove - Light Sensor: Grove-Light_Sensor.md
           - Grove - Line Finder: Grove-Line_Finder.md
           - Grove - Loudness Sensor: Grove-Loudness_Sensor.md
           - Grove - Luminance Sensor: Grove-Luminance_Sensor.md
+          - Grove - Laser PM2.5 Sensor (HM3301): Grove-Laser_PM2.5_Sensor-HM3301.md
           - Grove - Magnetic Switch: Grove-Magnetic_Switch.md
           - Grove - Mini Track Ball: Grove-Mini_Track_Ball.md
           - Grove - Moisture Sensor: Grove-Moisture_Sensor.md
@@ -445,6 +506,8 @@ pages:
           - Grove - Q Touch Sensor: Grove-Q_Touch_Sensor.md
           - Grove - RTC: Grove-RTC.md
           - Grove - Rotary Angle Sensor: Grove-Rotary_Angle_Sensor.md
+          - Grove - RS232: Grove-RS232.md
+          - Grove - RS485: Grove-RS485.md
           - Grove - Serial Camera Kit: Grove-Serial_Camera_Kit.md
           - Grove - Slide Potentiometer: Grove-Slide_Potentiometer.md
           - Grove - Sound Recorder: Grove-Sound_Recorder.md
@@ -455,7 +518,7 @@ pages:
           - Grove - Mech Keycap: Grove-Mech_Keycap.md
           - Grove - 5-Way Switch: Grove-5-Way_Switch.md
           - Grove - 6-Position DIP Switch: Grove-6-Position_DIP_Switch.md
-          - Grove - Temp&amp;Humi Sensor(SHT31): Grove-TempAndHumi_Sensor-SHT31.md
+          - Grove - Temp and Humi Sensor(SHT31): Grove-TempAndHumi_Sensor-SHT31.md
           - Grove - I2C High Accuracy Temp&Humi Sensor(SHT35): Grove-I2C_High_Accuracy_Temp&Humi_Sensor-SHT35.md
           - Grove - Temperature Sensor: Grove-Temperature_Sensor.md
           - Grove - Temperature Sensor V1.2: Grove-Temperature_Sensor_V1.2.md
@@ -463,6 +526,7 @@ pages:
           - Grove - Temperature&amp;Humidity Sensor: Grove-TemperatureAndHumidity_Sensor.md
           - Grove - Temperature&amp;Humidity Sensor (HDC1000): Grove-TemperatureAndHumidity_Sensor-HDC1000.md
           - Grove - Temperature&amp;Humidity Sensor (High-Accuracy &amp;Mini) v1.0: Grove-TemptureAndHumidity_Sensor-High-Accuracy_AndMini-v1.0.md
+          - Grove - Thermal Imaging Camera IR Array: Grove-Thermal-Imaging-Camera-IR-Array.md
           - Grove - I2C High Accuracy Temperature Sensor(MCP9808): Grove-I2C_High_Accuracy_Temperature_Sensor-MCP9808.md
           - Grove - Thumb Joystick: Grove-Thumb_Joystick.md
           - Grove - Tilt Switch: Grove-Tilt_Switch.md
@@ -486,14 +550,12 @@ pages:
           - Grove - Step Counter(BMA456): Grove-Step_Counter-BMA456.md
           - Grove - 3 Axis Digital Accelerometer±16g Ultra-low Power (BMA400): Grove-3-Axis_Digital_Accelerometer±16g_Ultra-low_Power-BMA400.md
           - Grove - 6-Axis Accelerometer&Gyroscope(BMI088): Grove-6-Axis_Accelerometer&Gyroscope(BMI088).md
-          - Grove - 16x2 LCD Series: Grove-16x2_LCD_Series.md
           - Grove - I2C UV Sensor (VEML6070): Grove-I2C_UV_Sensor-VEML6070.md
+          - Grove - Coulomb Counter 3.3V to 5V (LTC2941): Grove-Coulomb_Counter_3.3V_to_5V-LTC2941.md
+          - Grove - Light Gesture Color Proximity Sensor (TMG39931): Grove-Light-Gesture-Color-Proximity_Sensor-TMG39931.md
+          - Grove - 12 Channel Capacitive Touch Keypad (ATtiny1616): Grove-12-Channel-Capacitive-Touch-Keypad-ATtiny1616-.md
           
           
-
-          
-
-
       - Actuator:
           - Actuator Introduction: Actuator.md
           - Atom Node: Atom_Node.md
@@ -521,19 +583,30 @@ pages:
           - Grove - 2-Channel Solid State Relay: Grove-2-Channel_Solid_State_Relay.md
           - Grove - 4-Channel Solid State Relay: Grove-4-Channel_Solid_State_Relay.md
           - Grove - 8-Channel Solid State Relay: Grove-8-Channel_Solid_State_Relay.md
+          - Grove - Optocoupler Relay (M281).md: Grove-Optocoupler_Relay-M281.md
           - Grove - Serial MP3 Player: Grove-Serial_MP3_Player.md
           - Grove - Servo: Grove-Servo.md
           - Grove - Speaker: Grove-Speaker.md
           - Grove - Variable Color LED: Grove-Variable_Color_LED.md
           - Grove - Vibration Motor: Grove-Vibration_Motor.md
           - Grove - Water Atomization: Grove-Water_Atomization.md
+          - Grove - 16 Channel PWM Driver (PCA9685): Grove-16-Channel_PWM_Driver-PCA9685.md
+          - Grove - I2C Motor Driver (TB6612FNG): Grove-I2C_Motor_Driver-TB6612FNG.md
+
+
+
 
       - Display:
           - Display Introduction: Display.md
           - Grove - 4-Digit Display: Grove-4-Digit_Display.md
+          - Grove - 0.54 inch Red Dual Alphanumeric Display: Grove-0.54_inch_Red_Dual_Alphanumeric_Display.md
+          - Grove - 0.54 inch Red Quad Alphanumeric Display: Grove-0.54_inch_Red_Quad_Alphanumeric_Display.md
+          - Grove - 16x2 LCD Series: Grove-16x2_LCD_Series.md          
           - Grove - Circular LED: Grove-Circular_LED.md
           - Grove - LCD RGB Backlight: Grove-LCD_RGB_Backlight.md
           - Grove - LED Bar: Grove-LED_Bar.md
+          - Grove - RGB LED Stick (10 - WS2813 Mini): Grove-RGB_LED_Stick-10-WS2813_Mini.md
+          - Grove - RGB LED Ring (20 - WS2813 Mini): Grove-LED_ring.md
           - Grove - LED Socket Kit: Grove-LED_Socket_Kit.md
           - Grove - LED String Light: Grove-LED_String_Light.md
           - Grove - LED Strip Driver: Grove-LED_Strip_Driver.md
@@ -541,6 +614,13 @@ pages:
           - Grove - OLED Display 1.12&#34;: Grove-OLED_Display_1.12inch.md
           - Grove - Red LED: Grove-Red_LED.md
           - I2C LCD: I2C_LCD.md
+          - Grove - Red LED Matrix w/Driver: Grove-Red_LED_Matrix_w_Driver.md
+          - Grove - LED Matrix Driver (HT16K33): Grove-LED_Matrix_Driver-HT16K33.md
+          - Grove - RGB LED Matrix w/Driver: Grove-RGB_LED_Matrix_w-Driver.md
+          - Grove - Triple Color E-Ink Display 2.13": Grove-Triple_Color_E-Ink_Display_2_13.md
+          - Grove - Triple Color E-Ink Display 1.54": Grove-Triple_Color_E-Ink_Display_1_54.md
+
+
 
       - Communication:
           - Communication Introduction: Communication.md
@@ -595,7 +675,9 @@ pages:
           - Grove Indoor Environment Kit for Edison: Grove_Indoor_Environment_Kit_for_Edison.md
           - Grove Shield for Intel Joule: Grove_Shield_for_Intel_Joule.md
           - Grove Smart Plant Care Kit: Grove_Smart_Plant_Care_Kit.md
-          
+          - Grove Beginner Kit for Arduino: Grove_Beginner_Kit_for_Arduino.md
+          - Grove Creator Kit: Grove-Creator-Kit-1.md
+
 
 
   - IoT:
@@ -651,16 +733,16 @@ pages:
           - FSM-55: FSM-55.md
           - FST-01: FST-01.md
           - Fubarino SD: Fubarino_SD.md
-          - G1&#34; Water Flow Sensor: G1_Water_Flow_Sensor.md
-          - G1&amp;2&#34; Water Flow Sensor: G1_and_2_inch_Water_Flow_Sensor.md
-          - G1&#39;1/4 Water Flow sensor: G1-1-4_Water_Flow_sensor.md
-          - G1/8&#34; Water Flow Sensor: G1-8_Water_Flow_Sensor.md
-          - G3/4 Water Flow sensor: G3-4_Water_Flow_sensor.md
+          - G1 inch Water Flow Sensor: G1_Water_Flow_Sensor.md
+          - G1/2 inch Water Flow Sensor: G1_and_2_inch_Water_Flow_Sensor.md
+          - G1/4 inch Water Flow sensor: G1-1-4_Water_Flow_sensor.md
+          - G1/8 inch Water Flow Sensor: G1-8_Water_Flow_Sensor.md
+          - G3/4 inch Water Flow sensor: G3-4_Water_Flow_sensor.md
           - GPS Bee kit: GPS_Bee_kit.md
           - Grove - Base Shield for IOIO-OTG: Grove-Base_Shield_for_IOIO-OTG.md
           - LCD 16*2 Characters- Green Yellow back light: LCD_16-2_Characters-Green_Yellow_back_light.md
           - LCD 8*2 Characters- Blue back light: LCD_8-2_Characters-Blue_back_light.md
-          - LoNet 808 - Mini GSM/GPRS &#43; GPS Breakout: LoNet_808-Mini_GSM_GPRS_Plus_GPS_Breakout.md
+          - LoNet 808 - Mini GSM/GPRS Plus GPS Breakout: LoNet_808-Mini_GSM_GPRS_Plus_GPS_Breakout.md
           - M11*1.25 Water Flow Sensor: M11_1.25_Water_flow_Sensor.md
           - Matrix Clock: Matrix_Clock.md
           - Mini Soldering Iron: Mini_Soldering_Iron.md
@@ -670,7 +752,7 @@ pages:
           - Piezo Sensor - MiniSense 100: Piezo_Sensor-MiniSense_100.md
           - RF Explorer Software: RF_Explorer_Software.md
           - RGBW Stripe WireLess Shield V1.0: RGBW_Stripe_WireLess_Shield_V1.0.md
-          - Raspberry PI B&#43; Case: Raspberry_PI_Bplus_Case.md
+          - Raspberry PI B Plus Case: Raspberry_PI_Bplus_Case.md
           - Raspberry Pi 3 Model B: Raspberry_Pi_3_Model_B.md
           - Renbotics ServoShield Rev: Renbotics_ServoShield_Rev.md
           - SDLogger - Open Hardware Data Logger: SDLogger-Open_Hardware_Data_Logger.md
@@ -683,6 +765,9 @@ pages:
           - WireLess Gate Shield V1.0: WireLess_Gate_Shield_V1.0.md
           - Wireless Sensor Node - Solar Kit: Wireless_Sensor_Node-Solar_Kit.md
           - Gear Stepper Motor Driver Pack: Gear_Stepper_Motor_Driver_Pack.md
+          - RS-232 To TTL Conveter (MAX3232IDR): RS-232_To_TTL_Conveter-MAX3232IDR.md
+
+
 
   - Tutorial:
           - Tutorial Introduction: Tutorial.md
@@ -701,6 +786,8 @@ pages:
           - Get Started with Arduino: Getting_Started_with_Arduino.md
           - Getting Started with Seeeduino: Getting_Started_with_Seeeduino.md
           - Grove Inventor Kit for micro:bit: Grove_Inventor_Kit_for_microbit.md
+          - Guide for Codecraft using Arduino: Guide_for_Codecraft_using_Arduino.md
+          - Codecraft Grove Compatible List: Codecraft_Grove_Compatible_List.md
           - Guide to use demos downloaded from Seeed&#39;s Github: Guide_to_use_demos_downloaded_from_Seeed-s_Github.md
           - Google Assistant: Google_Assistant.md
           - How To Choose The Right Cable: How_To_Choose_The_Right_Cable.md
@@ -711,7 +798,9 @@ pages:
           - How to edit a document: How_To_Edit_A_Document.md
           - How to install an Arduino library: How_to_install_Arduino_Library.md
           - How to use and write a library: How_to_use_and_write_a_library.md
+          - How to build a home soft router and NAS With ReComputer: How-to-build-a-home-soft-router-and-NAS-With-ReComputer.md
           - I2C And I2C Address of Seeed Product: I2C_And_I2C_Address_of_Seeed_Product.md
+          - Introduction to Artificial Intelligence for Makers: Introduction_to_Artificial_Intelligence_for_Makers.md
           - IR Remote: IR_Remote.md
           - JavaScript for RePhone: JavaScript_for_RePhone.md
           - Joystick Control RGB Led: Joystick_Control_RGB_Led.md
@@ -744,6 +833,9 @@ pages:
           - Replacement LCD Screen for DSO nano: Replacement_LCD_Screen_for_DSO_nano.md
           - Secret Box: Secret_Box.md
           - Seeeduino Buying Guide: Seeeduino_Buying_Guide.md
+          - Seeed Arduino Serial: Seeed_Arduino_Serial.md
+          - Seeed Relay Selection Guide: Seeed_Relay_Page.md
+          - Seeed Gas Sensor Selection Guide: Seeed_Gas_Sensor_Selection_Guide.md
           - Service for Fusion PCB: Service_for_Fusion_PCB.md
           - Sketchbook of Sidekick Advanced Kit: Sketchbook_of_Sidekick_Advanced_Kit.md
           - Sound Sensor And LED Bar: Sound_Sensor_And_LED_Bar.md
@@ -757,7 +849,7 @@ pages:
             - Google Assistant: Google_Assistant.md
             - ReSpeaker Core V2 & Wio Link: ReSpeaker_Core_V2_&_Wio_Link.md
           - Xadow IO pin mapping: Xadow_IO_pin_mapping.md
-          - Zigbee Networking with XBee Series 2 and Seeed&#39;s Products: Zigbee_Networking_with_XBee_Series_2_and_Seeeds_Products.md
+          - Zigbee Networking with XBee Series 2 and Seeed Products: Zigbee_Networking_with_XBee_Series_2_and_Seeeds_Products.md
 
 
   - Discontinued:
@@ -790,7 +882,7 @@ pages:
           - Lipo Rider: Lipo_Rider.md
           - Lipo Rider V1.1: Lipo_Rider_V1.1.md
           - Logic_DC_Jack‏‎: Logic_DC_Jack.md
-          - Mini GSM/GPRS&#43;GPS Breakout SIM808: Mini_GSM_GPRS_GPS_Breakout_SIM808.md
+          - Mini GSM/GPRS GPS Breakout SIM808: Mini_GSM_GPRS_GPS_Breakout_SIM808.md
           - Motor Shield V1.0: Motor_Shield_V1.0.md
           - Motor Shield‏‎: Motor_Shield.md
           - Music Shield: Music_Shield.md

@@ -1,5 +1,5 @@
 ---
-title: Seeeduino v4.2
+name: Seeeduino v4.2
 category: Arduino
 bzurl: http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html
 oldwikiname: Seeeduino_v4.2
@@ -291,8 +291,29 @@ Here is some funny project for your reference.
 
 ## FAQs
 
-Please click **[here](http://support.seeedstudio.com/knowledgebase/articles/1826437-seeeduino-v4-2-sku-102010026)** to see all Seeeduino V4.2 FAQs.
+**Q1：In Ubuntu, I get the error 'avrdue: ser_open(): can't open device "dev/tty/ACM0": Permission denied'. How do I connect Seeeduino V4 to a Linux PC?**
 
+A1： Please read the instuction [here](http://playground.arduino.cc/Linux/Debian) to make Arduino IDE work without root permission in Ubuntu. Please find below the relevant part.
+
+**Q2: What's the difference between Arduino UNO and Seeeduino v4.2?**
+
+A2: Seeeduino v4.2 is fully compatible with Arduino UNO. The mainly difference list below:
+
+* Use a micro USB to power and program the board
+* 3 on-board Grove connector
+* 3.3/5V system power switch
+* DCDC circuit instead of LDO, more efficiency
+* Others circuit improve
+
+
+**Q3: Error downloading http://downloads.arduino.cc/packages/package_index.json**
+
+A3: Please follow below steps to solve the issue. 
+
+* Click File -> Preferences
+* Click  in the url C:\Users\...\AppData\Local\Arduino15\preferences.txt at the bottom of the Preferences window.
+* Delete all the files except preferences.txt, staging and packages.
+* Close and reopen an IDE window and it shall work. 
 
 ## Resources
 - **[PDF]** [Download Wiki PDF](https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/Seeeduino_v4.2.pdf)
@@ -309,6 +330,7 @@ Please click **[here](http://support.seeedstudio.com/knowledgebase/articles/1826
 - **[MoreReading]** [Arduino Introduction](https://www.arduino.cc/en/guide/introduction)
 - **[MoreReading]** [Wikipedia page for Arduino](https://en.wikipedia.org/wiki/Arduino)
 - **[MoreReading]** [How to fit RF Explorer 3G+ IoT modules on Seeeduino](http://j3.rf-explorer.com/60-rfe/specifications/184-rf-explorer-3g-iot-for-seeeduino)
+- **[Firmware]** [How to burn the bootloader](https://github.com/SeeedDocument/forum_doc/raw/master/reg/seeeduino_boot.zip)
 
 ## Project
 
@@ -321,4 +343,4 @@ Please click **[here](http://support.seeedstudio.com/knowledgebase/articles/1826
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/78141/make-an-interactive-color-matrix-with-seeeduino-arduino-f9f3c0/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

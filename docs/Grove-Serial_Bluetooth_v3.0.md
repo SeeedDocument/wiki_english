@@ -1,5 +1,5 @@
 ---
-title: Grove - Serial Bluetooth v3.0
+name: Grove - Serial Bluetooth v3.0
 category: Communication
 bzurl: https://seeedstudio.com/Grove-Serial-Bluetooth-v3.0-p-2475.html
 oldwikiname: Grove_-_Serial_Bluetooth_v3.0‏‎
@@ -78,21 +78,16 @@ Reference
 
 **2.Set BAUDRATE**
 
-<table>
-<tr>
-<td width="200px">
-AT+BAUD6
-</td>
-<td width="400px">
-Set baudrate 38400. Save and Rest.
-</td>
-</tr>
-<tr>
-<td colspan="2">
-Supported baudrate: 4--9600, 5--19200,6--38400,7--57600,8--115200,9--230400,A--460800.
-</td>
-</tr>
-</table>
+| Command  | Description                                 |
+|----------|---------------------------------------------|
+| AT+BAUD4 | Set baudrate 9600. Save and Reset.  |
+| AT+BAUD5 | Set baudrate 19200. Save and Reset.  |
+| AT+BAUD6 | Set baudrate 38400. Save and Reset.  |
+| AT+BAUD7 | Set baudrate 57600. Save and Reset.  |
+| AT+BAUD8 | Set baudrate 115200. Save and Reset.  |
+| AT+BAUD9 | Set baudrate 230400. Save and Reset.  |
+| AT+BAUDA | Set baudrate 460800. Save and Reset.  |
+
 
 **3. Set Device NAME**
 
@@ -135,4 +130,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Serial_Bluetooth_v3.0 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

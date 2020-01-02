@@ -1,5 +1,5 @@
 ---
-title: Intel® Edison and Grove IoT Starter Kit Powered by AWS
+name: Intel® Edison and Grove IoT Starter Kit Powered by AWS
 category: Discontinued
 bzurl:  https://www.amazon.com/dp/B0168KU5FK
 oldwikiname: Intel® Edison and Grove IoT Starter Kit Powered by AWS
@@ -435,4 +435,4 @@ thingShadows.<span class="me1">on</span><span class="br0">(</span><span class="s
 *   [Getting started with Edison](https://software.intel.com/en-us/iot/library/edison-getting-started)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

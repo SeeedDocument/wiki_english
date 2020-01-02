@@ -1,5 +1,5 @@
 ---
-title: IoT Introduction
+name: IoT Introduction
 nointro:
 ---
 ---
@@ -21,3 +21,4 @@ Here is the list of the IoT Boards you can find in the Seeed WiKi. The list will
 
 
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

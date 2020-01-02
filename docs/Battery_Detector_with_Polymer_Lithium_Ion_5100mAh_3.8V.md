@@ -1,5 +1,5 @@
 ---
-title: Battery Detector with Polymer Lithium Ion 5100mAh 3.8V
+name: Battery Detector with Polymer Lithium Ion 5100mAh 3.8V
 category: Essentials
 bzurl: https://seeedstudio.com/Battery-Detector-with-Polymer-Lithium-Ion-5100mAh-3.8V-p-2647.html
 oldwikiname: Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V
@@ -162,4 +162,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

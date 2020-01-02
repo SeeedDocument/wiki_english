@@ -1,5 +1,5 @@
 ---
-title: Grove - 125KHz RFID Reader
+name: Grove - 125KHz RFID Reader
 category: Communication
 bzurl: https://seeedstudio.com/Grove-125KHz-RFID-Reader-p-1008.html
 oldwikiname: Grove_-_125KHz_RFID_Reader
@@ -45,7 +45,7 @@ And you should use the module below while using RFID reader:
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 ## Getting Started
 
@@ -284,21 +284,25 @@ D0[7..0]
 -   DX\[7..0\] is the data bit which correspond to Mifare@ Standard & Light card read only ID;
 
 ## FAQs
-**Q1: How to convert the output to Card Number**
 
-- A1:
+**Q1: How to convert the output to Card Number?**
+
+A1: Please follow below steps.
 
 - Take ID: 0009776930 for example:
-
 - Card Number ID: 0009776930 ------- Decimalism [Start Bit(00) + Card Number(8 numbers)]
-
 - Output: 0700952F229F ------------- Hex [[Start Bit(07h) + Card Number(8 numbers) + Checksum]
-
 - The calculator for decimal and hex numbers is available online.
+
+**Q2: How to read tags continuously?**
+
+A2: The RFID reader can read tags continuously without any setting. Keep the tag 2.5-4 cm from the antenna, and the reader can read data continuously. And if the distance is below 2.5cm, the reader reads data once if not moving tags away.
 
 ## Resources
 
 - **[Demo]** [Grove - 125KHz RFID Reader Demo](https://github.com/SeeedDocument/Grove-125KHz_RFID_Reader/raw/master/res/RFID_Wiegand_INT.zip)
+- **[PDF]** [Declaration of conformity](https://github.com/SeeedDocument/Grove-125KHz_RFID_Reader/raw/master/res/CSTR140821808_Declaration%20of%20conformity.pdf)
+- **[PDF]** [Test Report](https://github.com/SeeedDocument/Grove-125KHz_RFID_Reader/raw/master/res/CSTR140821808_test%20report.pdf)
 
 ## Projects
 
@@ -307,4 +311,4 @@ D0[7..0]
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/ArduinoBasics/arduino-based-security-project-using-cayenne-eb379b/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

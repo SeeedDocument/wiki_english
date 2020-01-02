@@ -1,5 +1,5 @@
 ---
-title: Grove - Capacitive Touch Slide Sensor(CY8C4014LQI)
+name: Grove - Capacitive Touch Slide Sensor(CY8C4014LQI)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -21,7 +21,13 @@ It will be a lot fun to use this module as a game controler or apply it to other
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Capacitive-Touch-Slide-Sensor%28CY8C4014LQI%29-p-3183.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Capacitive-Touch-Slide-Sensor%28CY8C4014LQI%29-p-3183.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+
+## Version
+
+| Product Version  | Changes                                                                                               | Released Date |
+|------------------|-------------------------------------------------------------------------------------------------------|---------------|
+| Grove - Capacitive Touch Slide Sensor(CY8C4014LQI) | Initial                                                                                               | Jul 2018      |
 
 
 
@@ -44,6 +50,10 @@ It will be a lot fun to use this module as a game controler or apply it to other
 |Operating Junction Temperature|-40°C to +100°C|
 |Interface|I^2^C|
 |Default I^2^C Address|0x08|
+|Size|L: 60mm W: 20mm H: 6mm| 
+|Weight|8g|
+|Package size|L: 140mm W: 90mm H: 10mm|
+|Gross Weight|15g|
 
 
 ## Applications
@@ -78,7 +88,7 @@ This module is based on **CY8C4014LQI**, the input voltage of this chip range fr
 
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -212,6 +222,13 @@ slider value is9
 ![](https://github.com/SeeedDocument/Grove-Capacitive_Touch_Slide_Sensor-CY8C4014LQI/raw/master/img/result.gif)
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-Capacitive_Touch_Slide_Sensor-CY8C4014LQI/raw/master/res/Grove-Capacitive_Touch_Slider_Sensor.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
 ## Resources
 
 - **[Zip]** [Grove - Capacitive Touch Slide Sensor(CY8C4014LQI) Eagle Files](https://github.com/SeeedDocument/Grove-Capacitive_Touch_Slide_Sensor-CY8C4014LQI/raw/master/res/Grove-Capacitive_Touch_Slider_Sensor.zip)
@@ -224,3 +241,4 @@ slider value is9
 ## Tech Support
 Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove - Thumb Joystick
+name: Grove - Thumb Joystick
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Thumb-Joystick-p-935.html
 oldwikiname: Grove_-_Thumb_Joystick
@@ -14,7 +14,7 @@ tags: grove_analog, io_3v3, io_5v, plat_duino,plat_pi
 
 Grove - Thumb Joystick is a Grove compatible module which is very similar to the 'analog' joystick on PS2 (PlayStation 2) controllers. The X and Y axes are two ~10k potentiometers which control 2D movement by generating analog signals. The joystick also has a push button that could be used for special applications. When the module is in working mode, it will output two analog values, representing two directions. Compared to a normal joystick, its output values are restricted to a smaller range (i.e. 200~800), only when being pressed that the X value will be set to 1023 and the MCU can detect the action of pressing.
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Thumb-Joystick-p-935.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Thumb-Joystick-p-935.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
 
 ## Version
 
@@ -42,7 +42,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Getting Started
@@ -116,7 +116,165 @@ void loop()
 
 The output value from the analog port of Arduino can be converted to the corresponding resistance by using the formula:R=(float)(1023-sensorValue)\*10/sensorValue.
 
-### Play With Raspberry Pi
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Thumb Joystick to port A0 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/img/cc_Thumb_Joystick.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see the coordinate of X and Y displayed in the Serial Monitor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Thumb Joystick |
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/img/Bgjoy1_small.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Thumb-Joystick-p-935.html)|
+
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the Thumb Joystick  to port A0 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/img/Thumb_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the the thumb joystick to **any Analog Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd grove.py/grove
+python grove_thumb_joystick.py 0
+
+```
+!!!Note
+    you can excute the program with ++python grove_thumb_joystick.py pin++, where pin could be one of {0, 2, 4, 6} in the ADC group and connect the device to the corresponding slot {A0, A2, A4, A6}.
+
+Following is the grove_thumb_joystick.py code.
+
+```python
+
+import math
+import sys
+import time
+from grove.adc import ADC
+
+
+class GroveThumbJoystick:
+
+    def __init__(self, channelX, channelY):
+        self.channelX = channelX
+        self.channelY = channelY
+        self.adc = ADC()
+
+    @property
+    def value(self):
+        return self.adc.read(self.channelX), self.adc.read(self.channelY)
+
+Grove = GroveThumbJoystick
+
+
+def main():
+    from grove.helper import SlotHelper
+    sh = SlotHelper(SlotHelper.ADC)
+    pin = sh.argv2pin()
+
+    sensor = GroveThumbJoystick(int(pin), int(pin + 1))
+
+    while True:
+        x, y = sensor.value
+        if x > 900:
+            print('Joystick Pressed')
+        print("X, Y = {0} {1}".format(x, y))
+        time.sleep(.2)
+
+if __name__ == '__main__':
+    main()
+
+
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result
+    
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_thumb_joystick.py 0
+Hat Name = 'Grove Base Hat RPi'
+X, Y = 506 484
+X, Y = 484 484
+X, Y = 506 484
+X, Y = 506 487
+Joystick Pressed
+X, Y = 999 485
+X, Y = 310 736
+X, Y = 681 484
+Joystick Pressed
+X, Y = 999 277
+Joystick Pressed
+X, Y = 999 487
+X, Y = 506 484
+X, Y = 501 486
+X, Y = 509 484
+X, Y = 511 486
+X, Y = 510 485
+^CTraceback (most recent call last):
+  File "grove_thumb_joystick.py", line 69, in <module>
+    main()
+  File "grove_thumb_joystick.py", line 66, in main
+    time.sleep(.2)
+KeyboardInterrupt
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+!!!Notice
+        You may have noticed that for the analog port, the silkscreen pin number is something like **A1, A0**, however in the command we use parameter **0** and **1**, just the same as digital port. So please make sure you plug the module into the correct port, otherwise there may be pin conflicts.
+
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 #### Hardware
 
@@ -221,6 +379,7 @@ Resources
 - **[Eagle]** [Grove-Thumb Joystick Schematic](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/res/Eagle_Design_Files.zip)
 - **[Datasheet]** [Analog Joystick Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/res/Analog_Joystick_Datasheet.jpg)
 - **[PDF]** [Joystick Schematic PDF File](https://github.com/SeeedDocument/Grove-Thumb_Joystick/raw/master/res/Joystick.pdf)
+- **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-Thumb_Joystick/master/res/Grove_Thumb_Joystick_CDC_File.zip)
 
 ## Projects
 
@@ -233,4 +392,4 @@ Resources
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/dexterindustries/build-a-custom-minecraft-controller-d55d9c/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

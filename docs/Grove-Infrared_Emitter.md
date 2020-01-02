@@ -1,5 +1,5 @@
 ---
-title: Grove - Infrared Emitter
+name: Grove - Infrared Emitter
 category: Actuator
 bzurl: https://seeedstudio.com/Grove-Infrared-Emitter-p-993.html
 oldwikiname: Grove_-_Infrared_Emitter
@@ -17,7 +17,7 @@ The Infrared Emitter is used to transmit infrared signals through an infrared LE
 
 
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/Grove-Infrared-Emitter-p-993.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/Grove-Infrared-Emitter-p-993.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
 
 
 
@@ -30,13 +30,22 @@ Grove - Infrared Emitter v1.0	| Initial |	Nov. 01 2015
 Grove - Infrared Emitter v1.1	| Change the Infrared transmitting tube location  |	Jul. 24 2016
 Grove - Infrared Emitter v1.2	| Change the valnue of C1 to make the power more stable  |	Dec. 14 2016
 
+## Application
+- Infrared remote control units with high power requirements
+- Free air transmission systems
+- Infrared source for optical counters and card readers
 
+##　Specification
 
-
-##　Specifications
-
--   Voltage: 3.3-5V
--   Distance:10m
+| Parameter               | Value/Range   |
+|-------------------------|---------------|
+| Operating voltage       | 3.3/5V        |
+| Peak wavelength         | 940nm         |
+| Angle of half intensity | ϕ = ± 17°     |
+| Radiant Intensity       | 72 mW/sr      |
+| Distance                | 10 meter(MAX) |
+| Operation Temperature   | -40℃ to +80℃  |
+| Size                    | 20mmX20mm     |
 
 !!!Tip
     More details about Grove modules please refer to [Grove System](http://wiki.seeedstudio.com/Grove_System/)
@@ -51,7 +60,7 @@ Grove - Infrared Emitter v1.2	| Change the valnue of C1 to make the power more s
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -274,4 +283,4 @@ If every thing goes well, The result should be like:
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

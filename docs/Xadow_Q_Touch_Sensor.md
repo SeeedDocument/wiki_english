@@ -1,5 +1,5 @@
 ---
-title: Xadow-Q Touch Sensor
+name: Xadow-Q Touch Sensor
 category: RePhone
 bzurl: https://www.seeedstudio.com/Xadow-Q-Touch-Sensor-p-1853.html
 oldwikiname: Xadow-Q Touch Sensor
@@ -74,4 +74,4 @@ You can see :
 *   [How to detect finger touch?](/How_to_detect_finger_touch)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

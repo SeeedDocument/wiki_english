@@ -1,6 +1,6 @@
 ---
-title: BeagleBone Green Wireless
-category: BeagleBone
+name: BeagleBone® Green Wireless
+category: BeagleBone®
 bzurl: https://www.seeedstudio.com/SeeedStudio-BeagleBone-Green-Wireless-p-2650.html
 oldwikiname: SeeedStudio_BeagleBone_Green_Wireless
 prodimagename: BBGW_cover.png
@@ -10,7 +10,7 @@ sku: 102010048
 
 ![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/BBGW_cover.png?raw=true)
 
-SeeedStudio BeagleBone Green Wireless (BBGW) is a joint effort by [BeagleBoard.org](http://beagleboard.org) and Seeed Studio. It is based on the open-source hardware design of [BeagleBone Black](http://beagleboard.org/black) and developed into this differentiated version. SeeedStudio BeagleBone Green Wireless has included a high-performance flexible WiFi/Bluetooth interface and two Grove connectors, making it easier to connect to the large family of Grove sensors. The on-board HDMI and Ethernet are removed to make room for these wireless features and Grove connectors.
+Seeed Studio BeagleBone® Green Wireless is a joint effort by [BeagleBoard.org](http://beagleboard.org) and Seeed Studio. It is based on the open-source hardware design of [BeagleBone® Black](http://beagleboard.org/black) and developed into this differentiated version. Seeed Studio BeagleBone® Green Wireless has included a high-performance flexible WiFi/Bluetooth interface and two Grove connectors, making it easier to connect to the large family of Grove sensors. The on-board HDMI and Ethernet are removed to make room for these wireless features and Grove connectors.
 
 <iframe width="1111" height="625" src="https://www.youtube.com/embed/tlA97rhKG10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -20,7 +20,7 @@ SeeedStudio BeagleBone Green Wireless (BBGW) is a joint effort by [BeagleBoard.o
 ## Features
 ----
 
-* **Fully Compatiable with BeagleBone Black**
+* **Fully Compatiable with BeagleBone® Black**
 * **Processor: AM335x 1GHz ARM® Cortex-A8**
 	* 512MB DDR3 RAM
 	* 4GB 8-bit eMMC on-board flash storage
@@ -69,8 +69,9 @@ SeeedStudio BeagleBone Green Wireless (BBGW) is a joint effort by [BeagleBoard.o
 - Sensor Hub
 - Robot
 
-###BBGW Starter Tutorial #1-#6
-Here are some tutorials for the starters to use some Grove modules to realize their interesting ideas with BeagleBone Green Wireless(BBGW). The tutorials are based on Python and mraa/upm library.  
+
+###Seeed Studio BeagleBone® Green Wireless Starter Tutorial #1-#6
+Here are some tutorials for the starters to use some Grove modules to realize their interesting ideas with Seeed Studio BeagleBone® Green Wireless. The tutorials are based on Python and mraa/upm library.  
 
 |#1 The Breath LED|#2 Storm on your table|#3 Speak Louuuuuudly|
 |---------------|-----|--------------|
@@ -88,6 +89,7 @@ Here are some tutorials for the starters to use some Grove modules to realize th
 |---------------|-----|--------------|
 |![](http://statics3.seeedstudio.com/upload/img/community/20160526075527-90edbd.png)|![](http://statics3.seeedstudio.com/upload/img/community/20160524014508-4a47a0.png)|![](http://statics3.seeedstudio.com/upload/img/community/20160523121641-1ed045.png)|
 |[MAKE IT NOW!](https://community.seeedstudio.com/Bluetooth-Device-Detection-with-the-BeagleBone-Green-Wireless-p-1601.html)|[MAKE IT NOW!](https://community.seeedstudio.com/Home-Control-Center-using-BeagleBone-Green-Wireless-p-1596.html)|[MAKE IT NOW!](https://community.seeedstudio.com/SAP-HCP-IOT-SERVICE-WITH-WIOLINK-p-1581.html)|
+
 
 ## Hardware Overview
 
@@ -142,16 +144,27 @@ Each digital I/O pin has 8 different modes that can be selected, including GPIO.
 ![enter image description here](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/cape-headers-spi.png?raw=true)
 
 
+## Mechincal Drawing
+
+![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/raw/master/images/bbgw_drawing_1.png)
+
+![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/raw/master/images/bbgw_drawing_2.png)
+
+<iframe src="https://3dwarehouse.sketchup.com/embed.html?mid=3b02b643-b219-43b8-b5d5-d8e886608aaa" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="800" height="450" allowfullscreen></iframe>
+
+
+
+
 ## Getting Started
 ----
 
 !!!Note
     This chapter is writing under Win10. The steps are familiar for the other operate systems.
 
-###STEP1. Plug in your BBGW via USB
-Use the provided micro USB cable to plug your BBGW into your computer. This will both power the board and provide a development interface. BBGW will boot Linux from the **on-board 2GB** or 4GB eMMC.
+###STEP1. Plug in your Seeed Studio BeagleBone® Green Wireless via USB
+Use the provided micro USB cable to plug your Seeed Studio BeagleBone® Green Wireless into your computer. This will both power the board and provide a development interface. Seeed Studio BeagleBone® Green Wireless will boot Linux from the **on-board 2GB** or 4GB eMMC.
 
-BBGW will operate as a flash drive providing you with a local copy of the documentation and drivers. Note that this interface may not be used to re-configure the microSD card with a new image, but may be used to update the boot parameters using the uEnv.txt file.
+Seeed Studio BeagleBone® Green Wireless will operate as a flash drive providing you with a local copy of the documentation and drivers. Note that this interface may not be used to re-configure the microSD card with a new image, but may be used to update the boot parameters using the uEnv.txt file.
 
 You’ll see the PWR LED lit steadily. Within 10 seconds, you should see the other LEDs blinking in their default configurations.
 
@@ -185,8 +198,8 @@ Install the drivers for your operating system to give you network-over-USB acces
 
 Using either Chrome or Firefox (Internet Explorer will NOT work), browse to the web server running on your board. It will load a presentation showing you the capabilities of the board. Use the arrow keys on your keyboard to navigate the presentation.
 
-Click [http://192.168.7.2](http://192.168.7.2) to launch to your BBGW.
-Older software images require you to EJECT the BEAGLE_BONE drive to start the network. With the latest software image, that step is no longer required.
+Click [http://192.168.7.2](http://192.168.7.2) to launch to your Seeed Studio BeagleBone® Green Wireless.
+Older software images require you to EJECT the BeagleBone® drive to start the network. With the latest software image, that step is no longer required.
 
 [![Click to view larger image](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/launch.png)](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/launch.png)
 
@@ -196,9 +209,9 @@ To begin editing programs that live on your board, you can use the Cloud9 IDE by
 
 [![enter image description here](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/cloud9.png)](http://192.168.7.2:3000/ide.html)
 
-###STEP5. Connect your BBGW to Wi-Fi
+###STEP5. Connect your Seeed Studio BeagleBone® Green Wireless to Wi-Fi
 
-Using your smart phone or computer to scan local Wi-Fi network and connect to the AP named "BeagleBone XXX"
+Using your smart phone or computer to scan local Wi-Fi network and connect to the AP named "BeagleBone® XXX"
 
 ![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/wifi1.png?raw=true)
 
@@ -206,11 +219,11 @@ After connection succeeded, it will head to the login page automatically. Select
 
 ![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/wifi2.png?raw=true)
 
-Now your BBGW is connected to Wi-Fi.
+Now your Seeed Studio BeagleBone® Green Wireless is connected to Wi-Fi.
 
 ![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/wifi3.png?raw=true)
 
-###STEP6. Connect your BBGW to your Bluetooth Device
+###STEP6. Connect your Seeed Studio BeagleBone® Green Wireless to your Bluetooth Device
 
 Connect to Cloud9 IDE and start a new terminal.
 Start the bluetooth config with the command:
@@ -236,8 +249,8 @@ connect 0C:xx:xx:xx:xx:0B
 
 ![](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/bluetooth3.jpg?raw=true)
 
-Now your BBGW is connected to your bluetooth device. Type ``quit`` back to the terminal.
-Play music on BBGW, then you will hear music on your bluetooth speaker device.
+Now your Seeed Studio BeagleBone® Green Wireless is connected to your bluetooth device. Type ``quit`` back to the terminal.
+Play music on Seeed Studio BeagleBone® Green Wireless, then you will hear music on your bluetooth speaker device.
 
 ## Update to latest software
 -----
@@ -248,7 +261,7 @@ You need to update the board to latest software to keep a better performance, he
 
 First of all, you have to download the suitable image here.
 
-[![enter image description here](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green_Wireless/master/images/download_the_lastest_image_of_bbgw.png)](https://www.dropbox.com/s/9qsa75cazhjgb1x/BBGW-blank-debian-8.4-seeed-iot-armhf-2016-06-27-4gb1.zip?dl=0)
+[![enter image description here](https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green_Wireless/master/images/download_the_lastest_image_of_bbgw.png)](http://beagleboard.org/latest-images?tdsourcetag=s_pcqq_aiomsg)
 
 !!!Note
     Due to sizing necessities, this download may take about 30 minutes or more.
@@ -280,7 +293,7 @@ Click on **Write** button, then the process is started.
 
 !!!Note
     * You may see a warning about damaging your device. This is fine to accept as long as you are pointing to your SD card for writing.
-    * You should not have your BeagleBone connected to your computer at this time.
+    * You should not have your BeagleBone® connected to your computer at this time.
     * This process may need up to 10 minutes.
 
 
@@ -319,11 +332,11 @@ When the flashing is complete, all 4 USRx LEDs will be **off**. The latest Debia
 
 We have provided Mraa library and UPM library to make it easy for developers and sensor manufacturers to map their sensors & actuators on top of supported hardware and to allow control of low level communication protocol by high level languages & constructs.
 ###What are Mraa and UPM?
-Mraa is a C/C++ library with bindings to Python, Javascript and Java to interface with the I/O on BBG, BBGW and other platforms, with a structured and sane API where port names/numbering matches the board that you are on. Use of Mraa does not tie you to specific hardware with board detection done at runtime you can create portable code that will work across the supported platforms.
+Mraa is a C/C++ library with bindings to Python, Javascript and Java to interface with the I/O on Seeed Studio BeagleBone® Green, Seeed Studio BeagleBone® Green Wireless and other platforms, with a structured and sane API where port names/numbering matches the board that you are on. Use of Mraa does not tie you to specific hardware with board detection done at runtime you can create portable code that will work across the supported platforms.
 UPM is a high level repository for sensors that use MRAA. Each sensor links to MRAA and are not meant to be interlinked although some groups of sensors may be. Each sensor contains a header which allows to interface with it. Typically a sensor is represented as a class and instantiated.The constructor is expected to initialise the sensor and parameters may be used to provide identification/pin location on the board.
 
 ###Install and update
-Mraa and UPM are already installed in the system image of BBGW, so **you don't need to install it.** However if you want to update the library, or want to upgrade the library, use ``apt-get update`` and ``apt-get upgrade`` please. Refer to [https://github.com/intel-iot-devkit/mraa](https://github.com/intel-iot-devkit/mraa) and [https://github.com/intel-iot-devkit/upm](https://github.com/intel-iot-devkit/upm) for more information.
+Mraa and UPM are already installed in the system image of Seeed Studio BeagleBone® Green Wireless, so **you don't need to install it.** However if you want to update the library, or want to upgrade the library, use ``apt-get update`` and ``apt-get upgrade`` please. Refer to [https://github.com/intel-iot-devkit/mraa](https://github.com/intel-iot-devkit/mraa) and [https://github.com/intel-iot-devkit/upm](https://github.com/intel-iot-devkit/upm) for more information.
 
 ###Mraa Example
 
@@ -397,7 +410,7 @@ Grove - RTC v2.0
 ](https://community.seeedstudio.com/BBGW-starter-tutorial%235-Where-are-you%3F-p-1648.html)
 
 
-###Mraa Map for BBGW
+###Mraa Map for Seeed Studio BeagleBone® Green Wireless
 
 ![GPIO](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/BBGW_Mraa_Gpio.png?raw=true)
 
@@ -409,12 +422,12 @@ Grove - RTC v2.0
 
 ![UART](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/blob/master/images/BBGW_Mraa_UART.png?raw=true)
 
-## Grove for BBG
+## Grove for Seeed Studio BeagleBone® Green
 ------
 
 Grove is a modular, standardized connecter prototyping system. Grove takes a building block approach to assembling electronics. Compared to the jumper or solder based system, it is easier to connect, experiment and build and simplifies the learning system, but not to the point where it becomes dumbed down.  Some of the other prototype systems out there takes the level down to building blocks.   Good stuff to be learned that way, but the Grove system allows you to build real systems.   It requires some learning and expertise to hook things up.
 
-Below listed the Grove modules that work well with BBG.
+Below listed the Grove modules that work well with Seeed Studio BeagleBone® Green.
 
 
 |SKU        |Name|Interface|link|
@@ -451,10 +464,10 @@ Below listed the Grove modules that work well with BBG.
 |101020019	|Grove - Temperature&Humidity Sensor Pro	|Analog| [link](http://www.seeedstudio.com/Grove-Temperature&Humidity-Sensor-Pro-p-838.html)|
 
 
-## Cape for BBG
+## Cape for Seeed Studio BeagleBone® Green
 -------
 
-You will need some expansion board when you start a project. There're many cape for BBG already, they include LCD display, motor driver as well as HDMI expansion etc. Below is some of them recommend.
+You will need some expansion board when you start a project. There're many cape for Seeed Studio BeagleBone® Green already, they include LCD display, motor driver as well as HDMI expansion etc. Below is some of them recommend.
 
 |Grove Cape| Motor Bridge Cape|HDMI Cape|
 |------------|----------------|----------|
@@ -471,24 +484,47 @@ You will need some expansion board when you start a project. There're many cape 
 There're many references to help you to get more information about the board.
 
 * [BeagleBoard Main Page](http://beagleboard.org/)
-* [BeagleBone Green Wireless info at BeagleBoard page](http://beagleboard.org/green-wireless)
+* [Seeed Studio BeagleBone® Green Wireless info at BeagleBoard page](http://beagleboard.org/green-wireless)
 * [BeagleBoard Getting Started](http://beagleboard.org/getting-started)
 * [Troubleshooting](http://beagleboard.org/getting-started#troubleshooting)
 * [Hardware documentation](http://beagleboard.org/getting-started#hardware)
 * [Projects of BeagleBoard](http://beagleboard.org/project)
 
+## FAQs
+
+**Q1: How to connect your Seeed Studio BeagleBone® Green Wireless to your Bluetooth Device with Debian 9.5 2018-10-07 4GB image?**
+
+**A1:** Please follow below instructions. thanks.
+
+```
+udebian@beaglebone:~$ uname -a
+Linux beaglebone 4.14.71-ti-r80 #1 SMP PREEMPT Fri Oct 5 23:50:11 UTC 2018 armv7l GNU/Linux
+debian@beaglebone:~$ bluetoothctl --agent
+[NEW] Controller A4:D5:78:6D:6F:E0 beaglebone [default]
+Agent registered
+[bluetooth]# scan on
+Discovery started
+[CHG] Controller A4:D5:78:6D:6F:E0 Discovering: yes
+[NEW] Device C0:72:BC:0A:E6:1E HB7910703602
+[NEW] Device E8:19:C4:6B:03:5C YONGNUO LED
+[NEW] Device C0:F6:1E:02:0A:1E HB7690138998
+```
+
+
+
 ## Resources
 -----
-- **[PDF]** [BeagleBone_Green_Wireless Schematic(pdf)](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/tree/master/resources/BeagleBone_Green Wireless_V1.0_SCH_20160314.pdf)
+- **[PDF]** [Seeed Studio BeagleBone® Green Wireless Schematic(pdf)](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/tree/master/resources/BeagleBone_Green Wireless_V1.0_SCH_20160314.pdf)
 - **[Zip]** [AM335X Datasheet](https://github.com/SeeedDocument/Bazaar_file/raw/master/102010027/AM335x.pdf)
-- **[3D]** [BBGW 3D Model](https://github.com/SeeedDocument/forum_doc/tree/master/reg/BBGW_3D)
+- **[3D]** [Seeed Studio BeagleBone® Green Wireless 3D Model](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/raw/master/resources/BBGW_0421.zip)
+- **[PDF]** [Seeed Studio BeagleBone® Green Wireless Mechincal Drawing](https://github.com/SeeedDocument/BeagleBone_Green_Wireless/raw/master/resources/BBGW-PCBA.pdf)
 
 ## Project
 
-**BeagleBone Green Wireless Irrigation Control**: BeagleBone Green Wireless Irrigation Control using HTML5, WebSockets, and Ecmascript 6.
+**Seeed Studio BeagleBone® Green Wireless Irrigation Control**: Seeed Studio BeagleBone® Green Wireless Irrigation Control using HTML5, WebSockets, and Ecmascript 6.
 
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/Greg-R/beaglebone-green-wireless-irrigation-control-ce7c4b/embed' width='350'></iframe>
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/) or drop mail to techsupport@seeed.cc. 

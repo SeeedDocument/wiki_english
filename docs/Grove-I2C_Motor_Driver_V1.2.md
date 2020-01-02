@@ -1,5 +1,5 @@
 ---
-title: Grove - I2C Motor Driver V1.2
+name: Grove - I2C Motor Driver V1.2
 category: Actuator
 bzurl: https://www.seeedstudio.com/twig-i2c-motor-driver-p-907.html
 oldwikiname:  Grove - I2C Motor Driver V1.2
@@ -286,4 +286,4 @@ _Description: Adjust the direction and speed together of Motors._
 *   [File:Burn Firmware for Atmega8 using ISP](https://github.com/SeeedDocument/Grove-I2C_Motor_Driver_V1.2/raw/master/res/Burn_firmware_for_Atmega8_using_ISP.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

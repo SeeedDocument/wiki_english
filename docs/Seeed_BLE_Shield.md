@@ -1,5 +1,5 @@
 ---
-title: Seeed BLE Shield v1
+name: Seeed BLE Shield v1
 category: Shield
 bzurl: https://www.seeedstudio.com/Seeed-BLE-Shield-p-1859.html
 oldwikiname:   Seeed BLE Shield v1
@@ -110,7 +110,7 @@ We have produced a lot of extension board that can make your platform board more
 
 ## Hardwarw Overview
 
-<div class="center"><div class="floatnone">![](https://github.com/SeeedDocument/Seeed_BLE_Shield/raw/master/img/BLE_Shield.png)</div></div>
+![](https://github.com/SeeedDocument/Seeed_BLE_Shield/raw/master/img/BLE_Shield.png)
 
 *   HM-11: The basic module is HM-11, more information you can refer to this wiki of [HM-11](/Bluetooth_V4.0_HM_11_BLE_Module).
 
@@ -265,4 +265,4 @@ More information about the AT Commands please refer to the data sheet of BLE mod
 [DataSheet of BLE module](https://github.com/SeeedDocument/Seeed_BLE_Shield/raw/master/res/Bluetooth4_en.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

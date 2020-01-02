@@ -1,5 +1,5 @@
 ---
-title: Arch Max v1.1
+name: Arch Max v1.1
 category: mbed
 bzurl: https://seeedstudio.com/Arch-Max-v1.1-p-2632.html
 oldwikiname: Arch_Max_v1.1
@@ -122,4 +122,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_Max_v1.1 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

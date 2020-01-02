@@ -1,5 +1,5 @@
 ---
-title: Eagleye 530s
+name: Eagleye 530s
 category: Artik
 bzurl: https://www.seeedstudio.com/Eagleye-530s-p-3035.html
 oldwikiname:
@@ -21,7 +21,9 @@ As mentioned above, the Eagleye530s is based on the ARTIK 530s 1GB SoM, which is
  
 Since the Eagleye 530s is pin-compatible with many “maker” hardware accessories, it allows Samsung ARTIK™ developers to easily tap into the extensive “maker” accessories marketplace and prototype and build with off-the-shelf sensors (eg. [GrovePi+](https://www.seeedstudio.com/GrovePi%2B-p-2241.html),[Grove sensors](https://www.seeedstudio.com/grove.html)), voice recognition (eg. [ReSpeaker 2-mic array](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html) and [ReSpeaker 4-mic array](https://www.seeedstudio.com/ReSpeaker-4-Mic-Array-for-Raspberry-Pi-p-2941.html)), relays, GPS, cellular connectivity, and more, providing many options for enterprise developers creating feature-rich proof-of-concepts (PoC) or production-ready products.
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Eagleye-530s-p-3035.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4IR768d8Ins" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p style=":center"><a href="https://www.seeedstudio.com/Eagleye-530s-p-3035.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 
 ## Version
@@ -1248,3 +1250,4 @@ A2: Find the D401 diode as below picture, remove D401 diode by soldering, short 
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

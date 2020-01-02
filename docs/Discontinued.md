@@ -1,5 +1,5 @@
 ---
-title: Discontinued Introduction
+name: Discontinued Introduction
 nointro:
 ---
 Many of Seeed's products have more than one version, most of the old version is EOL now. However there are many users out there who are still using the old version. We will keep all the document for old product in this section. If there are discontinued product you are using that has no document, please contact us via techsupport@seeed.cc.
@@ -80,3 +80,4 @@ Here is the list of the BeagleBone Boards you can find in the Seeed WiKi. The li
 - [Wifi Shield V1.2](/Wifi_Shield_V1.2/)
 - [XBee Shield](/XBee_Shield/)
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove Starter kit for LinkIt Smart7688 Duo
+name: Grove Starter kit for LinkIt Smart7688 Duo
 category: LinkIt
 bzurl: https://seeedstudio.com/Grove-Starter-Kit-for-LinkIt-7688-Duo-p-2551.html
 oldwikiname: Grove_Starter_kit_for_LinkIt_Smart7688_Duo
@@ -73,4 +73,4 @@ You can build an IoT application easily with Grove modules supplied in this kit.
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_Starter_kit_for_LinkIt_Smart7688_Duo -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

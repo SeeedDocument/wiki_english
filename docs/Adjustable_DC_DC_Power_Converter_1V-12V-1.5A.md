@@ -1,5 +1,5 @@
 ---
-title: Adjustable DC - DC Power Converter(1V - 12V1.5A)
+name: Adjustable DC - DC Power Converter(1V - 12V1.5A)
 category: Essentials
 bzurl: https://www.seeedstudio.com/Adjustable-DC%26DC-Power-Converter-(1V-12V%261.5A)-p-1996.html
 oldwikiname:  Adjustable DC - DC Power Converter(1V - 12V1.5A)
@@ -50,4 +50,4 @@ Connect the module with Bread Board like following picture. It can quickly selec
 *   [MP1496 Datasheet](https://github.com/SeeedDocument/Adjustable_DC_DC_Power_Converter_1V-12V-1.5A/raw/master/res/MP1496-277526.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

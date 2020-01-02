@@ -1,5 +1,5 @@
 ---
-title: Grove - AND
+name: Grove - AND
 category: Others
 bzurl:  https://www.seeedstudio.com/Mixer-Pack-V2-(Electronic-blocks%2Cwithout-Arduino%2Cplug-and-play-system)-p-1867.html
 oldwikiname:  Grove - AND
@@ -44,4 +44,4 @@ Note that this Grove - AND module is sold only as part of the above mentioned pa
 *   [Grove - AND v2.0 Source Files](https://github.com/SeeedDocument/Grove-AND/raw/master/res/Grove-AND_v2.0_Eagle.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

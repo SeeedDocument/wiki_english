@@ -1,5 +1,5 @@
 ---
-title: Wio LTE Cat M1/NB-IoT Tracker
+name: Wio LTE Cat M1/NB-IoT Tracker
 category: Actuator
 bzurl: https://seeedstudio.com/Grove-Infrared-Emitter-p-993.html
 oldwikiname: Grove_-_Infrared_Emitter
@@ -22,9 +22,9 @@ Wio LTE CAT M1/NB-IoT is well suited for outdoor projects where the device can c
 Wio LTE CAT M1/NB-IoT support Espruino(JavaScript) engine so that anyone can build IoT project rapidly, especially while you can use lot of resource of JavaScript community.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Wio-LTE-Cat-M1-NB1-p-3055.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Wio-LTE-Cat-M1-NB1-p-3055.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
-**Are you looking for the Twilio Developer Kit for T-Mobile Narrowband? Find the docs [here]()**
+**Are you looking for the Twilio Developer Kit for T-Mobile Narrowband? Find the docs [here](https://www.twilio.com/docs/wireless/nb)**
 
 
 ## Version
@@ -63,8 +63,7 @@ running up to 168MHZ
 - Peripheral
     - 1 x USB for power supply and DFU
     - JST 1.0 connector for battery
-    - 3 Buttons: 1. for Reset 2. for User
-function 3. into upload mode
+    - 3 Buttons: MCU Reset Button, MCU Boot (DFU) Button，EC21 Power Button
     - Nano SIM and TF card 2 in 1 socket
 - Grove
     - 2 x Digital Port
@@ -161,6 +160,7 @@ function 3. into upload mode
 
 
 ```c++
+
 #include <Seeed_ws2812.h>
 #include <ublox_sara_r4.h>
 
@@ -171,7 +171,7 @@ WS2812 strip = WS2812(LEN_NUM, ublox.RGB_LED_PIN);
 
 void setup() {
   // Set RGB LED power pin high
-  ublox.enableRGBPower();
+  ublox.turnOnRGBPower();
   strip.begin();
   strip.brightness = 20;
 }
@@ -198,6 +198,7 @@ void loop() {
 - Step 8. Press **RST** button to enable the COM port.
 
 ```c++
+
 #include <ublox_sara_r4_gnss.h>
 
 UBLOX_SARA_R4_GNSS gnss = UBLOX_SARA_R4_GNSS();
@@ -207,7 +208,7 @@ void setup()
   // Open GNSS module
   gnss.open_GNSS();
   delay(3000);
-  Serial.println("_Start");
+  SerialDebug.println("_Start");
 }
 
 void loop() {
@@ -275,8 +276,14 @@ const int chipSelect = 43;
 
 void setup()
 {
+ // Open serial communications and wait for port to open:
+  // SerialUSB.begin(115200);
+  //  while (!Serial) {
+  //   ; // wait for serial port to connect. Needed for Leonardo only
+  // }
 
-  Serial.print("\nInitializing SD card...");
+
+  SerialUSB.print("\nInitializing SD card...");
   // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
   // Note that even if it's not used as the CS pin, the hardware SS pin 
   // (10 on most Arduino boards, 53 on the Mega) must be left as an output 
@@ -287,55 +294,55 @@ void setup()
   // we'll use the initialization code from the utility libraries
   // since we're just testing if the card is working!
   while (!card.init(SPI_HALF_SPEED, chipSelect)) {
-    Serial.println("initialization failed. Things to check:");
-    Serial.println("* is a card is inserted?");
-    Serial.println("* Is your wiring correct?");
-    Serial.println("* did you change the chipSelect pin to match your shield or module?");
+    SerialUSB.println("initialization failed. Things to check:");
+    SerialUSB.println("* is a card is inserted?");
+    SerialUSB.println("* Is your wiring correct?");
+    SerialUSB.println("* did you change the chipSelect pin to match your shield or module?");
   } 
   
   // print the type of card
-  Serial.print("\nCard type: ");
+  SerialUSB.print("\nCard type: ");
   switch(card.type()) {
     case SD_CARD_TYPE_SD1:
-      Serial.println("SD1");
+      SerialUSB.println("SD1");
       break;
     case SD_CARD_TYPE_SD2:
-      Serial.println("SD2");
+      SerialUSB.println("SD2");
       break;
     case SD_CARD_TYPE_SDHC:
-      Serial.println("SDHC");
+      SerialUSB.println("SDHC");
       break;
     default:
-      Serial.println("Unknown");
+      SerialUSB.println("Unknown");
   }
 
   // Now we will try to open the 'volume'/'partition' - it should be FAT16 or FAT32
   if (!volume.init(card)) {
-    Serial.println("Could not find FAT16/FAT32 partition.\nMake sure you've formatted the card");
+    SerialUSB.println("Could not find FAT16/FAT32 partition.\nMake sure you've formatted the card");
     return;
   }
 
 
   // print the type and size of the first FAT-type volume
   uint32_t volumesize;
-  Serial.print("\nVolume type is FAT");
-  Serial.println(volume.fatType(), DEC);
-  Serial.println();
+  SerialUSB.print("\nVolume type is FAT");
+  SerialUSB.println(volume.fatType(), DEC);
+  SerialUSB.println();
   
   volumesize = volume.blocksPerCluster();    // clusters are collections of blocks
   volumesize *= volume.clusterCount();       // we'll have a lot of clusters
   volumesize *= 512;                            // SD card blocks are always 512 bytes
-  Serial.print("Volume size (bytes): ");
-  Serial.println(volumesize);
-  Serial.print("Volume size (Kbytes): ");
+  SerialUSB.print("Volume size (bytes): ");
+  SerialUSB.println(volumesize);
+  SerialUSB.print("Volume size (Kbytes): ");
   volumesize /= 1024;
-  Serial.println(volumesize);
-  Serial.print("Volume size (Mbytes): ");
+  SerialUSB.println(volumesize);
+  SerialUSB.print("Volume size (Mbytes): ");
   volumesize /= 1024;
-  Serial.println(volumesize);
+  SerialUSB.println(volumesize);
 
   
-  Serial.println("\nFiles found on the card (name, date and size in bytes): ");
+  SerialUSB.println("\nFiles found on the card (name, date and size in bytes): ");
   root.openRoot(volume);
   
   // list all files in the card with date and size
@@ -437,6 +444,398 @@ AT+CSQ
 
 +CSQ: 99,99
 ```
+
+
+**6. Play with Arduino Example TCP**
+
+- Step 1. Select File--> Examples-->WioLTE_Cat_NB1_Arduino_Library-->Network-->tcp_directLink sketch. 
+- Step 2. Press and hold BOOT button at back side of the Wio LTE Cat NB1 and plug the USB to PC.
+- Step 3. We will see **STM BOOTLARDER** in device manager.
+- Step 4. Select Tools-->Boards-->Wio_Tracker_LTE.
+- Step 5. Keep COM Port blank.
+- Step 6. Select Sketch-->Upload to upload the code to Wio_LTE.
+
+```c++
+#include <ublox_sara_r4.h>
+
+Ublox_sara_r4 ublox = Ublox_sara_r4();
+
+char *server = "www.arduino.cc";
+uint16_t port = 80;
+int sockId = -1;
+
+void setup() {
+	bool network_attached = false;
+
+	Log_info("Begin...");
+	
+	ublox.powerOn();
+	Log_info("Waitting for module to alvie...");
+	while(false == ublox.isAlive()){
+		Log(".");
+		delay(100);
+	} 
+	Logln(); 
+
+	Log_info("Initializing network..");
+	if(!ublox.network_Init(120)) { 
+		Log_error("Network initialize timeout.");
+		while(1);
+	}
+	Log_info("APN: " + String(ublox._apn));
+	Log_info("Local IP: " + String(ublox._str_ip));
+	Log_info("Operator: " + String(ublox._operator));
+	Log_info("Network attached.");
+	
+	// This method is import for setting transparent session
+	// use disableDirectLinkMode() to use nontransparent session  
+	ublox.enableDirectLinkMode();
+
+	if(-1 == (sockId = ublox.createSocket(TCP))) {
+		Log_error("Create socket error!");
+		return;
+	}
+	if(!ublox.sockConnect(sockId, server, port)) {
+		Log_error("connect to server failed.");
+	}			
+	Log_info("Sent TCP message in direct link mode.");
+		
+}	
+
+void loop() {
+	static uint8_t tries = 0;
+	String str_msg = "ublox random number " + String(random(0,100));
+	// String str_msg = "/txt HTTP"; 
+
+	ublox.socketWrite((uint8_t *)str_msg.c_str(), (uint16_t)str_msg.length());
+	Log_info("Send msg: " + str_msg);
+
+	tries++;
+	if(tries > 5) {
+		if(ublox.sockClose(sockId)) {
+			Log_info("Close socket.");
+		}
+		Log_info("Enter AT command mode.");
+		while(true) AT_bypass();
+	}
+
+	delay(2000);
+}
+
+
+```
+
+- Step 7. Press **RST**, then you can see below info on screen.
+
+```c++
+[INFO] Begin...
+[INFO] Waitting for module to alvie...
+...
+[INFO] Initializing network..
+.............................[INFO] APN: ctnb
+[INFO] Local IP: 10.14.8.161
+[INFO] Operator: 460 11 ????
+[INFO] Network attached.
+[INFO] Sent TCP message in direct link mode.
+[INFO] Send msg: ublox random number 33
+[INFO] Send msg: ublox random number 43
+[INFO] Send msg: ublox random number 62
+[INFO] Send msg: ublox random number 29
+[INFO] Send msg: ublox random number 0
+[INFO] Send msg: ublox random number 8
+```
+
+
+**7. Play with Arduino Example UDP**
+
+- Step 1. Select File--> Examples-->WioLTE_Cat_NB1_Arduino_Library-->Network-->udp_directLink sketch. 
+- Step 2. Press and hold BOOT button at back side of the Wio LTE Cat NB1 and plug the USB to PC.
+- Step 3. We will see **STM BOOTLARDER** in device manager.
+- Step 4. Select Tools-->Boards-->Wio_Tracker_LTE.
+- Step 5. Keep COM Port blank.
+- Step 6. Select Sketch-->Upload to upload the code to Wio_LTE.
+
+```c++
+#include <ublox_sara_r4.h>
+
+Ublox_sara_r4 ublox = Ublox_sara_r4();
+
+char *server = "time.nist.gov";
+uint16_t port = 8888;
+int sockId = -1;
+
+void setup() {
+	bool network_attached = false;
+
+	Log_info("Begin...");
+	
+	ublox.powerOn();
+	Log_info("Waitting for module to alvie...");
+	while(false == ublox.isAlive()) {
+		Log(".");
+		delay(100);
+	}  
+	Logln("");
+
+	Log_info("Initializing network..");
+	if(!ublox.network_Init(120)) { 
+		Log_error("Network initialize timeout.");
+		while(1);
+	}
+	Log_info("APN: " + String(ublox._apn));
+	Log_info("Local IP: " + String(ublox._str_ip));
+	Log_info("Operator: " + String(ublox._operator));
+	Log_info("Network attached.");
+	
+	if(-1 == (sockId = ublox.createSocket(UDP))) {
+		Log_error("Create socket error!");
+	}
+	Log("[INFO] Create socket id: ");
+	Logln(sockId);
+
+	ublox.enableDirectLinkMode();
+	if(!ublox.sockConnect(sockId, server, port)) {
+		Log_error("connect to server failed.");
+	}
+	Log_info("Sent UDP message in direct link mode.");
+
+
+		
+}	
+
+void loop() {
+	static uint8_t tries = 0;
+
+	String str_msg = "ublox random number " + String(random(0,100));
+
+	ublox.socketWrite((uint8_t *)str_msg.c_str(), (uint16_t)str_msg.length());
+	Log_info("Send msg: " + str_msg);
+
+	tries++;
+	if(tries > 5) {
+		if(ublox.sockClose(sockId)) {
+			Log_info("Close socket.");
+		}
+		while(true) AT_bypass();
+	}
+
+	delay(2000);
+}
+
+```
+
+- Step 7. Press **RST**, then you can see below info on screen.
+
+```
+[INFO] Waitting for module to alvie...
+...
+[INFO] Initializing network..
+....................[INFO] APN: ctnb
+[INFO] Local IP: 10.178.48.90
+[INFO] Operator: 460 11 ????
+[INFO] Network attached.
+[INFO] Create socket id: 0
+[INFO] Sent UDP message in direct link mode.
+[INFO] Send msg: ublox random number 33
+[INFO] Send msg: ublox random number 43
+[INFO] Send msg: ublox random number 62
+[INFO] Send msg: ublox random number 29
+[INFO] Send msg: ublox random number 0
+[INFO] Send msg: ublox random number 8
+[INFO] Close socket.
+```
+
+**8. Play with Arduino Example MQTT Subscribe**
+
+- Step 1. Select File--> Examples-->WioLTE_Cat_NB1_Arduino_Library-->MQTTClient-->mqtt_sub sketch. 
+- Step 2. Press and hold BOOT button at back side of the Wio LTE Cat NB1 and plug the USB to PC.
+- Step 3. We will see **STM BOOTLARDER** in device manager.
+- Step 4. Select Tools-->Boards-->Wio_Tracker_LTE.
+- Step 5. Keep COM Port blank.
+- Step 6. Select Sketch-->Upload to upload the code to Wio_LTE.
+
+```c++
+#include <Arduino.h>
+
+#include <math.h>
+
+#include <ublox_sara_r4.h>
+#include <ublox_sara_r4_mqtt.h>
+#include <UART_Interface.h>
+
+#define PRE_FIX  "[MQTT] "
+
+MQTT mqtt;
+Ublox_sara_r4 ublox = Ublox_sara_r4();
+
+char *server = "test.mosquitto.org";
+uint16_t port = 1883;
+
+void setup() {
+	Log_info("Begin...");
+	
+	ublox.powerOn();
+	Log_info("Waitting for module to alive...");
+	while(false == ublox.isAlive()) {
+		Log(".");
+		delay(100);
+	}  
+	Logln();
+
+	Log_info("Initializing network...");	
+	if(!ublox.network_Init()) { 
+		Log_error("Network initialize timeout.");
+		return;
+	}
+
+	// Set MQTT server 
+	if(!mqtt.setServer(server, port)) {
+		Log_error("Set MQTT server failed");
+		return;
+	} else {
+		Logln(PRE_FIX"Set MQTT server success.");
+	}
+
+	// Set will
+	if(!mqtt.setWill("Heat", "ublox n/r410")) {
+		Log_error("Set MQTT will failed");
+		return;
+	} else {
+		Logln(PRE_FIX"Set MQTT will success.");
+	}
+
+	// Connect to server
+	Logln(PRE_FIX"Connecting to server: " + String(server));
+	while(!mqtt.connect()) {}
+	Logln(CRLF PRE_FIX"Connected\n\r");
+}	
+
+void loop() 
+{				
+	static uint8_t tries = 0;	
+	const char *topic = "Heat";
+	String msg = String(random(2000, 3000)*1.0/100.0) + " degree";
+	
+		
+	if(mqtt.publish(topic, msg.c_str())) {
+		Logln(PRE_FIX" published Topic " + String(topic) + " Messagea " + msg);	
+	} else {
+		Log_error("MQTT publish failed");
+		// while(true);
+	}
+
+	tries++;
+	if(tries > 5)
+	{
+		if(mqtt.disconnect()) {
+			Logln(PRE_FIX"Disconnect.");
+		}
+		Log_info("Enter AT command loop");
+		while(true) AT_bypass();
+	}
+	
+	delay(2000);
+}
+
+```
+
+
+- Step 7. Press **RST**, then you can see below info on screen.
+
+**9. Play with Arduino Example MQTT Publish**
+
+- Step 1. Select File--> Examples-->WioLTE_Cat_NB1_Arduino_Library-->MQTTClient-->mqtt_pub sketch. 
+- Step 2. Press and hold BOOT button at back side of the Wio LTE Cat NB1 and plug the USB to PC.
+- Step 3. We will see **STM BOOTLARDER** in device manager.
+- Step 4. Select Tools-->Boards-->Wio_Tracker_LTE.
+- Step 5. Keep COM Port blank.
+- Step 6. Select Sketch-->Upload to upload the code to Wio_LTE.
+
+```c++
+#include <Arduino.h>
+
+#include <math.h>
+
+#include <ublox_sara_r4.h>
+#include <ublox_sara_r4_mqtt.h>
+#include <UART_Interface.h>
+
+#define PRE_FIX  "[MQTT] "
+
+MQTT mqtt;
+Ublox_sara_r4 ublox = Ublox_sara_r4();
+
+char *server = "server name or IP";
+uint16_t port = 1883;
+
+void setup() {
+	Log_info("Begin...");
+	
+	ublox.powerOn();
+	Log_info("Waitting for module to alive...");
+	while(false == ublox.isAlive()) {
+		Log(".");
+		delay(100);
+	}  
+	Logln();
+
+	Log_info("Initializing network...");	
+	if(!ublox.network_Init()) { 
+		Log_error("Network initialize timeout.");
+		return;
+	}
+
+	// Set MQTT server 
+	if(!mqtt.setServer(server, port)) {
+		Log_error("Set MQTT server failed");
+		return;
+	} else {
+		Logln(PRE_FIX"Set MQTT server success.");
+	}
+
+	// Set will
+	if(!mqtt.setWill("Heat", "ublox n/r410")) {
+		Log_error("Set MQTT will failed");
+		return;
+	} else {
+		Logln(PRE_FIX"Set MQTT will success.");
+	}
+
+	// Connect to server
+	Logln(PRE_FIX"Connecting to server: " + String(server));
+	while(!mqtt.connect()) {}
+	Logln(CRLF PRE_FIX"Connected\n\r");
+}	
+
+void loop() 
+{				
+	static uint8_t tries = 0;	
+	const char *topic = "Heat";
+	String msg = String(random(2000, 3000)*1.0/100.0) + " degree";
+	
+		
+	if(mqtt.publish(topic, msg.c_str())) {
+		Logln(PRE_FIX" published Topic " + String(topic) + " Messagea " + msg);	
+	} else {
+		Log_error("MQTT publish failed");
+		// while(true);
+	}
+
+	tries++;
+	if(tries > 5)
+	{
+		if(mqtt.disconnect()) {
+			Logln(PRE_FIX"Disconnect.");
+		}
+		Log_info("Enter AT command loop");
+		while(true) AT_bypass();
+	}
+	
+	delay(2000);
+}
+
+```
+- Step 7. Press **RST**, then you can see below info on screen.
 
 
 ### Play with Javascript
@@ -745,4 +1144,4 @@ For more info, please refer to [Wio_LTE_Module](http://www.espruino.com/modules/
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

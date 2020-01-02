@@ -1,5 +1,5 @@
 ---
-title: Grove - Multichannel Gas Sensor
+name: Grove - Multichannel Gas Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Multichannel-Gas-Sensor-p-2502.html
 oldwikiname: Grove_-_Multichannel_Gas_Sensor
@@ -32,6 +32,9 @@ The sensor value only reflects the approximated trend of gas concentration in a 
 </div>
 
 [![](https://raw.githubusercontent.com/SeeedDocument/common/master/Get_One_Now_Banner.png)](http://www.seeedstudio.com/Grove-Multichannel-Gas-Sensor-p-2502.html)
+
+!!!Tip
+    We've released the [Seeed Gas Sensor Selection Guide](http://wiki.seeedstudio.com/Seeed_Gas_Sensor_Selection_Guide/), it will help you choose the gas sensor that best suits your needs.
 
 
 ## Before usage
@@ -102,7 +105,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Electrical Characteristics
@@ -313,7 +316,7 @@ If you always get an unauthentic value, please try to calibrate the sensor.
 Open the example **calibration** and upload to your Arduino, open Serial monitor to get info when it's calibrating. 
 
 !!!Note
-    The calibration has been done before the modules leave the factory. If you want to recalibrate, please do make sure that the air condition is fresh. And the calibration may need munutes to half an hour. 
+    The calibration has been done before the modules leave the factory. If you want to recalibrate, please do make sure that the air condition is fresh. And the calibration may need minutes to half an hour. 
 
 Resources
 ---------
@@ -322,7 +325,6 @@ Resources
 -   [Grove - Multichannel Gas Sensor eagle files](https://raw.githubusercontent.com/SeeedDocument/Grove-Multichannel_Gas_Sensor/master/res/Grove-Multichannel_Gas_Sensor_v1.0_eagle_files.zip)
 -   [Arduino Library & Grove/Xadow firmware](https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor)
 -   [MiCS-6814 Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-Multichannel_Gas_Sensor/master/res/MiCS-6814_Datasheet.pdf)
--   [MICS-VZ-89-I2C-specs-rev-A](https://github.com/SeeedDocument/Grove-Multichannel_Gas_Sensor/raw/master/res/MICS-VZ-89-I2C-specs-rev-A.pdf)
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Multichannel_Gas_Sensor -->
 
@@ -336,9 +338,135 @@ FAQ
 
     * *A2. Don't worry about it, run factory_setting example to make it default. Please note that the calibration data will factory setting as well.*
 
+* **Q3. Does the multichannel gas sensor work with Wio GPS and Wio LTE?**
 
-!!!Tip
-    If you need futhur support, please feel free to contact [techsupport@seeed.cc](mailto:techsupport@seeed.cc)
+    * *A3. Yes, please refer to below code. 
+
+Wio GPS: 
+
+```
+#include <Wire.h>
+#include "MutichannelGasSensor.h"
+
+#define WIOLTE_GROVE_PIN (12)
+#define SENSOR_ADDR     0X04        // default to 0x04
+
+void setup()
+{
+    SerialUSB.begin(115200);
+    pinMode(WIOLTE_GROVE_PIN, OUTPUT);
+    digitalWrite(WIOLTE_GROVE_PIN, HIGH);
+    delay(2000);
+    gas.begin(SENSOR_ADDR);     // 
+}
+
+void loop()
+{
+    float R0_NH3, R0_CO, R0_NO2;
+    float Rs_NH3, Rs_CO, Rs_NO2;
+    float ratio_NH3, ratio_CO, ratio_NO2;
+    
+    R0_NH3 = gas.getR0(0);
+    R0_CO  = gas.getR0(1);
+    R0_NO2 = gas.getR0(2);
+    
+    Rs_NH3 = gas.getRs(0);
+    Rs_CO  = gas.getRs(1);
+    Rs_NO2 = gas.getRs(2);
+    
+    ratio_NH3 = Rs_NH3/R0_NH3;
+    ratio_CO  = Rs_CO/R0_CO;
+    ratio_NO2 = Rs_NH3/R0_NO2;
+    
+    SerialUSB.println("R0:");
+    SerialUSB.print(R0_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(R0_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(R0_NO2);
+    
+    SerialUSB.println("Rs:");
+    SerialUSB.print(Rs_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(Rs_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(Rs_NO2);
+    
+    SerialUSB.println("ratio:");
+    SerialUSB.print(ratio_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(ratio_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(ratio_NO2);
+
+    SerialUSB.println("------------------------");
+    delay(1000);
+}
+```
+
+
+Wio LTE:
+
+```
+#include <Wire.h>
+#include "MutichannelGasSensor.h"
+
+#define WIOLTE_GROVE_PIN (26)
+#define SENSOR_ADDR     0X04        // default to 0x04
+
+void setup()
+{
+    // SerialUSB.begin(115200);
+    pinMode(WIOLTE_GROVE_PIN, OUTPUT);
+    digitalWrite(WIOLTE_GROVE_PIN, HIGH);
+    delay(2000);
+    gas.begin(SENSOR_ADDR);     // 
+}
+
+void loop()
+{
+    float R0_NH3, R0_CO, R0_NO2;
+    float Rs_NH3, Rs_CO, Rs_NO2;
+    float ratio_NH3, ratio_CO, ratio_NO2;
+    
+    R0_NH3 = gas.getR0(0);
+    R0_CO  = gas.getR0(1);
+    R0_NO2 = gas.getR0(2);
+    
+    Rs_NH3 = gas.getRs(0);
+    Rs_CO  = gas.getRs(1);
+    Rs_NO2 = gas.getRs(2);
+    
+    ratio_NH3 = Rs_NH3/R0_NH3;
+    ratio_CO  = Rs_CO/R0_CO;
+    ratio_NO2 = Rs_NH3/R0_NO2;
+    
+    SerialUSB.println("R0:");
+    SerialUSB.print(R0_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(R0_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(R0_NO2);
+    
+    SerialUSB.println("Rs:");
+    SerialUSB.print(Rs_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(Rs_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(Rs_NO2);
+    
+    SerialUSB.println("ratio:");
+    SerialUSB.print(ratio_NH3);
+    SerialUSB.print('\t');
+    SerialUSB.print(ratio_CO);
+    SerialUSB.print('\t');
+    SerialUSB.println(ratio_NO2);
+
+    SerialUSB.println("------------------------");
+    delay(1000);
+}
+```
+
 
 ## Projects
 
@@ -347,4 +475,4 @@ FAQ
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/gabogiraldo/smart-crops-implementing-iot-in-conventional-agriculture-3674a6/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

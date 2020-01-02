@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi Breakout Board v1.0
+name: Raspberry Pi Breakout Board v1.0
 category: Raspberry Pi
 bzurl: https://seeedstudio.com/Raspberry-Pi-Breakout-Board-v1.0-p-2410.html
 oldwikiname: Raspberry_Pi_Breakout_Board_v1.0
@@ -19,7 +19,7 @@ As a prototype board, it also provides power, state indicator light, button and 
 Features
 --------
 
--   Raspberry pi compatible
+-   Support Raspberry Pi 2/3B/3B+/4/Zero
 -   Micro USB power supply
 -   Basic Circuit : state indicator light, button and universal transistor（NPN,PNP,N-MOS,P-MOS）
 -   3.3 volts, 5 volts and ground power rails are easily available anywhere on the board
@@ -44,4 +44,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Raspberry_Pi_Breakout_Board_v1.0 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

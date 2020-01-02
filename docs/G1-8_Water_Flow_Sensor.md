@@ -1,5 +1,5 @@
 ---
-title: G1/8" Water Flow Sensor
+name: G1/8" Water Flow Sensor
 category: MakerPro
 bzurl: http://www.seeedstudio.com/depot/G18-Water-Flow-Sensor-p-1346.html?cPath=25_32
 oldwikiname:  G1/8" Water Flow Sensor
@@ -13,7 +13,7 @@ Water flow sensor consists of a plastic valve body, a water rotor, and a hall-ef
 
 We have a comprehensive line of water flow sensors in different diameters. Check them out to find the one that meets your need most.
 
-[![](https://github.com/SeeedDocument/Seeed-WiKi/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png)](https://www.seeedstudio.com/Skeleton-Box-p-1407.html)
+[![](https://github.com/SeeedDocument/Seeed-WiKi/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png)](https://www.seeedstudio.com/G1-8-Water-Flow-Sensor-p-1346.html)
 
 ##  Features
 
@@ -193,4 +193,4 @@ Pulse frequency (Hz) in Horizontal Test= 7.5Q, Q is flow rate in L/min. (Results
 *   [datasheet for the material](http://garden.seeedstudio.com/images/4/4e/YEE70G30HSLNC..pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

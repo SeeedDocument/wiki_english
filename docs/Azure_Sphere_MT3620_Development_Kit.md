@@ -1,5 +1,5 @@
 ---
-title: Azure Sphere MT3620 Development Kit
+name: Azure Sphere MT3620 Development Kit
 category: Azure
 bzurl:
 oldwikiname: 
@@ -33,9 +33,9 @@ MT3620 software development is supported using the powerful Microsoft Visual Stu
 
 |Product Name | How to Buy|
 |----------------|-----------|
-|Azure Sphere MT3620 Development Kit US Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit-p-3052.html)|
-|Azure Sphere MT3620 Development Kit JP Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit_JP-Version-p-3135.html)|
-|Azure Sphere MT3620 Development Kit EU Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit_EU-Version-p-3134.html)|
+|Azure Sphere MT3620 Development Kit US Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit-US-Version-p-3052.html)|
+|Azure Sphere MT3620 Development Kit JP Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit-JP-Version-p-3135.html)|
+|Azure Sphere MT3620 Development Kit EU Version|[![](https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png)](https://www.seeedstudio.com/Azure-Sphere-MT3620-Development-Kit-EU-Version-p-3134.html)|
 
  
 !!!Warning
@@ -57,9 +57,9 @@ MT3620 software development is supported using the powerful Microsoft Visual Stu
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-baqh{:center;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;:center;vertical-align:top}
+.tg .tg-0lax{:left;vertical-align:top}
 </style>
 <table class="tg">
   <tr>
@@ -133,8 +133,8 @@ MT3620 software development is supported using the powerful Microsoft Visual Stu
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;:left;vertical-align:top}
+.tg .tg-0lax{:left;vertical-align:top}
 </style>
 <table class="tg">
   <tr>
@@ -234,7 +234,7 @@ The Azure Sphere MT3620 Development Kit contains highly sensitive electronic cir
 
 <div class="method1" style="width:16%">
 
-<p style="text-align:center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-FCC-FCC.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/FCC.jpg"/></a></p>
+<p style=":center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-FCC-FCC.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/FCC.jpg"/></a></p>
 
 </div>
 
@@ -242,7 +242,7 @@ The Azure Sphere MT3620 Development Kit contains highly sensitive electronic cir
 
 <div class="method1" style="width:16%">
 
-<p style="text-align:center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-CE.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/CE.jpg" /></a></p>
+<p style=":center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-CE.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/CE.jpg" /></a></p>
 
 </div>
 
@@ -250,21 +250,21 @@ The Azure Sphere MT3620 Development Kit contains highly sensitive electronic cir
 
 <div class="method1" style="width:16%">
 
-<p style="text-align:center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-MIC.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/mic.jpg" /></a></p>
+<p style=":center"><a href="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/certification/Azure%20Sphere%20MT3620%20Development%20Kit-MIC.zip" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/mic.jpg" /></a></p>
 
 </div>
 
 
 <div class="method1" style="width:16%">
 
-<p style="text-align:center"><a href="" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/RoHS.jpg" /></a></p>
+<p style=":center"><a href="" target="_blank"><img src="https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/RoHS.jpg" /></a></p>
 
 </div>
 
 
 <style>
 .method1{
-  text-align:center;
+  :center;
   float:left;
 }
 .title{
@@ -340,18 +340,18 @@ The [SC18IM700](https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development
 
 ![](https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/MT3620_Grove_Shield-2018-09-11.png)
 
-<div style="text-align:center">MT3620 Grove Shield Hardware Overview</div>
+<div style=":center">MT3620 Grove Shield Hardware Overview</div>
 
 
 **Hardware Connection**
 
 ![](https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/MT3620_demo_Front.jpg)
 
-<div style="text-align:center">Front View of hardware setup</div>
+<div style=":center">Front View of hardware setup</div>
 
 ![](https://github.com/SeeedDocument/Azure_Sphere_MT3620_Development_Kit/raw/master/img/MT3620_demo_backside.jpg)
 
-<div style="text-align:center">Top View of hardware setup</div>
+<div style=":center">Top View of hardware setup</div>
 
 - Step 1. Connect Grove-Blue LED Button to port 2 of Grove base shield.
 - Step 2. Connect Fan PWM signal to port 5 of Grove base shield.
@@ -423,3 +423,4 @@ For detail operation, please refer to the video.
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

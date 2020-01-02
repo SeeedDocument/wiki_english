@@ -1,5 +1,5 @@
 ---
-title: Grove - Base Shield for IOIO-OTG
+name: Grove - Base Shield for IOIO-OTG
 category: MakerPro
 bzurl: https://www.seeedstudio.com/Grove-Base-Shield-for-IOIO-OTG-p-1613.html
 oldwikiname:  Grove - Base Shield for IOIO-OTG
@@ -241,4 +241,4 @@ The pins describe mapping to the Grove - Base Shield for IOIO-OTG board as show 
 - [Grove - Base Shield for IOIO-OTG Eagle File](https://github.com/SeeedDocument/Grove-Base_Shield_for_IOIO-OTG/raw/master/res/Grove-Base_Shield_for_IOIO-OTG_Eagle_File.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

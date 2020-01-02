@@ -1,5 +1,5 @@
 ---
-title: Grove - I2C FM Receiver v1.1
+name: Grove - I2C FM Receiver v1.1
 category: Communication
 bzurl: https://seeedstudio.com/Grove-I2C-FM-Receiver-p-1953.html
 oldwikiname: Grove_-_I2C_FM_Receiver
@@ -49,7 +49,7 @@ Grove - I2C FM Receiver v1.1  | Change some components to make the board more st
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -793,6 +793,14 @@ Now you can hear the FM station, and you can press the `Grove- button 1` and `Gr
 Have fun~
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-I2C_FM_Receiver_v1.1/raw/master/res/I2C%20FM%20Receiver%20v1.1.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
+
 ## Resources
 
 - **[Zip]** [Grove-I2C FM Receiver v1.1 eagle file](https://github.com/SeeedDocument/Grove-I2C_FM_Receiver_v1.1/raw/master/res/I2C%20FM%20Receiver%20v1.1.zip)
@@ -800,4 +808,4 @@ Have fun~
 
 
 ## Tech Support
-Please do not hesitate to contact [techsupport@seeed.cc](techsupport@seeed.cc) if you have any technical issue. Or submit the issue into our [forum](https://forum.seeedstudio.com/).
+Please do not hesitate to contact [techsupport@seeed.cc](techsupport@seeed.cc) if you have any technical issue. Or submit the issue into our [forum](https://forum.seeedstudio.com/).<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

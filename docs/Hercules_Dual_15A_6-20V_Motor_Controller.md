@@ -1,5 +1,5 @@
 ---
-title: Hercules Dual 15A 6-20V Motor Controller
+name: Hercules Dual 15A 6-20V Motor Controller
 category: Arduino
 bzurl: https://seeedstudio.com/Hercules-Dual-15A-6-20V-Motor-Controller-p-1515.html
 oldwikiname: Hercules_Dual_15A_6-20V_Motor_Controller
@@ -292,4 +292,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Hercules_Dual_15A_6-20V_Motor_Controller -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

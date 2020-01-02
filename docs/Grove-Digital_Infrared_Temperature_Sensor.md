@@ -1,5 +1,5 @@
 ---
-title: Grove - Digital Infrared Temperature Sensor
+name: Grove - Digital Infrared Temperature Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Digital-Infrared-Temperature-Sensor-p-2385.html
 oldwikiname: Grove_-_Digital_Infrared_Temperature_Sensor
@@ -118,7 +118,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -149,12 +149,12 @@ We provide an example here to show you how to use this sensor to measure the tem
 
 **Hardware components:**
 
-| Seeeduino V4.2 | Base Shield|  Grove - Ultrasonic Ranger |
+| Seeeduino V4.2 | Base Shield|  Grove - Digital Infrared Temperature Sensor |
 |--------------|-------------|-----------------|
 |![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_1.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove-Digital_Infrared_Temperature_Sensor/master/img/thumbnail.jpg)|
 |[Get One Now](http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html)|[Get One Now](https://www.seeedstudio.com/Base-Shield-V2-p-1378.html)|[Get One Now](https://www.seeedstudio.com/Grove-Digital-Infrared-Temperature-Sensor-p-2385.html)|
 
-- **Step 1.** Plug Grove - Digital Infrared Temperature Sensor into port **D2** of Grove-Base Shield.
+- **Step 1.** Plug Grove - Digital Infrared Temperature Sensor into D2 port of Grove-Base Shield.
 - **Step 2.** Plug Grove - Base Shield into Seeeduino.
 - **Step 3.** Connect Seeeduino to PC via a USB cable.
 
@@ -163,14 +163,14 @@ We provide an example here to show you how to use this sensor to measure the tem
 
 
 !!!Note
-	If we don't have Grove Base Shield, We also can directly connect Grove_Ultrasonic_Ranger to Arduino as below.
+	If we don't have Grove Base Shield, We also can directly connect Grove - Digital Infrared Temperature Sensor to Arduino as below.
 
-| Seeeduino       | Grove-Ultrasonic Ranger |
+| Seeeduino       | Grove - Digital Infrared Temperature Sensor |
 |---------------|-------------------------|
 | 5V           | Red                     |
 | GND           | Black                   |
-| SDA           | White                   |
-| SCL            | Yellow                  |
+| D3           | NA                   |
+| D2            | Yellow                  |
 
 #### Software
 
@@ -208,3 +208,4 @@ Resources
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

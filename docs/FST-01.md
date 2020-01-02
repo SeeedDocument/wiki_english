@@ -1,5 +1,5 @@
 ---
-title: FST-01
+name: FST-01
 category: MakerPro
 bzurl: https://www.seeedstudio.com/FST-01-without-Enclosure-p-1276.html
 oldwikiname:  FST-01
@@ -610,4 +610,4 @@ PCB Assembly was done by **User:Gniibe** by hand.  See [my article](http://www.g
             * blink LED (emits lights for 25ms,off 200ms).
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove - LED Strip Driver
+name: Grove - LED Strip Driver
 category: Display
 bzurl: https://www.seeedstudio.com/Grove-LED-Strip-Driver-p-1197.html
 oldwikiname:  Grove - LED Strip Driver
@@ -154,4 +154,4 @@ It can drive an LED strip 1 to 2 meters long with 9 V, while 1 to 5 meters long 
 *   [Suli Library](https://github.com/Seeed-Studio/LED_Strip_Suli)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

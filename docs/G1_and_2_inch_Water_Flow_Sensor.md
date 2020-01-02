@@ -1,5 +1,5 @@
 ---
-title: G1&2" Water Flow Sensor
+name: G1&2" Water Flow Sensor
 category: MakerPro
 bzurl: https://www.seeedstudio.com/g12-water-flow-sensor-p-635.html?cPath=84_87&zenid=020999c566d2f31841dc54602b7d02ef
 oldwikiname: G1/2 Water Flow sensor
@@ -220,4 +220,4 @@ Here is the Sensors FAQ, people can go here to find questions and answers for th
 - [datasheet for the material](http://garden.seeedstudio.com/images/4/4e/YEE70G30HSLNC..pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

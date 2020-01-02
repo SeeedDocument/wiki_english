@@ -1,5 +1,5 @@
 ---
-title: UartSBee V4
+name: UartSBee V4
 category: Arduino
 bzurl: https://www.seeedstudio.com/UartSBee-V4-p-688.html
 oldwikiname: UartSBee V4
@@ -443,4 +443,4 @@ FT232RL Bit-Bang mode can be used to construct AVR ISP, JTAG, SPI and I2C Ports.
 *   [Flashing Arduino with FT232R bitbang mode](http://www.geocities.co.jp/arduino_diecimila/bootloader/index_en.html)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Wio Node
+name: Wio Node
 category: Wio
 bzurl: https://www.seeedstudio.com/Wio-Node-p-2637.html
 oldwikiname: Wio_Node
@@ -22,6 +22,10 @@ Just like the meaning of its name, Wio Node is truly a Wi-Fi node that connect t
 The ecosystem of Wio Node also consists of Open Hardware **Wio Node board**, **Open Source Wio Link Mobile App** and **Open Source IoT Server implementation**. So the software platform for Wio Link is also available for Wio Node.
 
 [![Get one now](https://github.com/SeeedDocument/Wio_Node/raw/master/pictures/300px-Get_One_Now_Banner.png)](https://www.seeedstudio.com/Wio-Node-p-2637.html)
+
+
+!!!Warning
+     The Wio IFTTT function is EOL. But Wio APP is available. You can use the API from Wio APP to read sensor status and control the actuator. 
 
 ## Features
 ----
@@ -141,11 +145,12 @@ Download the Android or iOS App and install. Or you can go to app store of Apple
     Make sure your Android OS version is 4.1 or advanced, iOS version is 7 or advanced.
 
 ### **STEP 2:** Create your Account
+
 - If it is your first time to use Wio APP, it may require GPS authorization, please approve it, then sign up.
 - If you already have an account, check the server location before logging in.
 
 !!!Note
-   Please pay attention to the server location, because wrong server location will lead to failure when connecting to Wio Node.
+    Please pay attention to the server location, because wrong server location will lead to failure when connecting to Wio Node.
 
 [![](https://github.com/SeeedDocument/Wio_Node/raw/master/pictures/Wio%20App/sign%20in%2Blog%20in%2Bchoose%20server.png)](https://github.com/SeeedDocument/Wio_Node/raw/master/pictures/Wio%20App/sign%20in%2Blog%20in%2Bchoose%20server.png)
 
@@ -352,4 +357,4 @@ Here are some questions that we usually received from new users. If you have any
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/idreams/smart-home-with-wio-link-wio-node-and-telegram-app-831f78/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

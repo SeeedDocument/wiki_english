@@ -1,5 +1,5 @@
 ---
-title: Grove Smart Plant Care Kit
+name: Grove Smart Plant Care Kit
 category: Others
 bzurl: https://www.seeedstudio.com/Grove-Smart-Plant-Care-Kit-for-Arduino-p-2528.html
 oldwikiname:  Grove Smart Plant Care Kit
@@ -139,4 +139,4 @@ Part list in [PDF format](https://github.com/SeeedDocument/Grove_Smart_Plant_Car
 - [Manual to build a Grove Smart Plant Care Kit.](https://github.com/SeeedDocument/Grove_Smart_Plant_Care_Kit/raw/master/res/Grove_Smart_Plant_Care_Kit_Manual_Final_S.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

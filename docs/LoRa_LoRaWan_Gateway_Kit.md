@@ -1,5 +1,5 @@
 ---
-title: LoRa/LoRaWAN Gateway Kit
+name: LoRa/LoRaWAN Gateway Kit
 category: Wireless
 bzurl:  https://www.seeedstudio.com/LoRa-LoRaWAN-Gateway-868MHz-Kit-with-Raspberry-Pi-3-p-2823.html
 prodimagename:
@@ -14,6 +14,7 @@ This kit provides all the basic elements you need: a Raspberry Pi 3, a Seeeduino
 
 Regarding the gateway module RHF0M301, it is a 10 channel(8 x Multi-SF + 1 x Standard LoRa + 1 x FSK) LoRaWan gateway moduel with a 24pin DIP port on board, users can easily connect the RHF0M301 with PRI 2 bridge RHF4T002, adapter for Raspberry Pi 3 and RHF0M301. We also included a 868MHz antenna, an 8GB SD card and USB cables, Ethernet Cables and other accessories.
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4df5kaaKa6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <div class="admonition warning" style="background:#f0b37e; color:#FFF">
@@ -28,8 +29,8 @@ Regarding the gateway module RHF0M301, it is a 10 channel(8 x Multi-SF + 1 x Sta
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
-.tg .tg-s6z2{text-align:center}
-.tg .tg-5hgy{background-color:#D2E4FC;text-align:center}
+.tg .tg-s6z2{:center}
+.tg .tg-5hgy{background-color:#D2E4FC;:center}
 </style>
 <table class="tg">
   <tr>
@@ -281,10 +282,10 @@ Frequency Plan for EU868
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6ab0de;}
-.tg .tg-s6z2{text-align:center}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-5hgy{background-color:#D2E4FC;text-align:center}
-.tg .tg-j0tj{background-color:#D2E4FC;text-align:center;vertical-align:top}
+.tg .tg-s6z2{:center}
+.tg .tg-baqh{:center;vertical-align:top}
+.tg .tg-5hgy{background-color:#D2E4FC;:center}
+.tg .tg-j0tj{background-color:#D2E4FC;:center;vertical-align:top}
 </style>
 <table class="tg">
   <tr>
@@ -340,10 +341,10 @@ Frequency Plan for US915 HYBRID
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#6ab0de;}
-.tg .tg-s6z2{text-align:center}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-5hgy{background-color:#D2E4FC;text-align:center}
-.tg .tg-j0tj{background-color:#D2E4FC;text-align:center;vertical-align:top}
+.tg .tg-s6z2{:center}
+.tg .tg-baqh{:center;vertical-align:top}
+.tg .tg-5hgy{background-color:#D2E4FC;:center}
+.tg .tg-j0tj{background-color:#D2E4FC;:center;vertical-align:top}
 </style>
 <table class="tg">
   <tr>
@@ -609,9 +610,27 @@ Then go to **Dashboard -> Applications -> SampleApp ->Device** , click the Node 
 
 ## FAQs
 
-### Q1: How to find the factory firmware?
+**Q1: How to find the factory firmware?**
 
-**A1:** When the firmware is broken or some terrible errors happen, you can download the [firmware](https://drive.google.com/open?id=1MVLQlxjhir_mWvKhvuqBsr1a0ievZRDC) here.
+**A1:** When the firmware is broken or some terrible errors happen, you can download the [firmware](https://drive.google.com/open?id=1MVLQlxjhir_mWvKhvuqBsr1a0ievZRDC) here. It is for raspberry 3b only, NOT support raspberry 3b +. 
+
+**Q2: How to build the latest image?**
+
+**A2:** It works well with both raspberry 3b and 3b+. We tested it under 2018-11-13 raspbian image. 
+
+- Step 1. Download the [latest raspberry image](https://www.raspberrypi.org/downloads/raspbian/)
+
+- Step 2. Download libssl1.0.0.deb to your Raspberry Pi by running `wget https://github.com/SeeedDocument/LoRaWAN_Gateway-868MHz_Kit_with_Raspberry_Pi_3/raw/master/res/libssl1.0.0.deb`, and run `sudo dpkg -i ./libssl1.0.0.deb` to install it in terminal.
+
+- Step 3.  Run `sudo raspi-config` in terminal, select _Interfacing Options_ -- _P4 SPI_ -- _YES_ to enable SPI, so that Raspberry Pi can communicate with RHF0M301.
+
+- Step 4. Run following commands in terminal, download and start loriot gateway.
+
+```
+wget https://cn1.loriot.io/home/gwsw/loriot-pi-3-rhf1257-SPI-0-latest.bin -O loriot-gw
+chmod +x loriot-gw
+./loriot-gw -f
+```
 
 
 ## Resources
@@ -620,6 +639,7 @@ Then go to **Dashboard -> Applications -> SampleApp ->Device** , click the Node 
 - **[Uer Manual]** [User Manual](https://github.com/SeeedDocument/LoRaWAN_Gateway-868MHz_Kit_with_Raspberry_Pi_3/raw/master/res/%5BRHF-UM01649%5DIoT%20Discovery%20User%20Manual%20-%20v3.2.pdf).
 - **[More Reading]** [Wiki of Seeeduino LoRaWAN](/Seeeduino_LoRAWAN/)
 - **[More Reading]** [RisingHF Website](http://www.risinghf.com/product/risinghf-iot-dicovery/?lang=en)
+- **[Azure IoT Edge LoRaWAN]** [Azure IoT Edge LoRaWAN](https://github.com/Azure/iotedge-lorawan-starterkit/)
 
 ## Projects
 
@@ -629,3 +649,4 @@ Then go to **Dashboard -> Applications -> SampleApp ->Device** , click the Node 
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

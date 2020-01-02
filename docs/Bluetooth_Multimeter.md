@@ -1,5 +1,5 @@
 ---
-title: Bluetooth Multimeter
+name: Bluetooth Multimeter
 category: MakerPro
 bzurl: https://www.seeedstudio.com/Bluetooth-Multimeter-p-1535.html
 oldwikiname: Bluetooth Multimeter
@@ -205,4 +205,4 @@ We consistency agreed that the color of the previous two versions are not bright
 - [The application program package:SmartMeter](https://github.com/SeeedDocument/Bluetooth_Multimeter/raw/master/res/SmartMeterWithUI_Installation_package.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove Starter kit for Arduino&Genuino 101
+name: Grove Starter kit for Arduino&Genuino 101
 category: Arduino
 bzurl:  https://www.seeedstudio.com/Grove-Starter-kit-for-Arduino%26Genuino-101-p-2664.html
 oldwikiname: Grove Starter kit for Arduino&Genuino 101
@@ -161,4 +161,4 @@ After you have gotten an LED blinking (for Windows user, you can find it at [htt
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/shadeydave/arduino-101-ble-rover-05fa85/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

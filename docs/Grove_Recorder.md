@@ -1,5 +1,5 @@
 ---
-title: Grove - Recorder
+name: Grove - Recorder
 category: Actuator
 bzurl: https://www.seeedstudio.com/Grove-Recorder-p-1825.html
 oldwikiname:  Grove - Recorder
@@ -151,4 +151,4 @@ Alternatively, it can be bought stand-alone at the [Seeed Studio Bazaar](http://
 *   [Datasheet ISD1820P.pdf (Chinese)](https://github.com/SeeedDocument/Grove_Recorder/raw/master/res/ISD1820P.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>
