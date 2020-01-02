@@ -1,5 +1,5 @@
 ---
-title: Grove - UART WiFi V2 (ESP8285)
+name: Grove - UART WiFi V2 (ESP8285)
 category: Communication
 bzurl: https://www.seeedstudio.com/Grove-Uart-Wifi-p-2495.html
 oldwikiname:
@@ -14,7 +14,7 @@ sku: 113020011
 Grove - UART WiFi is a serial transceiver module featuring the ubiquitous ESP8285 IoT SoC. With integrated TCP/IP protocol stack, this module lets your micro-controller interact with WiFi networks with only a few lines of code. Each ESP8285 module comes pre-programmed with an AT command set firmware, meaning you can send simple text commands to control the device. The SoC features integrated WEP, WPA/WPA2, TKIP, AES, and WAPI engines, can act as an access point with DHCP, can join existing WiFi networks and has configurable MAC and IP addresses.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-UART-WiFi-V2-%28ESP8285%29-p-3054.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-UART-WiFi-V2-%28ESP8285%29-p-3054.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 
@@ -301,7 +301,6 @@ void display_ap()
         delay(2000);
     }
 }
-
 ```
 
 - **Step 4.** Upload the demo. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
@@ -311,9 +310,6 @@ Then you will see the OLED show the wifi AP around you.
 
 
 ![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove-Uart_Wifi/master/img/Grove_uart_wifi_result.jpg)
-
-
-
 
 ## Firmware update
 
@@ -488,6 +484,11 @@ You can use any serial Tools you like, we use Arduino here. And please make sure
 |AT+PING|	Ping an IP address or hostname|
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-Uart_Wifi/raw/master/res/Uart_Wifi_V2_Eagle_file.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
 
 
 ## Resources
@@ -502,4 +503,4 @@ You can use any serial Tools you like, we use Arduino here. And please make sure
 * **[MoreReading]** [https://nurdspace.nl/ESP8266](https://nurdspace.nl/ESP8266)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

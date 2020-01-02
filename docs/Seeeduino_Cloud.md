@@ -1,5 +1,5 @@
 ---
-title: Seeeduino Cloud
+name: Seeeduino Cloud
 category: Arduino
 bzurl: https://www.seeedstudio.com/Seeeduino-Cloud-Arduino-Yun-compatible-openWRT-controller-p-2123.html
 oldwikiname: Seeeduino_Cloud
@@ -112,7 +112,7 @@ In addition, some pins have specialized functions:
 Seeeduino Cloud has two processors on board. One is an ATmega32U4 like on the Leonardo. The other is an Atheros 9331, running Linux and the OpenWRT wireless stack, which enables the board to connect to WiFi and Ethernet networks. With [Yun Bridge Library](https://www.arduino.cc/en/Reference/YunBridgeLibrary), it is possible to call programs or custom scripts on the Linux system through the Arduino to connect with various internet services.
 
 
-**Program on ATmega32U4 side**
+### Program on ATmega32U4 side
 
 The ATmega32U4 is programmed using the [Arduino Software (IDE)](https://www.arduino.cc/en/Main/Software?setlang=en), if you haven't install, please click [here](https://www.arduino.cc/en/Guide/HomePage) for installation instructions.
 
@@ -166,7 +166,7 @@ Now, simply click the "Upload" button in the environment. Wait a few seconds - y
 
 A few seconds after the upload finishes, you should see the LED(D13) on the board start to blink (in green). If it does, congratulations! You’ve gotten Arduino up-and-running. If you have problems, please see the troubleshooting suggestions.
 
-**Program on ATHEROS AR9331 side**
+### Program on ATHEROS AR9331 side
 
 **Configure Network**
 
@@ -191,8 +191,33 @@ Click "SYSTEM", select your Wi-Fi network, enter the password and click "CONFIGU
 
 When you connect Seeeduino Cloud to a wired network with an ethernet cable, it will try to connect automatically via DHCP. The board will show up on the ports menu just as it would over WiFi.
 
+### Sysupgrade Firmware
 
-**Terminal**
+Below is detailed by using Browser to upgrade new firmware. 
+
+* Burn File -> Examples -> Birdge -> YunSerialTerminal.ino to Seeeduino Cloud
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/YunSerialTerminal.png)
+
+* Find ip of Seeeduino Cloud through type `ifconfig` on the putty that can communicate with Seeeduino Cloud
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/putty_configure.png)
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/inet_addr.png)
+
+* Visit Seeeduino Cloud by typing ip of Seeeduino Cloud in the Browser. and the password is `seeeduino`
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/password.png)
+
+* Get [newest_Firmware](http://www.dragino.com/downloads/index.php?dir=motherboards/ms14/Firmware/Yun/Newest_Firmware/)
+
+* Upgrade through the upgrade button.
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/upgrade.png)
+
+![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/upgrade_configure.png)
+
+### Terminal
 
 You could access the terminal of Seeeduino Cloud via SSH to Program or configure on ATHEROS AR9331 side.
 
@@ -207,7 +232,7 @@ password: seeeduino
 ![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/seeeduino_cloud_terminal.png)
 
 
-**Yun Bridge Library**
+### Yun Bridge Library
 
 The Bridge Library simplifies the communication between the Arduino Board and Dragino HE. Bridge commands from the AVR (Arduino Board) are interpreted by Python on the HE.
 Its role is to
@@ -329,6 +354,8 @@ String getTimeStamp() {
 ![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Cloud/master/img/500px-SeeeduinoCloud_Sketch_USB.png)
 
 
+
+
 ## Resources
 
 * **Schematic**
@@ -336,7 +363,7 @@ String getTimeStamp() {
     * [Seeeduino Cloud PDF file](https://github.com/SeeedDocument/Seeeduino_Cloud/raw/master/res/Seeeduino_Cloud_PDF.pdf)
 
 * **Firmware**
-    * [Seeeduino Cloud Firmware](https://github.com/SeeedDocument/Seeeduino_Cloud/raw/master/res/Seeeduino_Cloud_Firmware--v1.3.4--20140815-1100.zip)
+    * [Seeeduino Cloud Firmware](http://www.dragino.com/downloads/index.php?dir=motherboards/ms14/Firmware/Yun/Newest_Firmware/)
 
 * **References**
     * [Getting Started with Arduino](https://www.arduino.cc/en/Guide/HomePage)
@@ -357,4 +384,4 @@ String getTimeStamp() {
 Yun Bridge Library is the mechanism used in Arduino Yun for communication between a MPU and a MCU. Seeeduino Cloud supports Yun Bridge Library to make it easy for Arduino users to build their IoT projects.
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

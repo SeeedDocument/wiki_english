@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker 2-Mics Pi HAT
+name: ReSpeaker 2-Mics Pi HAT
 category: ReSpeaker
 bzurl: https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html
 prodimagename: 2mics-zero-high-res.jpg
@@ -13,18 +13,20 @@ ReSpeaker 2-Mics Pi HAT is a dual-microphone expansion board for Raspberry Pi de
 
 The board is developed based on WM8960, a low power stereo codec. There are 2 microphones on both sides of the board for collecting sounds and it also provides 3 APA102 RGB LEDs, 1 User Button and 2 on-board Grove interfaces for expanding your applications. What is more, 3.5mm Audio Jack or JST 2.0 Speaker Out are both available for audio output.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/uTyDqjG5o8s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/MwLEawbP0ZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [![](https://github.com/SeeedDocument/Seeed-WiKi/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png)](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html)
 
+
 ## Features
 
-* Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B, Raspberry Pi 3 B and Raspberry Pi 3 B+)
+* Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B, Raspberry Pi 3 B, Raspberry Pi 3 B+, Raspberry Pi 3 A+ and Raspberry Pi 4)
 * 2 Microphones
 * 2 Grove Interfaces
 * 1 User Button
 * 3.5mm Audio Jack
 * JST2.0 Speaker Out
+* Max Sample Rate: 48Khz
 
 ## Application Ideas
 
@@ -64,7 +66,7 @@ Raspberry Pi zero Connection
 
 While the upstream wm8960 codec is not currently supported by current Pi kernel builds, upstream wm8960 has some bugs, we had fixed it. We must build it manually.
 
-Make sure that you are running [the lastest Raspbian Operating System(debian 9)](https://www.raspberrypi.org/downloads/raspbian/) on your Pi. *(updated at 2018.6.27)*
+Make sure that you are running [the lastest Raspbian Operating System(debian 9)](https://www.raspberrypi.org/downloads/raspbian/) on your Pi. *(updated at 2018.11.13)*
 
 - Step 1. Get the seeed voice card source code, install and reboot.
 
@@ -296,6 +298,135 @@ python Smart_Fan.py
 - **Step 6. Let's try '快一点', '慢一点' and '关风扇'.**
 
 
+## Extract Voice
+
+We use [PyAudio python library](https://people.csail.mit.edu/hubert/pyaudio/) to extract voice.
+
+- Step 1, We need to run the following script to get the device index number of 2 Mic pi hat:
+
+```Python
+sudo pip install pyaudio
+cd ~
+nano get_index.py
+```
+
+- Step 2, copy below code and paste on get_index.py.
+
+```Python
+import pyaudio
+
+p = pyaudio.PyAudio()
+info = p.get_host_api_info_by_index(0)
+numdevices = info.get('deviceCount')
+
+for i in range(0, numdevices):
+        if (p.get_device_info_by_host_api_device_index(0, i).get('maxInputChannels')) > 0:
+            print "Input Device id ", i, " - ", p.get_device_info_by_host_api_device_index(0, i).get('name')
+```
+
+- Step 3, press Ctrl + X to exit and press Y to save.
+
+- Step 4, run 'sudo python get_index.py' and we will see the device ID as below.
+
+```
+Input Device id  2  -  seeed-2mic-voicecard: - (hw:1,0)
+```
+
+- Step 5, change `RESPEAKER_INDEX = 2` to index number. Run python script record.py to record a speech.
+
+```Python
+import pyaudio
+import wave
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 2 
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 5
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = []
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    frames.append(data)
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(RESPEAKER_CHANNELS)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
+- Step 6. If you want to extract channel 0 data from 2 channels, please follow below code. For other channel X, please change [0::2] to [X::2].
+
+```
+import pyaudio
+import wave
+import numpy as np
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 2
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 3
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = [] 
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    # extract channel 0 data from 2 channels, if you want to extract channel 1, please change to [1::2]
+    a = np.fromstring(data,dtype=np.int16)[0::2]
+    frames.append(a.tostring())
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(1)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
 
 ## FAQ
 
@@ -331,6 +462,10 @@ deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main non-
 - **[PDF]** [Respeaker_2_Mics_Pi_HAT_SCH](https://github.com/SeeedDocument/MIC_HATv1.0_for_raspberrypi/raw/master/src/ReSpeaker%202-Mics%20Pi%20HAT_SCH.pdf)
 - **[PDF]** [Respeaker_2_Mics_Pi_HAT_PCB](https://github.com/SeeedDocument/MIC_HATv1.0_for_raspberrypi/raw/master/src/ReSpeaker%202-Mics%20Pi%20HAT_PCB.pdf)
 - **[3D]** [ReSpeaker 2 Mics Pi HAT 3D](https://github.com/SeeedDocument/MIC_HATv1.0_for_raspberrypi/raw/master/src/ReSpeaker%202-Mics%20Pi%20HAT.zip)
+- **[Driver]** [Seeed-Voice Driver](https://github.com/respeaker/seeed-voicecard)
+- **[Algorithms]** [Algorithms includes DOA, VAD, NS](https://github.com/respeaker/mic_array)
+- **[Voice Engine]** [Voice Engine project, provides building blocks to create voice enabled objects](https://github.com/voice-engine/voice-engine)
+- **[Algorithms]** [AEC](https://github.com/voice-engine/ec)
 
 ## Projects
 
@@ -344,3 +479,7 @@ deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main non-
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+
+
+
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

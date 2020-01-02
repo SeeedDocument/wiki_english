@@ -1,5 +1,5 @@
 ---
-title: Seeeduino Stalker V3 - Waterproof Solar Kit
+name: Seeeduino Stalker V3 - Waterproof Solar Kit
 category: Arduino
 bzurl: https://www.seeedstudio.com/Seeeduino-Stalker-V3-Waterproof-Solar-Kit-p-2441.html
 oldwikiname:   Seeeduino Stalker V3 - Waterproof Solar Kit
@@ -326,4 +326,4 @@ The principal application of Seeeduino Stalker v3.0 is data-logging of sensor si
 *   [SD card reading mini-USB cable, in a capsule](http://www.seeedstudio.com/depot/sd-card-reading-miniusb-cable-in-a-capsule-p-575.html?cPath=77)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

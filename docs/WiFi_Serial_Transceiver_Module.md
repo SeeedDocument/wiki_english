@@ -1,5 +1,5 @@
 ---
-title: WiFi Serial Transceiver Module
+name: WiFi Serial Transceiver Module
 category: MakerPro
 bzurl: https://www.seeedstudio.com/WiFi-Serial-Transceiver-Module-w-ESP8266-p-1994.html
 oldwikiname: WiFi Serial Transceiver Module
@@ -176,4 +176,4 @@ Na, not enough? More [Awesome Projects with ESP8266](https://community.seeedstud
 Even more Awesome Projects On [Recipe](https://community.seeedstudio.com/projects.html#recipe)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

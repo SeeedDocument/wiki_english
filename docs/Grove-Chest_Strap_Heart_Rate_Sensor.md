@@ -1,5 +1,5 @@
 ---
-title: Grove - Chest Strap Heart Rate Sensor
+name: Grove - Chest Strap Heart Rate Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Chest-Strap-Heart-Rate-Sensor-p-1115.html
 oldwikiname: Grove_-_Chest_Strap_Heart_Rate_Sensor
@@ -265,4 +265,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Chest_Strap_Heart_Rate_Sensor -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

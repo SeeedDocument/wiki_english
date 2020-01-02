@@ -1,5 +1,5 @@
 ---
-title: Grove - Moisture Sensor
+name: Grove - Moisture Sensor
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Moisture-Sensor-p-955.html
 oldwikiname: Grove - Moisture Sensor
@@ -12,7 +12,7 @@ sku: 101020008
 
 This Moisture Senor can be used for detecting the moisture of soil or judge if there is water around the sensor, let the plant in your garden able to reach out for human's help when they are thirsty. This sensor is very easy to use, you can just simply insert in into the soil and read the data. With this sensor, you can make a small project that can let the plant send a message to you like " I am thirsty now, please feed me some water."
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Moisture-Sensor-p-955.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Moisture-Sensor-p-955.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 ## Version
 
@@ -46,7 +46,7 @@ This Moisture Senor can be used for detecting the moisture of soil or judge if t
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Application Ideas
@@ -123,7 +123,196 @@ Moisture = 215
 Moisture = 221
 ```
 
-### Play With Raspberry Pi
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Moisture Sensor to port A0 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_Moisture_Sensor/master/img/cc_Moisture_Sensor.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see the moisture value displayed in the Serial Monitor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi | Grove - Moisture Sensor |
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Moisture_Sensor/raw/master/img/Moisture_sensor_S.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Moisture-Sensor-p-955.html)
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry Pi.
+- **Step 3**. Connect the Grove - Moisture Sensor to the A0 port of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+![](https://github.com/SeeedDocument/Grove_Moisture_Sensor/raw/master/images/with_hat.jpg)
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3.** Excute below command to run the code.
+
+```
+cd grove.py/grove
+python grove_moisture_sensor.py 0
+```
+
+
+Following is the grove_moisture_sensor.py code.
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# The MIT License (MIT)
+#
+# Grove Base Hat for the Raspberry Pi, used to connect grove sensors.
+# Copyright (C) 2018  Seeed Technology Co.,Ltd.
+'''
+This is the code for
+    - Grove - Moisture Sensor <https://www.seeedstudio.com/Grove-Moisture-Sensor-p-955.html>`_
+
+Examples:
+
+    .. code-block:: python
+
+        import time
+        from grove.grove_moisture_sensor import GroveMoistureSensor
+
+        # connect to alalog pin 2(slot A2)
+        PIN = 2
+
+        sensor = GroveMoistureSensor(PIN)
+
+        print('Detecting moisture...')
+        while True:
+            m = sensor.moisture
+            if 0 <= m and m < 300:
+                result = 'Dry'
+            elif 300 <= m and m < 600:
+                result = 'Moist'
+            else:
+                result = 'Wet'
+            print('Moisture value: {0}, {1}'.format(m, result))
+            time.sleep(1)
+'''
+import math
+import sys
+import time
+from grove.adc import ADC
+
+__all__ = ["GroveMoistureSensor"]
+
+class GroveMoistureSensor:
+    '''
+    Grove Moisture Sensor class
+
+    Args:
+        pin(int): number of analog pin/channel the sensor connected.
+    '''
+    def __init__(self, channel):
+        self.channel = channel
+        self.adc = ADC()
+
+    @property
+    def moisture(self):
+        '''
+        Get the moisture strength value/voltage
+
+        Returns:
+            (int): voltage, in mV
+        '''
+        value = self.adc.read_voltage(self.channel)
+        return value
+
+Grove = GroveMoistureSensor
+
+
+def main():
+    from grove.helper import SlotHelper
+    sh = SlotHelper(SlotHelper.ADC)
+    pin = sh.argv2pin()
+
+    sensor = GroveMoistureSensor(pin)
+
+    print('Detecting moisture...')
+    while True:
+        m = sensor.moisture
+        if 0 <= m and m < 300:
+            result = 'Dry'
+        elif 300 <= m and m < 600:
+            result = 'Moist'
+        else:
+            result = 'Wet'
+        print('Moisture value: {0}, {1}'.format(m, result))
+        time.sleep(1)
+
+if __name__ == '__main__':
+    main()
+```
+
+
+!!!success
+    If everything goes well, you will be able to see the following result:
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_moisture_sensor.py 0
+Detecting moisture...
+Moisture value: 0, Dry
+Moisture value: 1, Dry
+Moisture value: 25, Dry
+Moisture value: 3, Dry
+Moisture value: 0, Dry
+Moisture value: 0, Dry
+Moisture value: 0, Dry
+Moisture value: 0, Dry
+Moisture value: 0, Dry
+Moisture value: 1, Dry
+^CTraceback (most recent call last):
+  File "grove_moisture_sensor.py", line 74, in <module>
+    main()
+  File "grove_moisture_sensor.py", line 71, in main
+    time.sleep(1)
+KeyboardInterrupt
+
+
+```
+
+You can use this sensor to detect the air quality. Press ++ctrl+c++ to quit.
+
+
+!!!Notice
+        You may have noticed that for the analog port, the silkscreen pin number is something like **A1, A0**, however in the command we use parameter **0** and **1**, just the same as the digital port. So please make sure you plug the module into the correct port, otherwise, there may be pin conflicts.
+
+
+### Play With Raspberry Pi(with GrovePi_Plus)
 
 **Hardware**
 
@@ -272,9 +461,16 @@ void loop() {
 }
 ```
 
+## FAQs
+
+**Q1: What does the output mean? voltage or counts?**
+
+A1: The output is voltage values. When using analogRead(), 5V will be divided by 1023. So the output value = Vout * 1023/5. The higher output voltage is, the higher moisture there is.
+
 ## Resources
 
 - [**Eagle&PDF**][Grove - Moisture Sensor v1.4 Schematic](https://github.com/SeeedDocument/Grove_Moisture_Sensor/raw/master/resources/Grove%20-%20Moisture%20Sensor%20v1.4.zip)
+- [**Codecraft**][CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_Moisture_Sensor/master/res/Grove_Moisture_Sensor_CDC_File.zip)
 
 
 ## Projects
@@ -287,3 +483,4 @@ void loop() {
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

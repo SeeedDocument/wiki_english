@@ -1,5 +1,5 @@
 ---
-title: Grove - Vibration Motor
+name: Grove - Vibration Motor
 category: Actuator
 bzurl: https://seeedstudio.com/Grove-Vibration-Motor-p-839.html
 oldwikiname: Grove_-_Vibration_Motor
@@ -91,7 +91,7 @@ Rated speed
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Getting Started
@@ -112,11 +112,11 @@ To make it vibrate is just as easy as to turn on an LED. Here is an example show
 |![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_1.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove-Vibration_Motor/master/img/Gvib_small.jpg)|
 |[Get One Now](http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html)|[Get One Now](https://www.seeedstudio.com/Base-Shield-V2-p-1378.html)|[Get One Now](http://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|
 
-- **Step 2.** Grove - Vibration Motor to port 9 of Grove-Base Shield.
+- **Step 2.** Grove - Vibration Motor to D2 of Grove-Base Shield.
 - **Step 3.** Plug Grove - Base Shield into Seeeduino.
 - **Step 4.** Connect Seeeduino to PC via a USB cable.
 
-![](https://raw.githubusercontent.com/SeeedDocument/Grove-Vibration_Motor/master/img/IMG_0506.jpg)
+![](https://github.com/SeeedDocument/Grove-Vibration_Motor/raw/master/img/vibration_motor.png)
 
 !!!Note
 	If we don't have Grove Base Shield, We also can directly connect Grove - Vibration Motor to Seeeduino as below.
@@ -126,14 +126,14 @@ To make it vibrate is just as easy as to turn on an LED. Here is an example show
 | 5V            | Red                     |
 | GND           | Black                   |
 | Not Conencted | White                   |
-| D9            | Yellow                  |
+| D2            | Yellow                  |
 
 #### Software
 
 - **Step 1.** Copy the code into Arduino IDE and upload. If you do not know how to upload the code, please check [how to upload code](http://wiki.seeedstudio.com/Upload_Code/).
 
 ```c
-int MoPin = 9;    // vibrator Grove connected to digital pin 9
+int MoPin = 2;    // vibrator Grove connected to digital pin 9
 
 void setup()  {
     pinMode( MoPin, OUTPUT );
@@ -151,6 +151,32 @@ void loop()  {
 ```
 
 - **Step 2.** Now, feel the vibration of your motor!
+
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect Grove - Vibration Motor to port D2 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://github.com/SeeedDocument/Grove-Vibration_Motor/raw/master/img/cc_Vibration_Motor.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will feel the vibration motor vibration.
 
 ### Play With Raspberry Pi
 
@@ -225,6 +251,8 @@ sudo python grove_vibration_motor.py
 
 - **[Datasheet]** [ANDA-B1020 Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-Vibration_Motor/master/res/ANDA-B1020_datasheet.pdf)
 
+- **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_Vibration_Motor/master/resource/Grove_Vibration_Motor_CDC_File.zip)
+
 
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Vibration_Motor -->
@@ -243,4 +271,4 @@ The Wooden Laser Gun and the Gun Target are all based on an Arduino board called
 [![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Lotus/master/img/gun.jpg)](http://www.instructables.com/id/DIY-a-Wooden-Laser-Gun-As-a-Xmas-Present-for-Your-/)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

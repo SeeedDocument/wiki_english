@@ -1,5 +1,5 @@
 ---
-title: Lipo Rider V1.3
+name: Lipo Rider V1.3
 category: Essentials
 bzurl: https://seeedstudio.com/Lipo-Rider-v1.3-p-2403.html
 oldwikiname: Lipo_Rider_V1.3
@@ -272,4 +272,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Lipo_Rider_V1.3 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

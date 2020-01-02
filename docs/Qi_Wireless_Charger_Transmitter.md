@@ -1,5 +1,5 @@
 ---
-title: Qi Wireless Charger Transmitter
+name: Qi Wireless Charger Transmitter
 category: Wireless
 bzurl: https://www.seeedstudio.com/Qi-Wireless-Charger-Transmitter-5V%261A-p-1997.html
 oldwikiname:  Qi Wireless Charger Transmitter
@@ -47,4 +47,4 @@ Your phone will enter the charging mode when D1 is flashing and buzzer is turned
 *   **[Datasheet]** [Mosfet Driver TPS28225](https://github.com/SeeedDocument/Qi_Wireless_Charger_Transmitter/raw/master/res/TPS28225.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

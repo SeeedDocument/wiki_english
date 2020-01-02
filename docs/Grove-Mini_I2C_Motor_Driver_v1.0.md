@@ -1,5 +1,5 @@
 ---
-title: Grove - Mini I2C Motor Driver v1.0
+name: Grove - Mini I2C Motor Driver v1.0
 category: Actuator
 bzurl: https://www.seeedstudio.com/Grove - I2C Mini Motor Driver-p-2508.html
 oldwikiname: Grove_-_Mini_I2C_Motor_Driver_v1.0
@@ -153,7 +153,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Hardware Overview
@@ -430,11 +430,11 @@ Resources
 ---------
 
 -   [DRV8830 Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-Mini_I2C_Motor_Driver_v1.0/master/res/DRV8830.pdf)
--   [Grove - Mini I2C Motor Driver\_Eagle\_File](https://raw.githubusercontent.com/SeeedDocument/Grove-Mini_I2C_Motor_Driver_v1.0/master/res/Grove-Mini_I2C_Motor_Driver_v1.0_SCH_PCB.rar)
+-   [Grove - Mini I2C Motor Driver\_Eagle\_File](https://github.com/SeeedDocument/Grove-Mini_I2C_Motor_Driver_v1.0/raw/master/res/Grove-Mini_I2C_Motor_Driver_v1.0_SCH_PCB.zip)
 -   [Grove - Mini I2C Motor Driver Schematic Document](https://raw.githubusercontent.com/SeeedDocument/Grove-Mini_I2C_Motor_Driver_v1.0/master/res/Grove-Mini_I2C_Motor_Driver_v1.0_SCH.pdf)
 -   [Grove - Mini I2C Motor Driver Source Library](https://github.com/Seeed-Studio/Drv8830_Motor_Driver)
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Mini_I2C_Motor_Driver_v1.0 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

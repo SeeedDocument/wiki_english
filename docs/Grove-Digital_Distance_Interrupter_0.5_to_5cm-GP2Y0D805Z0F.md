@@ -1,5 +1,5 @@
 ---
-title: Grove - Digital Distance Interrupter 0.5 to 5cm(GP2Y0D805Z0F)
+name: Grove - Digital Distance Interrupter 0.5 to 5cm(GP2Y0D805Z0F)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -21,7 +21,7 @@ There are two types of  Grove - Digital Distance Interrupter 0.5 to 5cm: Grove -
 GP2Y0D805Z0F is a distance measuring sensor unit, composed of an integrated combination of PD(photo diode) , IRED (infrared emitting diode) and signal processing circuit. The variety of the reflectivity of the object, the environmental temperature and the operating duration are not influenced easily to the distance detection because of adopting the triangulation method. 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Digital-Distance-Interrupter-0.5-to-5cm%28GP2Y0D805Z0F%29-p-3084.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Digital-Distance-Interrupter-0.5-to-5cm%28GP2Y0D805Z0F%29-p-3084.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 ## Features
@@ -55,7 +55,7 @@ GP2Y0D805Z0F is a distance measuring sensor unit, composed of an integrated comb
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -162,7 +162,7 @@ void loop()
 	{
 		Serial.println("Sensor is triggered!!");
 	}
-	delay(1000);
+	delay(100);
 }
 
 ```
@@ -196,6 +196,14 @@ val=1
 Normaly the output of this sensor is 1(High), when the object enters the measurement range of the sensor, it will be triggered and output a 0(LOW)
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-Digital_Distance_Interrupter_0.5_to_5cm-GP2Y0D805Z0F/raw/master/res/Grove-Digital_Distance_Interrupter_0.5_to_5cm-GP2Y0D805Z0F.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
+
 ## Resources
 
 - **[Zip]** [Grove - Digital Distance Interrupter 0.5 to 5cm eagle file](https://github.com/SeeedDocument/Grove-Digital_Distance_Interrupter_0.5_to_5cm-GP2Y0D805Z0F/raw/master/res/Grove-Digital_Distance_Interrupter_0.5_to_5cm-GP2Y0D805Z0F.zip)
@@ -205,3 +213,4 @@ Normaly the output of this sensor is 1(High), when the object enters the measure
 
 ## Tech Support
 You can submit the issue into our [forum](https://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: How to edit Wiki
+name: How to edit Wiki
 category: Tutorial
 bzurl: 
 oldwikiname: 
@@ -30,7 +30,7 @@ tags:
 **必须按照下面的格式编辑，wikiurl必须在第6行**
 
 ```
-title: CAN-BUS Shield V1.2
+name: CAN-BUS Shield V1.2
 category: Shield
 bzurl: https://www.seeedstudio.com/CAN-BUS-Shield-V1.2-p-2256.html
 oldwikiname: CAN-BUS_Shield_V1.2
@@ -75,7 +75,7 @@ pages:
 
 ```
 
-title: Grove - Actuator
+name: Grove - Actuator
 nointro:
 
 Grove - 执行器包括电机驱动器，LED显示屏，继电器，扬声器，蜂鸣器等模块。
@@ -90,7 +90,7 @@ Grove - 执行器包括电机驱动器，LED显示屏，继电器，扬声器，
 
 ```
 
-title: Grove - Actuator
+name: Grove - Actuator
 nointro:
 
 Grove - 执行器包括电机驱动器，LED显示屏，继电器，扬声器，蜂鸣器等模块。
@@ -192,4 +192,4 @@ Copyright (c) 2018-2017 Seeed Inc. (https://www.seeedstudio.com)
 如果你有文档或者技术上的任何疑问，请联系 [techsupport@seeed.cc](techsupport@seeed.cc)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

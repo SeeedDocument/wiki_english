@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker 4-Mic Linear Array Kit
+name: ReSpeaker 4-Mic Linear Array Kit
 category: ReSpeaker
 bzurl:
 oldwikiname: ReSpeaker 4-Mic Linear Array Kit
@@ -37,7 +37,7 @@ channel are dummy.
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/ReSpeaker-4-Mic-Linear-Array-Kit-p-3066.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/ReSpeaker-4-Mic-Linear-Array-Kit-p-3066.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 
@@ -47,8 +47,7 @@ channel are dummy.
 - 8 input and 8 output channels
 - Four microphones array
 - Grove support
-- Compatible with Raspberry Pi 40-pin
-headers
+- Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B, Raspberry Pi 3 B, Raspberry Pi 3 B+, Raspberry Pi 3 A+ and Raspberry Pi 4)
 - Headset and speaker voice output
 
 
@@ -62,11 +61,10 @@ headers
     - 3.5mm headset audio jack
     - Speaker jack
 - Compatible with Raspberry Pi 40-pin headers
-- Microphones: Knowles SPU0414HR5HSB
+- Microphones: MSM321A3729H9CP
 - Sensitivity: -22 dBFS (Omnidirectional)
 - SNR: 59 dB
-
-
+- Max Sample Rate: 48Khz
 
 
 ## Application Ideas
@@ -85,10 +83,19 @@ headers
 
 ## Hardware Overview
 
+**System Diagram**
+
+<a href="https://github.com/SeeedDocument/ReSpeaker_4-Mics_Linear_Array_Kit/raw/master/img/voice_hat_acc.png" target="_blank"><img src="https://github.com/SeeedDocument/ReSpeaker_4-Mics_Linear_Array_Kit/raw/master/img/voice_hat_acc.png"/></a>
+
+**Interface**
 
 ![](https://github.com/SeeedDocument/ReSpeaker_4-Mics_Linear_Array_Kit/raw/master/img/Hardware.jpg)
 
+!!!Note
+    
+    After connecting, be sure to use a multimeter to determine if the conduction of the circuit is as indicated in the figure above.
 
+    
 ## Assembly drawing  
 
 ![](https://github.com/SeeedDocument/Bazaar_file/raw/master/107990055/img/ab.png)
@@ -113,7 +120,7 @@ Earphone or Speaker                 x1
 
 
 !!!Tips
-        Actually the ReSpeaker 4-Mic Circular Array support Raspberry Pi Zero, Raspberry Pi 1 B+, Raspberry Pi 2 B, Raspberry Pi 3 B and Raspberry Pi 3 model B+, in this wiki we are using Raspberry Pi 3.
+        Actually the ReSpeaker 4-Mic Circular Array support Raspberry Pi Zero, Raspberry Pi 1 B+, Raspberry Pi 2 B, Raspberry Pi 3 B and Raspberry Pi 3 model B+ and Raspberry Pi 3 A+, in this wiki we are using Raspberry Pi 3.
 
 
 **Connection**
@@ -200,13 +207,13 @@ pi@raspberrypi:~ $ arecord -L
 It should be like:
 
 ```
+pi@raspberrypi:~ $ arecord -L
 null
     Discard all samples (playback) or generate zero samples (capture)
 default
-playback
-dmixed
+    Playback/recording through the PulseAudio sound server
 ac108
-multiapps
+dmixer
 ac101
 sysdefault:CARD=seeed8micvoicec
     seeed-8mic-voicecard, 
@@ -223,7 +230,6 @@ hw:CARD=seeed8micvoicec,DEV=0
 plughw:CARD=seeed8micvoicec,DEV=0
     seeed-8mic-voicecard, 
     Hardware device with all software conversions
- 
 ```
 
 Use the following command to check the play device.
@@ -235,13 +241,13 @@ pi@raspberrypi:~ $ aplay -L
 It should be like:
 
 ```
+pi@raspberrypi:~ $ aplay -L
 null
     Discard all samples (playback) or generate zero samples (capture)
 default
-playback
-dmixed
+    Playback/recording through the PulseAudio sound server
 ac108
-multiapps
+dmixer
 ac101
 sysdefault:CARD=ALSA
     bcm2835 ALSA, bcm2835 ALSA
@@ -271,19 +277,19 @@ plughw:CARD=ALSA,DEV=1
     bcm2835 ALSA, bcm2835 IEC958/HDMI
     Hardware device with all software conversions
 sysdefault:CARD=seeed8micvoicec
-    seeed-8mic-voicecard,
+    seeed-8mic-voicecard, 
     Default Audio Device
 dmix:CARD=seeed8micvoicec,DEV=0
-    seeed-8mic-voicecard,
+    seeed-8mic-voicecard, 
     Direct sample mixing device
 dsnoop:CARD=seeed8micvoicec,DEV=0
-    seeed-8mic-voicecard,
+    seeed-8mic-voicecard, 
     Direct sample snooping device
 hw:CARD=seeed8micvoicec,DEV=0
-    seeed-8mic-voicecard,
+    seeed-8mic-voicecard, 
     Direct hardware device without any conversions
 plughw:CARD=seeed8micvoicec,DEV=0
-    seeed-8mic-voicecard,
+    seeed-8mic-voicecard, 
     Hardware device with all software conversions
 
 ```
@@ -334,7 +340,7 @@ $ audacity                      // run audacity
 ```
 
 
-![](https://github.com/SeeedDocument/Respeaker_V2/raw/master/img/audacity.png)
+![](https://github.com/SeeedDocument/ReSpeaker_4-Mics_Linear_Array_Kit/raw/master/img/audacity.png)
 
 
 
@@ -425,7 +431,6 @@ As you may see, the demos above trigger the Alexa or Dueros by tapping the ++ent
 Well, you can use snowboy. And you only need simple steps to make that happen.
 
 
-**Step 1. Install Snowboy**
 ```
 cd ~
 git clone https://github.com/respeaker/4mics_hat.git
@@ -442,69 +447,6 @@ source ~/env/bin/activate              # activate the virtual, if we have alread
 
 ```
 
-
-**Step 2. Configure Pulse Audio**
-```
-cd ~
-sudo apt install pulseaudio
-cd seeed-voicecard
-cd pulseaudio
-cd pulse_config_6mic
-sudo cp seeed-voicecard.conf /usr/share/pulseaudio/alsa-mixer/profile-sets/
-```
-Then you need to edit the rules.
-As the system start, when the card "seeed8micvoicec" is detected, the PULSE_PROFILE_SET variable will be set in the udev database, and PulseAudio will be forced to use `seeed-voicecard.conf`.
-At first, please use the following command to check the rule.
-```
-sudo nano /lib/udev/rules.d/90-pulseaudio.rules
-
-```
-Then add the following lines at about line 87(behind the setting for some laptops and before the line GOTO="pulseaudio_end")
-```
-# Seeed Voicecard
-ATTR{id}=="seeed8micvoicec",ATTR{number}=="1",ENV{PULSE_PROFILE_SET}="seeed-voicecard.conf"
-
-```
-It should be like:
-![](https://github.com/respeaker/seeed-voicecard/raw/master/pulseaudio/udev_rules_6mic.png)
-Then presss ++ctrl+x++ to quite, and tap ++y++ to save the modification you've just made.
-The value of ATTR{number} can be found with command:
-```
-udevadm info -a -p /sys/class/sound/card1/:
-```
-
-**Step 3. config `default.pa` and `daemon.conf`**
-```
-sudo cp default.pa /etc/pulse/
-sudo cp daemon.conf /etc/pulse/
-```
-
-**Step 4. reboot raspberry pi and check**
-```
-sudo reboot
-pulseaudio --start  # start pulse at first
-pactl info  # check the setting
-
-# The output should be like this
-# You could see the default sink is seeed-2ch and default source is seeed-8ch
-pi@raspberrypi:~ $ pactl info
-Server String: /run/user/1000/pulse/native
-Library Protocol Version: 32
-Server Protocol Version: 32
-Is Local: yes
-Client Index: 6
-Tile Size: 65496
-User Name: pi
-Host Name: raspberrypi
-Server Name: pulseaudio
-Server Version: 10.0
-Default Sample Specification: s32le 8ch 96000Hz
-Default Channel Map: front-left,front-left-of-center,front-center,front-right,front-right-of-center,rear-center,aux0,aux1
-Default Sink: alsa_output.platform-soc_sound.seeed-2ch
-Default Source: alsa_input.platform-soc_sound.seeed-8ch
-Cookie: 3523:e5af
-```
-
 After you configure this snowboy, please do the following:
 
 ```
@@ -512,10 +454,138 @@ source ~/env/bin/activate
 cd ~/voice-engine/examples
 python kws_alexa_for_4mic_liner_pihat.py
 ```
-Then you will see the LEDs light up, and you can call `Snowboy` to wake it up. 
+
+You can call `Snowboy` to wake it up. 
 
 
+## Extract Voice
 
+We use [PyAudio python library](https://people.csail.mit.edu/hubert/pyaudio/) to extract voice.
+
+- Step 1, We need to run the following script to get the device index number of 4 Mic pi hat:
+
+```Python
+sudo pip install pyaudio
+cd ~
+nano get_index.py
+```
+
+- Step 2, copy below code and paste on get_index.py.
+
+```Python
+import pyaudio
+
+p = pyaudio.PyAudio()
+info = p.get_host_api_info_by_index(0)
+numdevices = info.get('deviceCount')
+
+for i in range(0, numdevices):
+        if (p.get_device_info_by_host_api_device_index(0, i).get('maxInputChannels')) > 0:
+            print "Input Device id ", i, " - ", p.get_device_info_by_host_api_device_index(0, i).get('name')
+```
+
+- Step 3, press Ctrl + X to exit and press Y to save.
+
+- Step 4, run 'sudo python get_index.py' and we will see the device ID as below.
+
+```
+Input Device id  2  -  seeed-8mic-voicecard: - (hw:1,0)
+```
+
+- Step 5, change `RESPEAKER_INDEX = 2` to index number. Run python script record.py to record a speech.
+
+```Python
+import pyaudio
+import wave
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 8 
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 5
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = []
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    frames.append(data)
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(RESPEAKER_CHANNELS)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
+- Step 6. If you want to extract channel 0 data from 8 channels, please follow below code. For other channel X, please change [0::8] to [X::8].
+
+```python
+import pyaudio
+import wave
+import numpy as np
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 8
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 3
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = [] 
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    # extract channel 0 data from 8 channels, if you want to extract channel 1, please change to [1::8]
+    a = np.fromstring(data,dtype=np.int16)[0::8]
+    frames.append(a.tostring())
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(1)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
 
 
 ## FAQ
@@ -534,9 +604,19 @@ A2: Please click raspberry -> Preferences -> Raspberry Pi Configuration, then se
 
 - **[PDF]** [AC101 Datasheet](https://github.com/SeeedDocument/ReSpeaker_6-Mics_Circular_Array_kit_for_Raspberry_Pi/raw/master/reg/AC101_User_Manual_v1.1.pdf)
 - **[PDF]** [AC108 Datesheet](https://github.com/SeeedDocument/ReSpeaker_6-Mics_Circular_Array_kit_for_Raspberry_Pi/raw/master/reg/AC108_Datasheet_V1.2.pdf)
+- **[Driver]** [Seeed-Voice Driver](https://github.com/respeaker/seeed-voicecard)
+- **[Algorithms]** [Algorithms includes DOA, VAD, NS](https://github.com/respeaker/mic_array)
+- **[Voice Engine** [Voice Engine project, provides building blocks to create voice enabled objects](https://github.com/voice-engine/voice-engine)
+- **[Algorithms]** [AEC](https://github.com/voice-engine/ec)
+- **[Mechanical Drawing]** [2D Drawing](https://github.com/SeeedDocument/ReSpeaker_4-Mics_Linear_Array_Kit/raw/master/res/2d.zip)
 
+## Projects
 
+**Mojing Mojing - A Smart Mirror with ReSpeaker!**: A smart mirror with voice interface control via ReSpeaker. We also connect with Wio Link to control other objects! Based on Raspberry Pi. 
+
+<iframe frameborder='0' height='327.5' scrolling='no' src='https://project.seeedstudio.com/SeeedStudio/mojing-mojing-a-smart-mirror-with-respeaker-e1ae20/embed' width='350'></iframe>
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

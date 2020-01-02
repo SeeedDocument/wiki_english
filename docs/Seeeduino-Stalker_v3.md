@@ -1,5 +1,5 @@
 ---
-title: Seeeduino Stalker‏‎ V3
+name: Seeeduino Stalker‏‎ V3
 category: Discontinued
 bzurl:
 oldwikiname: Seeeduino_Stalker‏‎
@@ -554,4 +554,4 @@ RTC I2C
     *   [Completed file via Offline-AVRISP](https://github.com/SeeedDocument/Seeeduino-Stalker_v3/raw/master/res/Stalker_V2_Final.Prjt.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove - Differential Amplifier v1.0
+name: Grove - Differential Amplifier v1.0
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Differential-Amplifier-p-1284.html
 oldwikiname:  Grove - Differential Amplifier v1.0
@@ -190,4 +190,4 @@ The measurement range is determined by power supply voltage VCC , the maximum ou
 - [INA125 Datasheet](https://github.com/SeeedDocument/Grove-Differential_Amplifier_v1.0/raw/master/res/INA125.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

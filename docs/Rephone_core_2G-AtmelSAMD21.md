@@ -1,5 +1,5 @@
 ---
-title: Rephone Core 2G-AtmelSAMD21
+name: Rephone Core 2G-AtmelSAMD21
 category: RePhone
 bzurl: https://www.seeedstudio.com/RePhone-core-2G-AtmelSAMD21-p-2775.html
 oldwikiname:
@@ -281,4 +281,4 @@ There are several chainable add-on modules to extend the features and functional
 - [Download ALL Above](https://github.com/SeeedDocument/RePhone-core-2G-AtmelSAMD21/archive/master.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

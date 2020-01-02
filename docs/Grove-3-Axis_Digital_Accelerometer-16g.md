@@ -1,5 +1,5 @@
 ---
-title: Grove - 3 Axis Digital Accelerometer(±16g)
+name: Grove - 3 Axis Digital Accelerometer(±16g)
 category: Sensor
 bzurl: <a href="https://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer(%C2%B116g)-p-1156.html">https://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer(%C2%B116g)-p-1156.html</a>
 oldwikiname: Grove - 3 Axis Digital Accelerometer(±16g)
@@ -50,6 +50,30 @@ Here below we show you how to read the raw data and obtain data in the unit of g
 ![](https://github.com/SeeedDocument/Grove_3_Axis_Digital_Accelerometer_Plus_Minus_16g/raw/master/images/Digital_Accelerometer.jpg)
 
 The outputs of this sensor consist of two parts: raw data and 3-axis acceleration info converted into the unit of gravity, "g".
+
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Using a Grove cable connect Grove - 3-Axis Digital Accelerometer(±16g) to Seeeduino's I2C port. If you are using Arduino, please take advantage of a Base Shield.
+
+**Step 2.** Link Seeedino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_3_Axis_Digital_Accelerometer_Plus_Minus_16g/master/img/cc_3_Axis_Digital_Accelerometer.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see the acceleration displayed in the Serial Monitor. 
 
 **With Raspberry Pi**
 
@@ -320,6 +344,7 @@ if __name__ == "__main__":
 - [ADXL345 datasheet.pdf](https://github.com/SeeedDocument/Grove_3_Axis_Digital_Accelerometer_Plus_Minus_16g/raw/master/res/ADXL345_datasheet.pdf)
 - [github repository for 3-Axis Digital Accelerometer(±16g)](https://github.com/Seeed-Studio/Accelerometer_ADXL345)
 - [Grove - 3-Axis Digital Accelerometer(±16g)](https://github.com/SeeedDocument/Grove_3_Axis_Digital_Accelerometer_Plus_Minus_16g/raw/master/resources/DigitalAccelerometer_ADXL345.zip)
+- [Codecraft CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_3_Axis_Digital_Accelerometer_Plus_Minus_16g/master/res/Grove_3_Axis_Digital_Acceleromete_CDC_File.zip)
 
 ## Projects
 
@@ -329,4 +354,4 @@ if __name__ == "__main__":
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

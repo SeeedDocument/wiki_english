@@ -1,5 +1,5 @@
 ---
-title:  Seeeduino v2.21‏‎
+name:  Seeeduino v2.21‏‎
 category: Discontinued
 bzurl:
 oldwikiname: Seeeduino_v2.21‏‎
@@ -87,4 +87,4 @@ This documentation is licensed under the Creative Commons [Attribution-ShareAlik
 - **[PDF]** [Schematic in pdf](https://github.com/SeeedDocument/Seeeduino_v2.21/raw/master/res/Seeeduino_v2.21.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

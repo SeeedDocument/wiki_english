@@ -1,5 +1,5 @@
 ---
-title: SDLogger - Open Hardware Data Logger
+name: SDLogger - Open Hardware Data Logger
 category: MakerPro
 bzurl: https://www.seeedstudio.com/sdlogger-open-hardware-data-logger-p-723.html?cPath=132_136
 oldwikiname:  SDLogger - Open Hardware Data Logger
@@ -74,4 +74,4 @@ SDLogger is a simple serial logger based on [SparkFun](http://www.sparkfun.com/)
 3.  Arduino SdFat library written by Bill Greiman and is released under GPL v3
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

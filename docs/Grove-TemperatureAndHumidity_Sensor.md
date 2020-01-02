@@ -1,5 +1,5 @@
 ---
-title: Grove - Temperature&Humidity Sensor
+name: Grove - Temperature&Humidity Sensor
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Temp&Humi-Sensor-p-745.html
 oldwikiname: Grove_-_Temperature&Humidity_Sensor
@@ -14,7 +14,7 @@ sku: 101020011
 This Temperature&Humidity sensor provides a pre-calibrated digital output. A unique capacitive sensor element measures relative humidity and the temperature is measured by a negative temperature coefficient (NTC) thermistor. It has excellent reliability and long term stability. Please note that this sensor will not work for temperatures below 0 degree.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Temp%26Humi-Sensor-p-745.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT1-p-745.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
 
 
 
@@ -320,7 +320,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Note
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -408,9 +408,124 @@ The result should be like:
 
 ![](https://github.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/raw/master/img/result_ar.png)
 
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Temperature&Humidity Sensor to port D2 a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/master/img/cc_Temperature_Humidity.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see temperature and humidity displayed in the Serial Monitor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Temp & Hum Sensor|
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/raw/master/img/list.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Temp%26Humi-Sensor-p-745.html)|
 
 
-### Play With Raspberry Pi
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the temperature and humidity sensor to Port 12 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/raw/master/img/Temp_Hum_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the temperature and humidity sensor to **any GPIO Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/Seeed_Python_DHT.git
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd Seeed_Python_DHT
+sudo python setup.py install
+cd ~/Seeed_Python_DHT/examples
+python dht_simpleread.py 
+```
+
+
+Following is the dht_simpleread.py code.
+
+```python
+import time
+import seeed_dht
+def main():
+
+    # for DHT11/DHT22
+    sensor = seeed_dht.DHT("11", 12)
+    # for DHT10
+    # sensor = seeed_dht.DHT("10")
+    
+    while True:
+        humi, temp = sensor.read()
+        if not humi is None:
+            print('DHT{0}, humidity {1:.1f}%, temperature {2:.1f}*'.format(sensor.dht_type, humi, temp))
+        else:
+            print('DHT{0}, humidity & temperature: {1}'.format(sensor.dht_type, temp))
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result
+    
+```python
+
+pi@raspberrypi:~/Seeed_Python_DHT/examples $ python dht_simpleread.py 
+DHT11, humidity 39.2%, temperature 29.1*
+DHT11, humidity 39.2%, temperature 29.1*
+DHT11, humidity 39.2%, temperature 29.1*
+DHT11, humidity 39.1%, temperature 29.1*
+DHT11, humidity 40.0%, temperature 29.1*
+DHT11, humidity 39.9%, temperature 29.1*
+DHT11, humidity 40.3%, temperature 29.1*
+DHT11, humidity 42.0%, temperature 29.1*
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 #### Hardware
 First, You need to prepare the below stuffs:
@@ -532,6 +647,8 @@ temp = 26.00 C humidity =40.00%
 
 - **[Zip]** [Temperature&Humidity Sensor Library](https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor)
 
+- **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/master/res/Grove_Temperature_and_Humidity_Sensor_CDC_File.zip)
+
 
 ## Projects
 
@@ -542,3 +659,4 @@ temp = 26.00 C humidity =40.00%
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

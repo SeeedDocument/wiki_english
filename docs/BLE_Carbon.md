@@ -1,5 +1,5 @@
 ---
-title: BLE Carbon
+name: BLE Carbon
 category: Wireless
 bzurl: https://www.seeedstudio.com/BLE-Carbon-p-2710.html
 oldwikiname:
@@ -184,4 +184,4 @@ For more details, please refer to [Running a serialized application](http://info
 * [Schematics in PDF](https://github.com/SeeedDocument/BLE-Carbon/raw/master/res/BLE%20Carbon%20v1.0_SCH.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker Core v2.0
+name: ReSpeaker Core v2.0
 category: ReSpeaker
 bzurl:
 oldwikiname: ReSpeaker Core v2.0
@@ -21,9 +21,9 @@ ReSpeaker Core v2.0 is designed as a feature rich development board for business
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/ReSpeaker-Core-V2.0-p-3039.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/ReSpeaker-Core-V2.0-p-3039.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
-<p style="text-align:center"><a href="https://www.amazon.com/dp/B07DN43Q7L" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/amaon.png"  width="300" height="48"  border=0/></a></p>
+<p style=":center"><a href="https://www.amazon.com/dp/B07DN43Q7L" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/amaon.png"  width="300" height="48"  border=0/></a></p>
 
 
 ## Features
@@ -109,7 +109,7 @@ ReSpeaker Core v2.0 is designed as a feature rich development board for business
   </tr>
   <tr>
     <td class="tg-dc35">Audio</td>
-    <td class="tg-dc35">6 Microphone Array;<br>3.5mm Audio Jack;<br>JST2.0 Audio output connector</td>
+    <td class="tg-dc35">Max Sample Rate: 96Khz;<br>6 Microphone Array;<br>3.5mm Audio Jack;<br>JST2.0 Audio output connector</td>
   </tr>
   <tr>
     <td class="tg-us36">Storage</td>
@@ -131,7 +131,7 @@ ReSpeaker Core v2.0 is designed as a feature rich development board for business
 </table>
 
 !!!Note
-    This table only lists the basic specification of ReSpeakser Core v2.0, for more professional parameters please refer to [Acoustic & Electrical Specification of ReSpeaker Core v2.0](https://github.com/SeeedDocument/Respeaker_V2/raw/master/res/Acoustic%26Electrical_Specification_of_ReSpeaker_Core_v2.0.pdf).
+​    This table only lists the basic specification of ReSpeakser Core v2.0, for more professional parameters please refer to [Acoustic & Electrical Specification of ReSpeaker Core v2.0](https://github.com/SeeedDocument/Respeaker_V2/raw/master/res/Acoustic%26Electrical_Specification_of_ReSpeaker_Core_v2.0.pdf).
 
 ## Hardware Overview
 
@@ -359,7 +359,6 @@ Now your ReSpeaker Core v2.0 can boot, you might want to get access to the Linux
 
 - **Step 4.** The default user name is ```respeaker```, and password is ```respeaker``` too.
 
-
 **B. Connection via The UART port**
 
 In this section we will guide you how to establish a connection from your computer to your ReSpeaker using your USB to TTL adapter which will be connected to the ReSpeaker's Uart port (Uart port located just to the left of the ReSpeaker speaker plug).
@@ -501,6 +500,7 @@ Please tap the commands below to update and activate the Bluetooth of ReSpeaker 
 
 ```
 sudo apt update
+sudo apt-mark hold firefox 
 sudo apt upgrade
 ```
 
@@ -724,7 +724,6 @@ When finished the steps above, run:
 
 ```
 python /home/respeaker/respeakerd/clients/Python/demo_respeaker_v2_vep_alexa_with_light.py
-
 ```
 
 Say `snowboy`, wake up Alexa, Enjoy！
@@ -778,7 +777,7 @@ Librespeaker is an audio processing library which can perform noise suppression,
   - Automatically adjust the volume of the microphone, maximize the pickup capability of microphone.
 
 
-And we provide several APIs which enable users to get indicated when hotword is said and the processed microphone data in PCM format, which then can be sent to cloud services like Alexa for further processing. You can click [APIs Docs](http://respeaker.io/librespeaker_doc/) to check.
+And we provide several APIs which enable users to get indicated when hotword is said and the processed microphone data in PCM format, which then can be sent to cloud services like Alexa for further processing. You can click [APIs Docs](http://wiki.seeedstudio.com/librespeaker_doc/) to check.
 
 
 ### Play with AVS
@@ -800,132 +799,60 @@ If you just received the board and had done nothing on it, please learn the [Bas
 - SSH
 - VNC
 
-Then install the basic software packages:
+Then install the basic software packages with the following command, when you see the prompt "When you finish that, the script will continue, or press Ctrl+C if you've done this before", just press Ctrl + C to interrupt the script.
 
+```shell
+curl https://raw.githubusercontent.com/respeaker/respeakerd/master/scripts/install_all.sh|bash
 ```
-## install deps
-sudo apt update
-sudo apt install -y librespeaker git cmake
-sudo apt install -y python-mraa python-upm libmraa1 libupm1 mraa-tools
-sudo pip install pixel_ring pydbus
 
-cd /home/respeaker
-git clone https://github.com/respeaker/respeakerd.git
-
-cd /home/respeaker/respeakerd
-
-sudo cp -f build/respeakerd /usr/local/bin
-sudo cp -f scripts/respeakerd_safe /usr/local/bin
-sudo chmod a+x /usr/local/bin/respeakerd
-sudo chmod a+x /usr/local/bin/respeakerd_safe
-sudo mkdir -p /usr/local/etc/respeakerd
-sudo cp -Rf build/resources /usr/local/etc/respeakerd/
-sudo cp -f scripts/respeakerd.service /etc/systemd/system/
-
-
-#enable system service
-sudo systemctl enable respeakerd
-sudo systemctl start respeakerd
-
-
-```
+This will install `librespeaker` and `respeakerd`.
 
 **Part 2. Configure respeakerd**
 
-2.1 PulseAudio Configuratin
-
-Use your favorite text editor to edit `default.pa`, in this wiki we use **vim editor**.Please tap the following command
+Use your favorite text editor to edit `/etc/respeaker/respeakerd.conf`, in this wiki we use **vim editor**.
 
 ```
-sudo vim /etc/pulse/default.pa
+sudo vim /etc/respeaker/respeakerd.conf
 
 ```
 
-Then the Vim editor will open this file, please press ++i++ to enter the editor mode. Copy and paste the following lines at the end of this file:
+Then change the `mode` to `pulse`
 
 ```
-load-module module-pipe-source source_name="respeakerd_output" rate=16000 channels=1
-set-default-source respeakerd_output
-
+# mode
+# the mode of respeakerd, can be: standard, pulse
+mode = pulse
 ```
 
-- Press ++esc++ button to exit editor modequit
-- Press ++colon++ to access the command mode, tap ++w++ then ++enter++ to save the modification.
-- After saving please press ++q++ then ++enter++ to quit vim.
-
-When all of above done, please make sure the end of **default.pa**  is something like the following picture.
-
-![](https://github.com/SeeedDocument/Respeaker_V2/raw/master/img/c1.png)
-
-
-Ok, now you can tap
-
-```
-sudo reboot -f
-```
-
-Reboot the board.
-
-2.2 Start respeakerd in PulseAudio mode
-
-
-When respeakerd works in PulseAudio mode, it outputs the processed audio stream into a named pipe which is created by the module-pipe-source of PulseAudio.
-
-```
-sudo systemctl stop respeakerd
-sudo vim /usr/local/bin/respeakerd_safe
-```
-Modify the content of this file as the following code, you can refer to the previous step for the vim editor operation.
-
-```
-#!/bin/bash
-
-pulseaudio --check
-
-while [ $? == 1 ]; do
-    sleep 1
-    pulseaudio --check
-done
-
-while [ ! -p /tmp/music.input ]; do
-   sleep 1
-done
-
-sleep 5
-
-/usr/local/bin/respeakerd --snowboy_res_path="/usr/local/etc/respeakerd/resources/common.res" --snowboy_model_path="/usr/local/etc/respeakerd/resources/snowboy.umdl" --snowboy_sensitivity="0.4" --source="alsa_input.platform-sound_0.seeed-8ch" --mode=pulse
-```
-
-!!!Note
-    Please make sure you have modified this file the same as the code above, especially the last line **/usr/local...--mode=pulse**, you may just ignore it.
-
-Restart the service:
+We need to restart the `respeakerd` service
 
 ```
 sudo systemctl start respeakerd
-
 ```
 
 Or you want to manually start the respeakerd for debugging purpose:
 
 ```
 sudo systemctl stop respeakerd
-/usr/local/bin/respeakerd --snowboy_res_path="/usr/local/etc/respeakerd/resources/common.res" --snowboy_model_path="/usr/local/etc/respeakerd/resources/snowboy.umdl" --snowboy_sensitivity="0.4" --source="alsa_input.platform-sound_0.seeed-8ch" --mode=pulse --debug
+/usr/bin/respeakerd --source="alsa_input.platform-sound_0.seeed-8ch" --mode=pulse --debug
 ```
+
+<div class="admonition note" >
+<p class="admonition-title">Note</p>
+​You can specify any configuration items inside the configuration file /etc/respeaker/respeakerd.conf on the command line to overwrite the corresponding configuration items in the configuration file. You can also inspect all the command line options with respeakerd --help.</div>
 
 **Part 3. Compile and Run AVS C++ SDK**
 
 3.1 Download and install the necessary files
 
 ```
-cd /home/respeaker/ && mkdir sdk-folder && cd sdk-folder && mkdir sdk-build sdk-source third-party application-necessities && cd application-necessities && mkdir sound-files
+cd ~ && mkdir sdk-folder && cd sdk-folder && mkdir sdk-build sdk-source third-party application-necessities && cd application-necessities && mkdir sound-files
 sudo apt-get -y install git gcc cmake build-essential libsqlite3-dev libcurl4-openssl-dev libfaad-dev libsoup2.4-dev libgcrypt20-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-good libasound2-dev doxygen
-cd /home/respeaker/sdk-folder/third-party && wget -c http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz && tar zxf pa_stable_v190600_20161030.tgz && cd portaudio && ./configure --without-jack && make
+cd ~/sdk-folder/third-party && wget -c http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz && tar zxf pa_stable_v190600_20161030.tgz && cd portaudio && ./configure --without-jack && make
 sudo pip install commentjson
-sudo pip install flask 
-sudo pip install requests
-cd /home/respeaker/sdk-folder/sdk-source && git clone git://github.com/respeaker/avs-device-sdk.git
-cd /home/respeaker/sdk-folder/sdk-build && cmake /home/respeaker/sdk-folder/sdk-source/avs-device-sdk -DCMAKE_BUILD_TYPE=DEBUG -DRESPEAKERD_KEY_WORD_DETECTOR=ON -DGSTREAMER_MEDIA_PLAYER=ON -DPORTAUDIO=ON -DPORTAUDIO_LIB_PATH=/home/respeaker/sdk-folder/third-party/portaudio/lib/.libs/libportaudio.a -DPORTAUDIO_INCLUDE_DIR=/home/respeaker/sdk-folder/third-party/portaudio/include
+sudo pip install flask
+cd ~/sdk-folder/sdk-source && git clone git://github.com/respeaker/avs-device-sdk.git
+cd ~/sdk-folder/sdk-build && cmake /home/respeaker/sdk-folder/sdk-source/avs-device-sdk -DCMAKE_BUILD_TYPE=DEBUG -DRESPEAKERD_KEY_WORD_DETECTOR=ON -DGSTREAMER_MEDIA_PLAYER=ON -DPORTAUDIO=ON -DPORTAUDIO_LIB_PATH=/home/respeaker/sdk-folder/third-party/portaudio/lib/.libs/libportaudio.a -DPORTAUDIO_INCLUDE_DIR=/home/respeaker/sdk-folder/third-party/portaudio/include
 make SampleApp -j2
 
 ```
@@ -936,10 +863,11 @@ In this section we are going to setup and run a local authorization server, whic
 
 Step 1. Register your product with Amazon
 
-First of all, please follow these [instructions](https://github.com/alexa/alexa-avs-sample-app/wiki/Create-Security-Profile) to register your product and create a security profile. You can skip this step if you have a registered product you'd like to test with.
+First of all, please follow these [instructions](https://github.com/alexa/avs-device-sdk/wiki/Create-Security-Profile) to register your product and create a security profile. You can skip this step if you have a registered product you'd like to test with.
 
-!!!Note
-    Make sure you save the **Product ID** from the **Product information** tab, and your **Client ID** and **Client Secret** from the **Security Profile** tab. You'll need these params to configure the authorization server.
+<div class="admonition note" >
+<p class="admonition-title">Note</p>
+Make sure you save the **Product ID** from the **Product information** tab, and your **Client ID** and **Client Secret** from the **Security Profile** tab. You'll need these params to configure the authorization server.</div>
 
 
 Step 2. Update AlexaClientSDKConfig.json
@@ -948,7 +876,7 @@ Step 2. Update AlexaClientSDKConfig.json
 Open `/home/respeaker/sdk-folder/sdk-build/Integration/AlexaClientSDKConfig.json` by the command below.
 
 ```
-vim /home/respeaker/sdk-folder/sdk-build/Integration/AlexaClientSDKConfig.json
+vim ~/sdk-folder/sdk-build/Integration/AlexaClientSDKConfig.json
 
 ```
 
@@ -984,14 +912,17 @@ Replace the contents of AlexaClientSDKConfig.json with this JSON blob:
 
 Enter the **clientId**, **clientSecret**, and **productId** that you saved during device registration and save.
 
-!!!warning
-    Do not remove the quotes and make sure there are no extra characters or spaces! The required values are strings. And It is a good idea to save a backup of this file. Subsequent builds may overwrite the values in **AlexaClientSDKConfig.json**.
+<div class="admonition Warning" >
+<p class="admonition-title">Warning</p>
+​Do not remove the quotes and make sure there are no extra characters or spaces! The required values are strings. And It is a good idea to save a backup of this file. Subsequent builds may overwrite the values in **AlexaClientSDKConfig.json**.</div>
 
-!!!note
-    deviceSerialNumber is pre-populated for this project, however, a commercial product should use a serial number or other unique identified for the device.
+<div class="admonition note" >
+<p class="admonition-title">Note</p>
+​deviceSerialNumber is pre-populated for this project, however, a commercial product should use a serial number or other unique identified for the device.</div>
 
-!!!Tip
-    The locale is set to US English by default in the sample JSON, however other [locales are supported](https://developer.amazon.com/docs/alexa-voice-service/settings.html#settingsupdated). Feel free to test each language.
+<div class="admonition Tip" >
+<p class="admonition-title">Tip</p>
+​The locale is set to US English by default in the sample JSON, however other [locales are supported](https://developer.amazon.com/docs/alexa-voice-service/settings.html#settingsupdated). Feel free to test each language.</div>
 
 
 Step 3. Obtain a refresh token
@@ -999,11 +930,13 @@ Step 3. Obtain a refresh token
 After you've updated **AlexaClientSDKConfig.json**, run **AuthServer.py** to kick-off the token exchange:
 
 ```
-cd /home/respeaker/sdk-folder/sdk-build && python AuthServer/AuthServer.py
+cd ~/sdk-folder/sdk-build && python AuthServer/AuthServer.py
 
 ```
-!!!Note
-    You may need to change the locale settings for your ReSpeaker, as some Raspbian images default to **amazon.co.uk** to **amazon.com**.
+
+<div class="admonition note" >
+<p class="admonition-title">Note</p>
+You may need to change the locale settings for your ReSpeaker, as some Raspbian images default to **amazon.co.uk** to **amazon.com**.</div>
 
 
 Open your browser and navigate to http://localhost:3000. Login with your Amazon credentials and follow the instructions provided.
@@ -1015,7 +948,7 @@ Step 4. AVS configuration test
 Tap the command below to test the AVS configuration.
 
 ```
-/home/respeaker/sdk-folder/sdk-build/SampleApp/src/SampleApp /home/respeaker/sdk-folder/sdk-build/Integration/AlexaClientSDKConfig.json
+~/sdk-folder/sdk-build/SampleApp/src/SampleApp ~/sdk-folder/sdk-build/Integration/AlexaClientSDKConfig.json
 
 ```
 If everything goes well, you will see the **Sample APP**. Now you are able to make conversations with Alexa, but all user experiences are done through the command line messages.
@@ -1024,13 +957,12 @@ If everything goes well, you will see the **Sample APP**. Now you are able to ma
 
 
 
-
 **Part 4. LED Ring Light Effect**
 
 To activate the on-board LED effect, you just need to tap commands below.
 
 ```
-sudo cp -f /home/respeaker/respeakerd/scripts/pixel_ring_server /usr/local/bin/
+sudo cp -f ~/respeakerd/scripts/pixel_ring_server /usr/local/bin/
 sudo chmod a+x /usr/local/bin/pixel_ring_server
 pixel_ring_server
 
@@ -1045,10 +977,10 @@ When this part done you will be able to wake up the ReSpeaker Core v2.0 by key w
 Tap the commands below.
 
 ```
-sudo cp -f /home/respeaker/respeakerd/scripts/avs_cpp_sdk_safe /usr/local/bin
+sudo cp -f ~/respeakerd/scripts/avs_cpp_sdk_safe /usr/local/bin
 sudo chmod a+x /usr/local/bin/avs_cpp_sdk_safe
-sudo cp -f /home/respeaker/respeakerd/scripts/pixel_ring_server.service /etc/systemd/system/
-sudo cp -f /home/respeaker/respeakerd/scripts/avs_cpp_sdk.service /etc/systemd/system/
+sudo cp -f ~/respeakerd/scripts/pixel_ring_server.service /etc/systemd/system/
+sudo cp -f ~/respeakerd/scripts/avs_cpp_sdk.service /etc/systemd/system/
 sudo systemctl enable pixel_ring_server
 sudo systemctl enable avs_cpp_sdk
 sudo systemctl start pixel_ring_server
@@ -1228,7 +1160,7 @@ python Bing_STT.py
 ```
 
 !!!Warning
-    Please add bing key @ line 12 before running python Bing_STT.py.
+​    Please add bing key @ line 12 before running python Bing_STT.py.
 
 - **Step 5. Let's say ReSpeaker to wake up**
 
@@ -1237,7 +1169,7 @@ python Bing_STT.py
 Let's say **turn on light** or **turn off light** and monitor the screen output.
 
 !!!Note
-    Please refer to FAQ9 to change the PocketSphinx wake up world.
+​    Please refer to FAQ9 to change the PocketSphinx wake up world.
 
 
 **2. Baidu STT**
@@ -1259,7 +1191,7 @@ python Baidu_STT.py
 ```
 
 !!!Warning
-    Please add baidu key @ line 16 before running python Baidu_STT.py.
+​    Please add baidu key @ line 16 before running python Baidu_STT.py.
 
 - **Step 4. Let's say ReSpeaker to wake up**
 
@@ -1268,7 +1200,7 @@ python Baidu_STT.py
 Let's say **开灯** or **关灯** and monitor the screen output.
 
 !!!Note
-    For more info about the baidu speech API, please refer to [here](http://ai.baidu.com/docs#/ASR-Online-Python-SDK/top).
+​    For more info about the baidu speech API, please refer to [here](http://ai.baidu.com/docs#/ASR-Online-Python-SDK/top).
 
 
 ## Play with Wio Link
@@ -1490,6 +1422,204 @@ Light value is 44
 Light value is 31  
 ```
 
+## Librespeaker Aduio Process
+
+Librespeaker is an audio processing library which can perform noise suppression, direction of arrival calculation, beamforming, hotword searching. It reads the microphoone stream from linux sound server, e.g. PulseAudio.
+
+Here is the list of examples in [Librespeaker Documentation](http://wiki.seeedstudio.com/librespeaker_doc/examples.html). These examples will help you understand how to make different applications with librespeaker. 
+
+### Install librespeaker
+ 
+```shell
+sudo apt install -y librespeaker-dev libsndfile1-dev libasound2-dev 
+# Reboot to make configuration effective
+sudo reboot 
+```
+
+### Librespeaker Examples
+
+First of all, as an audio processing application, we always have to collect audio stream. In librespeaker, we have 3 ways to capture audio stream: PulseAudio Server, ALSA API and a wav file.
+
+
+**1. PulseAudio Server**
+
+PulseAudio is a sound system for POSIX OSes, meaning that it is a proxy for your sound applications. It allows you to do advanced operations on your sound data as it passes between your application and your hardware.
+
+- Step1. Check PulseAudio Status  
+
+Run **pactl info**, You will see the output as below. 
+
+```
+respeaker@v2:~$ pactl info
+Server String: /run/user/1000/pulse/native
+Library Protocol Version: 33
+Server Protocol Version: 33
+Is Local: yes
+Client Index: 5
+Tile Size: 65496
+User Name: respeaker
+Host Name: v2
+Server Name: pulseaudio
+Server Version: 12.2.0-rebootstrapped
+Default Sample Specification: s16le 2ch 48000Hz
+Default Channel Map: front-left,front-right
+Default Sink: alsa_output.platform-sound_0.seeed-2ch
+Default Source: alsa_input.platform-sound_0.seeed-8ch
+Cookie: 971b:7ffb
+```
+
+- Step2. C++ Coding
+
+The example [pulse_snowboy_1b_test.cc](http://wiki.seeedstudio.com/librespeaker_doc/pulse_snowboy_1b_test_8cc-example.html) shows how to use the VepAecBeamformingNode node, the Snowboy1bDoaKwsNode node and the ReSpeaker supervisor, to make a simple snowboy KWS demo. This example supports keyword "alexa" and "snowboy", adjustable target gain level and wav log.
+
+
+```shell
+cd ~
+#copy above link code to pulse_snowboy_1b_test.cc, then press Ctrl+X, and Y to save the file.
+nano pulse_snowboy_1b_test.cc
+# compile
+g++ pulse_snowboy_1b_test.cc -o pulse_snowboy_1b_test -lrespeaker -lsndfile -fPIC -std=c++11 -fpermissive -I/usr/include/respeaker/ -DWEBRTC_LINUX -DWEBRTC_POSIX -DWEBRTC_NS_FLOAT -DWEBRTC_APM_DEBUG_DUMP=0 -DWEBRTC_INTELLIGIBILITY_ENHANCER=0
+# run, then say "snowboy" to test the KWS engine
+./pulse_snowboy_1b_test
+# show the help page of this example
+./pulse_snowboy_1b_test --help
+```
+
+Here is the output as below. We can see the DOA as 180, hotword dectect count as 2 times, the major audio comes from channel 2. 
+
+```
+collector: 1, vep_1beam: 0, snowboy_kws: 0
+collector: 1, vep_1beam: 0, snowboy_kws: 0
+collector: 0, vep_1beam: 0, snowboy_kws: 0
+(7617ms)DEBUG -- DoA: 180 Vep: 8451, 9135, 8644, 8805, 8088, 7921, 3373 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8455, 9144, 8650, 8811, 8097, 7914, 3380 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8458, 9149, 8652, 8816, 8102, 7904, 3383 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8460, 9149, 8650, 8822, 8100, 7888, 3383 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8459, 9144, 8642, 8825, 8094, 7870, 3377 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8458, 9130, 8626, 8823, 8085, 7853, 3368 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7617ms)DEBUG -- DoA: 180 Vep: 8456, 9096, 8579, 8816, 8070, 7834, 3352 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7618ms)DEBUG -- DoA: 180 Vep: 8454, 9053, 8520, 8806, 8047, 7811, 3331 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7618ms)DEBUG -- DoA: 180 Vep: 8458, 9034, 8496, 8788, 8008, 7779, 3320 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(7618ms)DEBUG -- DoA: 180 Vep: 8460, 9009, 8478, 8770, 7965, 7744, 3307 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+hotword_count = 2
+```
+
+!!!Note
+    If you need to see the process audio, you can set **bool enable_wav = false;** to true. Then you can get **pulse_snowboy_1b_test.wav** processed audio file.
+
+**2. ALSA API**
+
+ALSA stands for Advanced Linux Sound Architecture. It provides audio and MIDI functionality to the Linux operating system. If you want a more efficient(low latency and low CPU consumption) way to capture voice, ALSA will be your choice.
+
+- Step1. Audio Setting 
+
+If pulseaudio is running, the output of the **ps aux|grep pulse** will be as below. 
+
+```shell
+pi@raspberrypi:~ $ ps aux|grep pulse
+pi         978  0.1  0.9 112456  9236 ?        S<l  18:48   0:01 /usr/bin/pulseaudio --start --log-target=syslog
+pi        1247  0.0  0.0   4376   564 pts/0    S+   18:57   0:00 grep --color=auto pulse
+```
+
+please make sure that **pulseaudio is not running** by below commands: 
+
+```shell
+$ pulseaudio --k
+$ ps aux|grep pulse
+pi        1355  0.0  0.0   4376   568 pts/0    S+   16:48   0:00 grep --color=auto pulse
+```
+    
+- Step2. C++ Coding
+
+The example [alsa_snips_1b_test.cc](http://wiki.seeedstudio.com/librespeaker_doc/alsa_snips_1b_test_8cc-example.html) shows how to use the AlsaCollectorNode node with VepAecBeamformingNode node and Snips1bDoaKwsNode node.
+
+
+```shell
+cd ~
+#copy above link code to alsa_snips_1b_test.cc, then press Ctrl+X, and Y to save the file.
+nano alsa_snips_1b_test.cc
+# compile
+g++ alsa_snips_1b_test.cc -o alsa_snips_1b_test -lrespeaker -lsndfile -fPIC -std=c++11 -fpermissive -I/usr/include/respeaker/ -DWEBRTC_LINUX -DWEBRTC_POSIX -DWEBRTC_NS_FLOAT -DWEBRTC_APM_DEBUG_DUMP=0 -DWEBRTC_INTELLIGIBILITY_ENHANCER=0
+# run, then say "hey, snips" to test the KWS engine
+./alsa_snips_1b_test
+# show the help page of this example
+./alsa_snips_1b_test --help
+```
+
+Here is the output as below. We can see the DOA as 180, hotword dectect count as 3 times, the major audio comes from channel 2. 
+
+```
+collector: 3, vep_1beam: 0, snips_kws: 0
+collector: 3, vep_1beam: 0, snips_kws: 0
+collector: 3, vep_1beam: 0, snips_kws: 0
+(48683ms)DEBUG -- DoA: 180 Vep: 0, 0, 0, 0, 0, 0, 0 Chan: 2  [snips_1b_doa_kws_node.cc:423]
+(48683ms)DEBUG -- DoA: 180 Vep: 0, 0, 0, 0, 0, 0, 0 Chan: 2  [snips_1b_doa_kws_node.cc:423]
+(48683ms)DEBUG -- DoA: 180 Vep: 0, 0, 0, 0, 0, 0, 0 Chan: 2  [snips_1b_doa_kws_node.cc:423]
+(48683ms)DEBUG -- DoA: 180 Vep: 0, 0, 0, 0, 0, 0, 0 Chan: 2  [snips_1b_doa_kws_node.cc:423]
+(48683ms)DEBUG -- DoA: 180 Vep: 0, 0, 0, 0, 0, 0, 0 Chan: 2  [snips_1b_doa_kws_node.cc:423]
+hotword_count = 3
+```
+
+**3. WAV FILE**
+
+If you need to test the performance of KWS, ASR, NLP or something else, it is not a good way to test it with your mouth repeatly. It is recommanded to record a testing recording first, and just send the recording to your program to get the result.
+
+[file_1beam_test.cc](http://wiki.seeedstudio.com/librespeaker_doc/file_1beam_test_8cc-example.html) shows how to read a 8-channels 16K 16-bit wav file, send the recording stream to VepAecBeamformingNode node and detect hotword from the output beam. This example supports keyword "alexa", "snowboy" and "heysnips", adjustable target gain level and wav log.
+
+
+```shell
+cd ~
+#copy above link code to file_1beam_test.cc, then press Ctrl+X, and Y to save the file.
+nano file_1beam_test.cc
+# compile
+g++ file_1beam_test.cc -o file_1beam_test -lrespeaker -lsndfile -fPIC -std=c++11 -fpermissive -I/usr/include/respeaker/ -DWEBRTC_LINUX -DWEBRTC_POSIX -DWEBRTC_NS_FLOAT -DWEBRTC_APM_DEBUG_DUMP=0 -DWEBRTC_INTELLIGIBILITY_ENHANCER=0
+# record a testing wav file to test keyword "snowboy"
+arecord -Dhw:0,0 -f S16_LE -r 16000 -c 8 my_test.wav
+# run
+./file_1beam_test -f my_test.wav
+# you need to press Ctrl+C to exit when the log is stopped
+```
+
+Here is the output as below. We can see the DOA as 180, hotword dectect count as 3 times, the major audio comes from channel 2. 
+
+```
+.............................(6606ms)DEBUG -- DoA: 180 Vep: 1593, 1713, 1658, 1710, 1927, 1784, 1848 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1574, 1691, 1620, 1672, 1910, 1767, 1820 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1555, 1668, 1580, 1647, 1893, 1746, 1789 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1539, 1646, 1550, 1624, 1877, 1733, 1764 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1523, 1616, 1525, 1601, 1854, 1702, 1736 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1494, 1571, 1504, 1583, 1827, 1664, 1698 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6606ms)DEBUG -- DoA: 180 Vep: 1465, 1517, 1487, 1562, 1780, 1603, 1660 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6607ms)DEBUG -- DoA: 180 Vep: 1442, 1485, 1468, 1541, 1730, 1561, 1630 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6607ms)DEBUG -- DoA: 180 Vep: 1421, 1474, 1447, 1510, 1693, 1525, 1605 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+(6607ms)DEBUG -- DoA: 180 Vep: 1424, 1465, 1445, 1507, 1680, 1507, 1589 Chan: 2 Chan_real: 2  [snowboy_1b_doa_kws_node.cc:429]
+hotword_count = 3
+```
+
+
+**4. Another way to output processed audio: ALOOP** 
+
+AloopOutputNode is designed to redirect the processed audio stream into a specific Alsa device(Loopback PCM). In this way, some third-party voice assistants can get  real-time processed audio stream from a PCM device, which provides a convenient way to build your application.
+
+[alsa_aloop_test.cc](http://wiki.seeedstudio.com/librespeaker_doc/alsa_aloop_test_8cc-example.html) shows how to achieve it. To run this example, you have to run 'sudo modprobe snd-aloop' first. And make sure "pulseaudio" doesn't start, then, after runing this example, you can open another terminal and use `arecord -Dhw:Loopback,1,0 -c 1 -r 16000 -f S16_LE loop_test.wav` to arecord the processed audio stream. Further more, you can setup a third party voice assistant to capture voice from "hw:Loopback,1,0", to run the assistant directly. Check [respeaker::AloopOutputNode Class Reference](http://wiki.seeedstudio.com/librespeaker_doc/classrespeaker_1_1AloopOutputNode.html) for more details of this node.
+
+```shell
+cd ~
+#copy above link code to file_1beam_test.cc, then press Ctrl+X, and Y to save the file.
+nano alsa_aloop_test.cc
+# compile
+g++ alsa_aloop_test.cc -o alsa_aloop_test -lrespeaker -lsndfile -fPIC -std=c++11 -fpermissive -I/usr/include/respeaker/ -DWEBRTC_LINUX -DWEBRTC_POSIX -DWEBRTC_NS_FLOAT -DWEBRTC_APM_DEBUG_DUMP=0 -DWEBRTC_INTELLIGIBILITY_ENHANCER=0
+```
+
+## Respeakerd Aduio Process
+
+Respeakerd is the server application for the microphone array solutions of SEEED, based on librespeaker which combines the audio front-end processing algorithms.
+
+The guide of respeakerd can be found at [here](https://github.com/respeaker/respeakerd/tree/master). Download that repository to your Pi. Don't forget to do `Alexa authorization` and update avs `sudo pip install -U avs` before you run python client of respeakerd `python ~/respeakerd/clients/Python/demo_pi_vep_alexa.py`.
+
+
+
+
 ## FAQs
 
 **Q1: How to change the senstivity of the wake up word?**
@@ -1594,7 +1724,7 @@ Once the ReSpeaker Core v2.0 reboot, you can wake up it with your own hot word.
 
 
 Tip!!!
-    The defualt file is **umdl** which is released by the snowboy company,and the file you created is **pmdl** which means personal.
+​    The defualt file is **umdl** which is released by the snowboy company,and the file you created is **pmdl** which means personal.
 
 
 
@@ -1731,6 +1861,12 @@ Here are the detail instructions.
 The root cause is that the old SD cards do not work with linux system. Please change to recent SD cards, which supports all the eMMC commands, such as ScanDisk Ultra.
 
 ## Resources
+- **[Algorithms]** [Audio front-end processing algorithms including AEC, Beamforming, NS and KWS](https://github.com/respeaker/respeakerd)
+- **[Google Assistant]** [Google Assistant Demo](https://github.com/respeaker/googleassistant_respeakerd)
+- **[Alexa]** [Alexa Voice Service C++ SDK for ReSpeaker Core v2.0](https://github.com/respeaker/avs-device-sdk)
+- **[Alexa/DuerOS]** [Alexa Voice Service & DuerOS Python SDK](https://github.com/respeaker/avs)
+- **[Microsoft]** [Microsoft Speech Translation Demo](https://github.com/respeaker/Python-Speech-Translate)
+- **[Pixel]** [RGB LEDs library](https://github.com/respeaker/pixel_ring)
 - **[PDF]** [Download PDF of This Wiki](https://github.com/SeeedDocument/Respeaker_V2/raw/master/res/ReSpeaker_Core_v2.pdf)
 - **[PDF]** [Rockchip RK3229 Datasheet V1.1](https://github.com/SeeedDocument/Respeaker_V2/raw/master/res/Rockchip%20RK3229%20Datasheet%20V1.1%2020151209.pdf)
 - **[PDF]** [Dimensions for Board](https://github.com/SeeedDocument/Respeaker_V2/raw/master/res/ReSpeaker_Core_v2_Demensions.pdf)
@@ -1742,6 +1878,8 @@ The root cause is that the old SD cards do not work with linux system. Please ch
 - **[MoreReading]** [Mraa Python documents page](http://iotdk.intel.com/docs/master/mraa/python/)
 - **[MoreReading]** [Intel Mraa SDK](https://software.intel.com/en-us/mraa-sdk/documentation )
 - **[MoreReading]** [Snips SDK](https://snips.gitbook.io/documentation/installing-snips/respeaker-core-2.0)
+- **[Source Code]** [ReSpeaker Core v2.0 source code](https://github.com/respeaker/rk-linux-develop)
+
 
 ## Projects
 
@@ -1775,3 +1913,4 @@ The basic function of the reception service is to greet visitors, make them feel
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

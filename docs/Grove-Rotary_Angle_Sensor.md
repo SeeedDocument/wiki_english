@@ -1,5 +1,5 @@
 ---
-title: Grove - Rotary Angle Sensor
+name: Grove - Rotary Angle Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Rotary-Angle-Sensor-p-770.html
 oldwikiname: Grove_-_Rotary_Angle_Sensor
@@ -14,7 +14,7 @@ tags: grove_analog, io_3v3, io_5v, plat_duino, plat_linkit, plat_bbg, plat_wio, 
 
 The rotary angle sensor produces analog output between 0 and Vcc (5V DC with Seeeduino) on its D1 connector. The D2 connector is not used. The angular range is 300 degrees with a linear change in value. The resistance value is 10k ohms, perfect for Arduino use. This may also be known as a “potentiometer ”.
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor-p-770.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor-p-770.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 There is another product, Grove - Rotary Angle Sensor(P). What does “P” mean? “P” is for “panel mount” in this product.It is the sister version of Grove - Rotary Angle Sensor. They are identical except the Grove connecter is moved to the back so that you can easily use it as a neat and wire-free human interface device.
 
@@ -29,7 +29,7 @@ There is another product, Grove - Rotary Angle Sensor(P). What does “P” mean
     </tr>
 </table>
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/depot/grove-rotary-angle-sensorp-p-1242.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/depot/grove-rotary-angle-sensorp-p-1242.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 ## Version
 
@@ -123,7 +123,7 @@ mm
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 ## Getting Started
 
@@ -200,8 +200,167 @@ void loop()
 
 - **Step 2.** Adjust Grove-Rotary Angle Sensor and we will see the Grove-LED changes the brightness.
 
+### Play with Codecraft
 
-### Play With Raspberry Pi
+#### Hardware
+
+**Step 1.** Connect a Grove - Rotary Angle Sensor to port A0, and connect a Grove - Red LED to port D3 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-Rotary_Angle_Sensor/master/img/cc_Rotary_Angle_Sensor.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, the brightness of the LED will vary depending on the angle of the sensor, and the angle value displayed in the Serial Monitor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Rotary Angle Sensor |
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-Rotary_Angle_Sensor/raw/master/img/rorary_s.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor--p-1242.html)|
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the rotary sensor to port A0 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-Rotary_Angle_Sensor/raw/master/img/Rotary_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the rotary angle sensor to **any Analog Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd grove.py/grove
+python grove_rotary_angle_sensor.py 0
+
+```
+
+Following is the grove_rotary_angle_sensor.py code.
+
+```python
+
+import math
+import sys
+import time
+from grove.adc import ADC
+
+
+class GroveRotaryAngleSensor(ADC):
+    def __init__(self, channel):
+        self.channel = channel
+        self.adc = ADC()
+    
+    @property
+    def value(self):
+        return self.adc.read(self.channel)
+
+
+Grove = GroveRotaryAngleSensor
+
+
+def main():
+    if len(sys.argv) < 2:
+        print('Usage: {} adc_channel'.format(sys.argv[0]))
+        sys.exit(1)
+
+    sensor = GroveRotaryAngleSensor(int(sys.argv[1]))
+
+    while True:
+        print('Rotary Value: {}'.format(sensor.value))
+        time.sleep(.2)
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result
+
+    
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_rotary_angle_sensor.py 0
+Rotary Value: 932
+Rotary Value: 931
+Rotary Value: 931
+Rotary Value: 931
+Rotary Value: 933
+Rotary Value: 931
+Rotary Value: 742
+Rotary Value: 666
+Rotary Value: 666
+Rotary Value: 549
+Rotary Value: 520
+Rotary Value: 499
+Rotary Value: 430
+Rotary Value: 430
+Rotary Value: 321
+Rotary Value: 286
+Rotary Value: 205
+Rotary Value: 127
+Rotary Value: 88
+Rotary Value: 0
+Rotary Value: 0
+Rotary Value: 0
+Rotary Value: 0
+Rotary Value: 0
+Rotary Value: 0
+Rotary Value: 0
+^CTraceback (most recent call last):
+  File "grove_rotary_angle_sensor.py", line 66, in <module>
+    main()
+  File "grove_rotary_angle_sensor.py", line 62, in main
+    time.sleep(.2)
+KeyboardInterrupt
+
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+!!!Notice
+        You may have noticed that for the analog port, the silkscreen pin number is something like **A0, A1**, however in the command we use parameter **0** and **1**, just the same as digital port. So please make sure you plug the module into the correct port, otherwise there may be pin conflicts.
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 **Hardware**
 
@@ -368,6 +527,7 @@ void loop() {
 -  **[Eagle&PDF]** [Grove-Rotary Angle Sensor v1.2 Schematic File](https://github.com/SeeedDocument/Grove-Rotary_Angle_Sensor/raw/master/res/Grove%20-%20Rotary%20Angle%20Sensor%20v1.2.zip)
 -  **[Eagle&PDF]** [Grove - Rotary Angle Sensor(P) v1.1 Schematic File](https://github.com/SeeedDocument/Grove-Rotary_Angle_Sensor/raw/master/res/Grove%20%20-%20Rotary%20Angle%20Sensor(P)%20v1.1.zip)
 -  **[Library]** [Github repository for Rotary Angle Sensor](https://github.com/Seeed-Studio/Grove_Rotary_Angle_Sensor)
+-  **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-Rotary_Angle_Sensor/master/res/Grove_Rotary_Angle_Sensor_CDC_File.zip)
 
 ## Projects
 
@@ -383,4 +543,4 @@ void loop() {
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

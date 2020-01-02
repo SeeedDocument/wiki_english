@@ -1,5 +1,5 @@
 ---
-title: Relay Shield v3.0
+name: Relay Shield v3.0
 category: Shield
 bzurl: https://www.seeedstudio.com/Relay-Shield-v3.0-p-2440.html
 oldwikiname: Relay Shield v3.0
@@ -35,7 +35,7 @@ The Relay Shield features four high quality relays and provides NO/NC interfaces
 |---|:---:|:---:|:---:|:---:|
 |Supply Voltage	|4.75	|5|	5.25	|VDC|
 |Working Current	|8|	-|	250|	mA|
-|Switching Voltage|	-|	-|	35|	VDC|
+|Switching Voltage|	-|	-|	30|	VDC|
 |Switching Current|	-|	-|	8|A|
 |Frequency|	-|	1|	-|	HZ|
 |Switching Power|	-|	-|	70|	W|
@@ -174,9 +174,10 @@ void loop()  {
 ---
 - [FAQ of Relay Shield ](http://support.seeedstudio.com/knowledgebase/articles/462030-relay-shield-sku-sld01101p)
 
+
 ## Resource
 ---
 - [Relay Shield v3.0](https://github.com/SeeedDocument/Relay_Shield_v3.0/raw/master/res/Relay_Shield_v3.0.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

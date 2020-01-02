@@ -1,5 +1,5 @@
 ---
-title: Grove - LED Bar
+name: Grove - LED Bar
 category: Display
 bzurl: https://seeedstudio.com/Grove-LED-Bar-p-1178.html
 oldwikiname: Grove_-_LED_Bar
@@ -12,7 +12,7 @@ sku: 104030002
 
 Grove – LED Bar is comprised of a 10 segment LED gauge bar and an MY9221 LED controlling chip. It can be used as an indicator for remaining battery life, voltage, water level, music volume or other values that require a gradient display. There are 10 LED bars in the LED bar graph: one red, one yellow, one light green, and seven green bars. Demo code is available to get you up and running quickly. It lights up the LEDs sequentially from red to green, so the entire bar graph is lit up in the end. Want to go further? Go ahead and code your own effect.
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/s/Grove-LED-Bar-v2.0-p-2474.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/s/Grove-LED-Bar-v2.0-p-2474.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 Version
 --------
@@ -36,6 +36,22 @@ Features
     More details about Grove modules please refer to [Grove System](http://wiki.seeedstudio.com/Grove_System/)
 
 
+## Specification
+
+| Parameter                                                   | Value/Range  |
+|-------------------------------------------------------------|--------------|
+| Operating voltage                                           | 3.3/5V       |
+| Operation Temperature                                       | -20℃ to +80℃ |
+| Peak Emission Wavelength-RED(Current 20mA)                  | 630-637nm    |
+| Peak Emission Wavelength-Yellow Green(Current  20mA )       | 570-573nm    |
+| Peak Emission Wavelength-Yellow(Current  20mA )             | 585-592nm    |
+| Luminous Intensity Per Segment-RED(Current  20mA )          | 50-70mcd     |
+| Luminous Intensity Per Segment-Yellow Green(Current  20mA ) | 28-35mcd     |
+| Luminous Intensity Per Segment-Yellow(Current  20mA )       | 45-60mcd     |
+| LED segment                                                 | 10           |
+| Size                                                        | 40mm * 20mm  |
+
+
 Platforms Supported
 -------------------
 
@@ -44,7 +60,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Getting Started
@@ -429,3 +445,4 @@ Resources
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: BLE (dual) Bee v1.0
+name: BLE (dual) Bee v1.0
 category: Wireless
 bzurl: https://www.seeedstudio.com/BLE(dual-model)-Bee-p-2406.html
 oldwikiname:  BLE (dual) Bee v1.0
@@ -1101,4 +1101,4 @@ After downloading program, open two serial terminal windows, the LEDs on Bluetoo
 *   [PDF_BLE(dual)_bee_v1.0](https://github.com/SeeedDocument/BLE_dual_Bee_v1.0/raw/master/res/BLE-dual-bee_v1.0.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

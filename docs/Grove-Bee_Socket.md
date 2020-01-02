@@ -1,5 +1,5 @@
 ---
-title: Grove - Bee Socket
+name: Grove - Bee Socket
 category: Communication
 bzurl: https://www.seeedstudio.com/Grove-Bee-Socket-p-1449.html
 oldwikiname:  Grove - Bee Socket
@@ -69,4 +69,4 @@ If you need further information about how to communicate, please refer to WIKI p
 [Bee Socket Eagle File](https://github.com/SeeedDocument/Grove-Bee_Socket/raw/master/res/Bee_Socket_Eagle_File.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

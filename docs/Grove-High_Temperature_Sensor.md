@@ -1,5 +1,5 @@
 ---
-title: Grove - High Temperature Sensor
+name: Grove - High Temperature Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-High-Temperature-Sensor-p-1810.html
 oldwikiname: Grove_-_High_Temperature_Sensor
@@ -15,7 +15,7 @@ tags: grove_analog, io_3v3, io_5v, plat_duino, plat_linkit, plat_pi
 Thermocouples are very sensitive devices. It requires a good amplifier with cold-junction compensation. The Grove - High Temperatire Sensor uses a K-Type themocouple and a thermocouple amplifier that measures ambient temperature using thermistor for cold-junction compensation. The detectable range of this Sensor is -50~600°C , and the accuracy is ±(2.0% + 2°C).
 
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/depot/Grove-High-Temperature-Sensor-p-1810.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/depot/Grove-High-Temperature-Sensor-p-1810.html" target="_blank"><img src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" width="210" height="41"  border=0 /></a></p>
 
 ## Version
 
@@ -53,7 +53,7 @@ Thermocouples are very sensitive devices. It requires a good amplifier with cold
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Getting Started
@@ -225,10 +225,26 @@ pi@raspberrypi:~/GrovePi/Software/Python/grove_hightemperature_sensor $ python h
 [room temperature: 20.60°C][probe temperature: 32.19°C]
 ```
 
+## FAQs
 
 
-## Tech Support
-Please do not hesitate to contact **techsupport@seeed.cc** if you require further information.
+**Q1: How to do Grove-High temperature sensor calibration?**
+
+**A1:**  Please download the [libray](https://github.com/SeeedDocument/Grove_High_Temperature_Sensor/raw/master/resource/Grove_HighTemp_Sensor-master_cal.zip) and then follow below instructions.  
+
+- Step 1. run the getTemperature-calibration-measurement.ino to get below info. 
+
+```
+10:02:17.792 -> "You have Scucessfully record the sample data,please copy the following line of code to your clipboard and replace the first line of function loop()
+10:02:17.935 ->       double TMP[]={10.29,10.29,10.29,10.29,10.29,10.29,10.29,10.29,10.29,10.29};
+10:02:18.038 ->       double Real_temperature[]={10.00,20.00,30.00,40.00,50.00,60.00,70.00,80.00,90.00,100.00};
+```
+
+- Step 2. paste to getTemperature-calibration_demo.ino and run the calibration.
+
+- Step 3. run getTemperature.ino to read the temperature.  
+
+
 
 ## Resources
 
@@ -245,4 +261,4 @@ Please do not hesitate to contact **techsupport@seeed.cc** if you require furthe
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_High_Temperature_Sensor -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

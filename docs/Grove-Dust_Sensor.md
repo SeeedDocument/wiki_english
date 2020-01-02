@@ -1,5 +1,5 @@
 ---
-title: Grove - Dust Sensor
+name: Grove - Dust Sensor
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Dust-Sensor-p-1050.html
 oldwikiname: Grove - Dust Sensor
@@ -13,6 +13,9 @@ tags: plat_duino
 
 This Dust Sensor gives a good indication of the air quality in an environment by measuring the dust concentration. The Particulate Matter level (PM level) in the air is measured by counting the Low Pulse Occupancy time (LPO time) in given time unit. LPO time is proportional to PM concentration. This sensor can provide reliable data for air purifier systems; it is responsive to PM of diameter 1μm.
 
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4df5kaaKa6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 !!!warning
     - This sensor uses counting method to measure dust concentration, not weighing method, and the unit is pcs/L or pcs/0.01cf.
     - Please pay attention to the warnings listed here:
@@ -22,7 +25,7 @@ This Dust Sensor gives a good indication of the air quality in an environment by
         - Following widgets (red rectangle marked) is used only for the factory setting. Please **DO NOT** change the default configuration.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Dust-Sensor-p-1050.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Dust-Sensor-p-1050.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 ## Version
 
@@ -68,7 +71,7 @@ This Dust Sensor gives a good indication of the air quality in an environment by
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Application Ideas
@@ -261,6 +264,13 @@ More attention is being paid to the environmental air quality nowadays because t
 
 [![](https://raw.githubusercontent.com/SeeedDocument/Grove_Dust_Sensor/master/image/200px-Wiki_makeitnow_logo.png)](http://www.instructables.com/id/Air-Quality-Test-Box/?ALLSTEPS)
 
+
+## FAQs
+
+**Q1: How can Grove - Dust Sensor (with 5V logic) be used with Seeeduino Stalker (with 3.3V logic)?**
+
+A1: The output signal from Dust Sensor needs to be scaled down to 3.3V logic to work with Seeeduino Stalker (or any such board). The output from Dust Sensor is 0.7V for Logic Low and greater than 4.0V for Logic High. You could use a voltage divider to scale the output to be compatible with 3.3V logic or use a TTL logic level translator.
+
 ## Resources
 
 - **[Datasheet]** [Grove-Dust_sensor datasheet](https://github.com/SeeedDocument/Grove_Dust_Sensor/raw/master/resource/Grove_-_Dust_sensor.pdf)
@@ -285,4 +295,4 @@ More attention is being paid to the environmental air quality nowadays because t
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/SeeedStudio/seeed-lora-iotea-solution-b5ee95/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

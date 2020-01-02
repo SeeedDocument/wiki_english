@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker Mic Array v2.0
+name: ReSpeaker Mic Array v2.0
 category: ReSpeaker
 bzurl:
 oldwikiname: ReSpeaker Mic Array v2.0
@@ -21,9 +21,9 @@ The ReSpeaker Mic Array v2.0 has two firmware versions available, one including 
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/ReSpeaker-Mic-Array-v2.0-p-3053.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/ReSpeaker-Mic-Array-v2.0-p-3053.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
-<p style="text-align:center"><a href="https://www.amazon.com/dp/B07D29L3Q1" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/amaon.png"  width="300" height="48"  border=0/></a></p>
+<p style=":center"><a href="https://www.amazon.com/dp/B07D29L3Q1" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/amaon.png"  width="300" height="48"  border=0/></a></p>
 
 
 
@@ -63,7 +63,7 @@ The ReSpeaker Mic Array v2.0 has two firmware versions available, one including 
 - Dimensions: 70mm (Diameter)  
 - 3.5mm Audio jack output socket
 - Power consumption: 5V, 180mA with led on and 170mA with led off
-- Max Sample Rate: 16Khz
+- Max Sample Rate: 48Khz
 
 ## Hardware Overview
 
@@ -365,9 +365,10 @@ import usb.util
 import time
 
 dev = usb.core.find(idVendor=0x2886, idProduct=0x0018)
-#print dev
+
 if dev:
     Mic_tuning = Tuning(dev)
+    print Mic_tuning.direction
     while True:
         try:
             print Mic_tuning.direction
@@ -527,6 +528,56 @@ wf.writeframes(b''.join(frames))
 wf.close()
 ```
 
+- Step 6. If you want to extract channel 0 data from 6 channels, please follow below code. For other channel X, please change [0::6] to [X::6].
+
+```
+import pyaudio
+import wave
+import numpy as np
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 6 # change base on firmwares, 1_channel_firmware.bin as 1 or 6_channels_firmware.bin as 6
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 3  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 3
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = [] 
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    # extract channel 0 data from 6 channels, if you want to extract channel 1, please change to [1::6]
+    a = np.fromstring(data,dtype=np.int16)[0::6]
+    frames.append(a.tostring())
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(1)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
+
 **For Windows:** 
 
 - Step 1. We run below command to install pyaudio.
@@ -588,7 +639,7 @@ MacBook-Air:Desktop XXX$ python record.py
 - Step 1. Get ODAS and build it.
 
 ```
-sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev
+sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev libgconf-2-4
 sudo apt-get install cmake
 git clone https://github.com/introlab/odas.git
 mkdir odas/build
@@ -599,19 +650,9 @@ make
 
 - Step 2. Get [ODAS Studio](https://github.com/introlab/odas_web/releases)  and open it.
 
-- Step 3. The odascore will be at odas/bin/odascore, the config file is [odas.cfg](https://github.com/respeaker/usb_4_mic_array/blob/master/odas.cfg). Please change odas.cfg based on your sound card number.
-
-```
-interface: {
-    type = "soundcard";
-    card = 1;
-    device = 0;
-}
-```
+- Step 3. The odascore will be at **odas/bin/odaslive**, the **config file** is [odas.cfg](https://raw.githubusercontent.com/respeaker/usb_4_mic_array/master/odas.cfg). 
 
 - Step 4. Upgrade mic array with 6_channels_firmware.bin which includes 4 channels raw audio data.
-
-
 
 <iframe width="800" height="500" src="https://www.youtube.com/embed/K5gZabfaaPI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -755,6 +796,11 @@ A3: Yes, we can connect the mic array v2.0 to raspberry usb port and follow [Ras
 
 A4: Yes, thanks for Yuki sharing the package for integrating [ReSpeaker Mic Array v2 with ROS (Robot Operating System) Middleware](https://github.com/furushchev/respeaker_ros).
 
+**Q5: How to enable 3.5mm audio port to receive the signal as well as usb port?**
+
+A5: Please download the [new firmware](https://github.com/SeeedDocument/ReSpeaker_Mic_Array_V2/raw/master/res/i2s_i1o2.bin) and burn the XMOS by following [How to update firmware](http://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/#update-firmware).
+
+
 
 ## Resource
 - **[PDF]** [ReSpeaker MicArray v2.0 Product Brief](https://github.com/SeeedDocument/ReSpeaker_Mic_Array_V2/raw/master/res/ReSpeaker%20MicArray%20v2.0%20Product%20Brief.pdf)
@@ -769,3 +815,4 @@ A4: Yes, thanks for Yuki sharing the package for integrating [ReSpeaker Mic Arra
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

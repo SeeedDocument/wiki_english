@@ -1,5 +1,5 @@
 ---
-title: G1" Water Flow Sensor
+name: G1" Water Flow Sensor
 category: MakerPro
 bzurl: https://www.seeedstudio.com/g34-water-flow-sensor-p-1083.html?cPath=144_151
 oldwikiname:  G1" Water Flow Sensor
@@ -322,4 +322,4 @@ Yes, it's usage is safe for human consumption. It is frequently used on drinking
 *   [datasheet for the material](http://wiki.seeedstudio.com/images/4/4e/YEE70G30HSLNC..pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

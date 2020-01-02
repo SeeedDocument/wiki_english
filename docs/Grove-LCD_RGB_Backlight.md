@@ -1,5 +1,5 @@
 ---
-title: Grove - LCD RGB Backlight
+name: Grove - LCD RGB Backlight
 category: Display
 bzurl: https://www.seeedstudio.com/Grove-LCD-RGB-Backlight-p-1643.html
 oldwikiname: Grove_-_LCD_RGB_Backlight
@@ -18,7 +18,7 @@ a love heart or some other foreign characters? Just take advantage of this featu
 This product is a replacement of Grove - Serial LCD. If you are looking for primitive 16x2 LCD modules, we
 have green yellow backlight version and blue backlight version on sale also.
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/Grove-LCD-RGB-Backlight-p-1643.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/Grove-LCD-RGB-Backlight-p-1643.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 
 !!!Note
@@ -64,7 +64,7 @@ have green yellow backlight version and blue backlight version on sale also.
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 ## Application Ideas
 
@@ -181,6 +181,30 @@ void loop()
 ```
 
 - **Step 4.** We will see the hello world on LCD.
+
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Using a Grove cable connect Grove - LCD  RGB Backlight to Seeeduino's I2C port. If you are using Arduino, please take advantage of a Base Shield.
+
+**Step 2.** Link Seeedino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_LCD_RGB_Backlight/master/img/cc_LCD_RGB_Backlight.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see "hello, world!" and system running time displayed in the LCD.
 
 ### Play With Raspberry Pi
 
@@ -317,10 +341,82 @@ if __name__=="__main__":
 - Q1: How to use multiple Grove-LCD RGB Backlight? 
     - A1: Please refer to [Arduino Software I2C user guide](http://wiki.seeedstudio.com/Arduino_Software_I2C_user_guide/).
 
+- Q2: How to use button to switch Grove RGB LCD to display different pages? 
+    - A2: Here is the code. 
+
+```c++
+
+#include <Wire.h>
+#include "rgb_lcd.h"
+
+rgb_lcd lcd;
+const int switchPin = 2;
+static int hits = 0;
+int switchState = 0;
+int prevSwitchState = 0;
+
+void setup() {
+    lcd.begin(16, 2);
+    pinMode(switchPin,INPUT);
+    Serial.begin(9600);
+    lcd.setCursor(0, 0);
+    lcd.print("Page 1");
+}
+
+void loop() {  
+  switchState = digitalRead(switchPin);
+  Serial.print("switchState:");Serial.println(switchState);
+  if (switchState != prevSwitchState) {
+    if (switchState == HIGH) {
+          hits = hits + 1;
+          delay(10);
+    }
+  }
+ 
+  Serial.print("hits:");Serial.println(hits);
+  if(hits==1)
+  {
+    Serial.println("Page 1");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Page 1");
+  }else
+  if(hits==2)
+  {
+   Serial.println("Page 2");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Page 2"); 
+  }else
+
+  if(hits==3)
+  {
+   Serial.println("Page 3");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Page 3"); 
+  }else
+  
+  if ( hits>=4)
+  {
+     hits = 0;
+     Serial.println("couter is reset");
+     Serial.println("Page 1");
+     lcd.clear();
+     lcd.setCursor(0, 0);
+     lcd.print("Page 1");
+  }
+delay(500);
+}
+```
+
 ## Resources
 
 - **[Library]** [Software Library](https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight/archive/master.zip)
 - **[Document]** [Github page for this document](https://github.com/SeeedDocument/Grove_LCD_RGB_Backlight)
+- **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_LCD_RGB_Backlight/master/res/Grove_LCD_RGB_Backlight_CDC_File.zip)
+- **[Datasheet]** [PCA9633](https://github.com/SeeedDocument/Grove_LCD_RGB_Backlight/raw/master/res/PCA9633.pdf)
+- **[Datasheet]** [JHD1313](https://github.com/SeeedDocument/Grove_LCD_RGB_Backlight/raw/master/res/JHD1313%20FP-RGB-1%201.4.pdf)
 
 ## Projects
 
@@ -335,4 +431,4 @@ if __name__=="__main__":
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tbdTTC3Jmgk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

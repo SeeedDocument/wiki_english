@@ -1,5 +1,5 @@
 ---
-title: LinkIt Smart 7688 Duo
+name: LinkIt Smart 7688 Duo
 category: LinkIt
 bzurl: https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html
 oldwikiname:
@@ -419,6 +419,10 @@ loop()
 You can now extend the Arduino sketch to drive other devices such as PWM, I2C devices and synchronize the states by extending the command messages between Arduino and the Linux side. If more peripheral types need to be included, you can use some external libraries to implement the communication protocol. One such protocol - Firmata is described in the following section.
 
 
+## FAQs
+
+[Here](https://docs.labs.mediatek.com/resource/linkit-smart-7688/en/faq) is the FAQ from Mediatek. 
+
 ##Resources
 
 * [Hardware Schematic files](https://raw.githubusercontent.com/SeeedDocument/LinkIt_Smart_7688_Duo/master/res/Hardware_Schematics.zip)
@@ -427,6 +431,7 @@ You can now extend the Arduino sketch to drive other devices such as PWM, I2C de
 * [MediaTek LinkIt? Smart 7688 Resources:](http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit_smart_7688/hdk_intro/index.gsp)
 * [How to flash the firmware via a USB drive](https://raw.githubusercontent.com/SeeedDocument/LinkIt_Smart_7688_Duo/master/res/Linkit_Smart_7688_DUO_Firmware.pdf)
 * [Certificates](https://raw.githubusercontent.com/SeeedDocument/LinkIt_Smart_7688_Duo/master/res/LinkIt_Smart_7688_Duo-Certificate.zip)
+* [Document]** [Mediatek](https://labs.mediatek.com/en/platform/linkit-smart-7688)
 
 ## Project
 
@@ -451,4 +456,4 @@ You can now extend the Arduino sketch to drive other devices such as PWM, I2C de
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/phigax/smart-lighting-and-notifications-1c8a1b/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

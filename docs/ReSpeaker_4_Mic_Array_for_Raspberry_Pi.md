@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker 4-Mic Array for Raspberry Pi
+name: ReSpeaker 4-Mic Array for Raspberry Pi
 category: ReSpeaker
 bzurl: https://www.seeedstudio.com/ReSpeaker-4-Mic-Array-for-Raspberry-Pi-p-2941.html
 oldwikiname:
@@ -15,13 +15,13 @@ ReSpeaker 4-Mic Array for Raspberry Pi is a quad-microphone expansion board for 
 
 Different from [ReSpeaker 2-Mics Pi HAT](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT-p-2874.html), this board is developed based on AC108, a highly integrated quad-channel ADC with I2S/TDM output transition for high definition voice capture, which allows the device to pick up sounds in a 3 meters radius. Besides, this 4-Mics version provides a super cool LED ring, which contains 12 APA102 programable LEDs. With that 4 microphones and the LED ring, Raspberry Pi would have ability to do VAD(Voice Activity Detection), estimate DOA(Direction of Arrival), do KWS(Keyword Search) and show the direction via LED ring, just like Amazon Echo or Google Home.
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/ukkOLqcm2CY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/uAQf0RKBNHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [![](https://github.com/SeeedDocument/Seeed-WiKi/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png)](https://www.seeedstudio.com/ReSpeaker-4-Mic-Array-for-Raspberry-Pi-p-2941.html)
 
 ## Features
 
-* Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B, Raspberry Pi 3 B and Raspberry Pi 3 B+)
+* Raspberry Pi compatible(Support Raspberry Pi Zero and Zero W, Raspberry Pi B+, Raspberry Pi 2 B, Raspberry Pi 3 B, Raspberry Pi 3 B+, Raspberry Pi 3 A+ and Raspberry Pi 4)
 * 4 Microphones
 * 3 meters radius voice capture
 * 2 Grove Interfaces
@@ -66,7 +66,7 @@ Mount ReSpeaker 4-Mic Array on Raspberry Pi, make sure that the pins are properl
 
 The AC108 codec is not supported by Pi kernel builds currently, we have to build it manually.
 
-- Step 1. Please Make sure running [the lastest Raspbian Operating System(debian 9)](https://www.raspberrypi.org/downloads/raspbian/) on Pi. *(updated at 2018.6.27)*
+- Step 1. Please Make sure running [the lastest Raspbian Operating System(debian 9)](https://www.raspberrypi.org/downloads/raspbian/) on Pi. *(updated at 2018.11.13)*
 
 - Step 2. Get the seeed voice card source code.
 
@@ -92,32 +92,37 @@ sudo raspi-config
 - Step 4. Check that the sound card name looks like this:
 
 ```
-pi@raspberrypi:~/seeed-voicecard $ arecord -L
+pi@raspberrypi:~ $ arecord -L
 null
     Discard all samples (playback) or generate zero samples (capture)
+jack
+    JACK Audio Connection Kit
+pulse
+    PulseAudio Sound Server
+default
 playback
-capture
-dmixed
-array
 ac108
-default:CARD=seeed4micvoicec
-    seeed-4mic-voicecard,
-    Default Audio Device
 sysdefault:CARD=seeed4micvoicec
-    seeed-4mic-voicecard,
+    seeed-4mic-voicecard, 
     Default Audio Device
 dmix:CARD=seeed4micvoicec,DEV=0
-    seeed-4mic-voicecard,
+    seeed-4mic-voicecard, 
     Direct sample mixing device
 dsnoop:CARD=seeed4micvoicec,DEV=0
-    seeed-4mic-voicecard,
+    seeed-4mic-voicecard, 
     Direct sample snooping device
 hw:CARD=seeed4micvoicec,DEV=0
-    seeed-4mic-voicecard,
+    seeed-4mic-voicecard, 
     Direct hardware device without any conversions
 plughw:CARD=seeed4micvoicec,DEV=0
-    seeed-4mic-voicecard,
+    seeed-4mic-voicecard, 
     Hardware device with all software conversions
+usbstream:CARD=seeed4micvoicec
+    seeed-4mic-voicecard
+    USB Stream Output
+usbstream:CARD=ALSA
+    bcm2835 ALSA
+    USB Stream Output
 ```
 
 If we want to change the alsa settings, we can use `sudo alsactl --file=ac108_asound.state store` to save it. And when we need to use the settings again, copy it to: `sudo cp ~/seeed-voicecard/ac108_asound.state /var/lib/alsa/asound.state`
@@ -174,6 +179,8 @@ pi@raspberrypi:~/4mics_hat $ source ~/env/bin/activate                   # activ
 
 ## DoA
 
+**DOA with Keywords**
+
 With DoA(Direction of Arrial), ReSpeaker 4-Mic Array is able to find the direction where the sound source is located.
 
 - Step 1. setup voice engine
@@ -196,6 +203,44 @@ pi@raspberrypi:~ $ source ~/env/bin/activate                    # activate the v
 ```
 (env) pi@raspberrypi:~/voice-engine $ cd ~/4mics_hat
 (env) pi@raspberrypi:~/4mics_hat $ python kws_doa.py
+```
+
+**DOA without Keywords**
+
+- Step 1. Setup the dependency
+
+```
+sudo apt-get install portaudio19-dev
+sudo pip install pyaudio
+sudo pip install webrtcvad
+sudo apt-get install python-numpy 
+sudo pip install pyusb
+```
+
+- Step 2. Run the vad_doa.py
+
+```
+cd ~
+git clone https://github.com/respeaker/mic_array.git
+cd mic_array
+nano vad_doa.py 
+#change CHANNELS = 8 to CHANNELS = 4 @line10
+python vad_doa.py 
+```
+
+- Step 3. Here is the output. 
+
+```
+1111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111110111111111111111111
+135
+10000000000000000000000000000000000000000000000000000000000000011111111111111111
+135
+11111111111111111111
+135
+1001111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111110000000
+135
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111
+135
 ```
 
 
@@ -275,6 +320,158 @@ python Smart_Fan.py
 - **Step 6. Let's try '快一点', '慢一点' and '关风扇'.**
 
 
+## Extract Voice
+
+We use [PyAudio python library](https://people.csail.mit.edu/hubert/pyaudio/) to extract voice.
+
+- Step 1, We need to run the following script to get the device index number of 4 Mic pi hat:
+
+```Python
+sudo pip install pyaudio
+cd ~
+nano get_index.py
+```
+
+- Step 2, copy below code and paste on get_index.py.
+
+```Python
+import pyaudio
+
+p = pyaudio.PyAudio()
+info = p.get_host_api_info_by_index(0)
+numdevices = info.get('deviceCount')
+
+for i in range(0, numdevices):
+        if (p.get_device_info_by_host_api_device_index(0, i).get('maxInputChannels')) > 0:
+            print "Input Device id ", i, " - ", p.get_device_info_by_host_api_device_index(0, i).get('name')
+```
+
+- Step 3, press Ctrl + X to exit and press Y to save.
+
+- Step 4, run 'sudo python get_index.py' and we will see the device ID as below.
+
+```
+Input Device id  2  -  seeed-4mic-voicecard: - (hw:1,0)
+```
+
+- Step 5, change `RESPEAKER_INDEX = 2` to index number. Run python script record.py to record a speech.
+
+```Python
+import pyaudio
+import wave
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 4 
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 5
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = []
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    frames.append(data)
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(RESPEAKER_CHANNELS)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
+- Step 6. If you want to extract channel 0 data from 4 channels, please follow below code. For other channel X, please change [0::4] to [X::4].
+
+```python
+import pyaudio
+import wave
+import numpy as np
+
+RESPEAKER_RATE = 16000
+RESPEAKER_CHANNELS = 4
+RESPEAKER_WIDTH = 2
+# run getDeviceInfo.py to get index
+RESPEAKER_INDEX = 2  # refer to input device id
+CHUNK = 1024
+RECORD_SECONDS = 3
+WAVE_OUTPUT_FILENAME = "output.wav"
+
+p = pyaudio.PyAudio()
+
+stream = p.open(
+            rate=RESPEAKER_RATE,
+            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            channels=RESPEAKER_CHANNELS,
+            input=True,
+            input_device_index=RESPEAKER_INDEX,)
+
+print("* recording")
+
+frames = [] 
+
+for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
+    data = stream.read(CHUNK)
+    # extract channel 0 data from 4 channels, if you want to extract channel 1, please change to [1::4]
+    a = np.fromstring(data,dtype=np.int16)[0::4]
+    frames.append(a.tostring())
+
+print("* done recording")
+
+stream.stop_stream()
+stream.close()
+p.terminate()
+
+wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+wf.setnchannels(1)
+wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
+wf.setframerate(RESPEAKER_RATE)
+wf.writeframes(b''.join(frames))
+wf.close()
+```
+
+## Realtime Sound Source Localization and Tracking
+
+[ODAS](https://github.com/introlab/odas) stands for Open embeddeD Audition System. This is a library dedicated to perform sound source localization, tracking, separation and post-filtering. Let's have a fun with it.
+
+- Step 1. Get ODAS and build it.
+
+```
+sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev libgconf-2-4
+sudo apt-get install cmake
+git clone https://github.com/introlab/odas.git
+mkdir odas/build
+cd odas/build
+cmake ..
+make
+```
+
+- Step 2. Get [ODAS Studio](https://github.com/introlab/odas_web/releases)  and open it.
+
+- Step 3. The odascore will be at **odas/bin/odaslive**, the config file is at **odas/config/odaslive/respeaker_4_mic_array.cfg**. 
+
+![](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/raw/master/img/odas.png)
+
+
 ## FAQ
 
 **Q1: How to change the Raspbian Mirrors source?**
@@ -317,10 +514,13 @@ sudo apt-get install portaudio19-dev
 ## Resources
 
 - **[PDF]** [ ReSpeaker 4-Mic Array for Raspberry Pi(PDF)](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/blob/master/src/ReSpeaker%204-Mic%20Array%20for%20Raspberry%20Pi%20%20v1.0.pdf)
-- **[DXF]** [ReSpeaker 4-Mic Array for Raspberry Pi v1.0](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/raw/master/src/ReSpeaker%204-Mic%20Array%20for%20Raspberry%20Pi%20v1.0.dxf)
+- **[DXF]** [ReSpeaker 4-Mic Array for Raspberry Pi v1.0](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/raw/master/src/ReSpeaker%204-Mic%20Array%20for%20Raspberry%20Pi%20v1.0.dxf.zip)
 - **[3D]** [ReSpeaker 4-Mic Array for Raspberry Pi v1.0 3D Model](https://github.com/SeeedDocument/ReSpeaker-4-Mic-Array-for-Raspberry-Pi/raw/master/src/ReSpeaker%204-Mics%20Pi%20HAT%20v1.0.skp.zip)
-
 - **[AC108]** [AC108 DataSheet](http://www.x-powers.com/en.php/Info/product_detail/article_id/41)
+- **[Driver]** [Seeed-Voice Driver](https://github.com/respeaker/seeed-voicecard)
+- **[Algorithms]** [Algorithms includes DOA, VAD, NS](https://github.com/respeaker/mic_array)
+- **[Voice Engine** [Voice Engine project, provides building blocks to create voice enabled objects](https://github.com/voice-engine/voice-engine)
+- **[Algorithms]** [AEC](https://github.com/voice-engine/ec)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

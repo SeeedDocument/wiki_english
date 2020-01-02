@@ -1,5 +1,5 @@
 ---
-title: Grove - Starter Kit v3
+name: Grove - Starter Kit v3
 category: Others
 bzurl: https://www.seeedstudio.com/Grove-Starter-Kit-V3-p-1855.html
 oldwikiname: Grove - Starter Kit v3
@@ -459,6 +459,19 @@ void loop()
 
 *   **Community based** – satisfying needs through voting, democratized design, project and recipe sharing, profit sharing business pattern, Renting and Reuse
 
+
+## FAQs
+
+**Q1:  Would this work with Intel Galileo Gen 1 Board?**
+     
+A1: Yes, you can use this kit on Intel Galileo Gen1/Gen2 board and Edison for Arduino.
+
+**Q2: There's nothing displayed on the Grove - RGB LCD backlight, but the back color works fine.**
+
+A2: Please check whether the powering switch(3.3V/5V) is on 5V side.
+
+
+
 ##   Resources
 ---
 *   [Sch pdf](https://github.com/SeeedDocument/Grove_Starter_Kit_v3/raw/master/res/Grove-Starter_Kit_v3_sch_pdf.zip)
@@ -485,4 +498,4 @@ void loop()
 We would like to express our gratitude to Rich Morin who modified this document with more appropriate grammar and words.
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

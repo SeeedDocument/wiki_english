@@ -1,11 +1,11 @@
 ---
-title: Grove System
+name: Grove System
 oldwikiname: Grove_System
 prodimagename: grove_cover.png
 surveyurl: https://www.research.net/r/grove_system
 ---
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/grove.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/top_banner.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/grove.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/top_banner.png" /></a></p>
 
 ## What is the Grove System?
 
@@ -18,6 +18,11 @@ The Base unit, generally a microprocessor, allows for easy connection of any inp
 You don't need a Base unit to connect up to Grove modules. You can use a cable (Grove to Pin Header Converter) to run from the pins on the Raspberry Pi or Arduino to the Grove connectors.
 
 ![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/grove_cover.png)
+
+## Grove Selection Guides
+
+- [Seeed Relay Selection Guide](http://wiki.seeedstudio.com/Seeed_Relay_Page/)
+- [Seeed Gas Sensor Selection Guide](http://wiki.seeedstudio.com/Seeed_Gas_Sensor_Selection_Guide)
 
 ## Grove Projects
 
@@ -59,6 +64,35 @@ There're 5 size of Grove.
 |---|-----|------|-----|----|
 |20x20mm|20x40mm|20x60mm|40x40mm|40x60mm|
 |![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/size1x1.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/size1x2.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/size1x3.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/size2x2.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/GroveSystem/master/images/size2x3.jpg)|
+
+
+Here are the dimensions.
+
+- Grove 20X20 DIP: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/20_20dip.png)
+
+- Grove 20X20 SMD Horizontal: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/20_20smd_horizontal.png)
+
+- Grove 20X20 SMD Vertical: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/20_20smd_vertical.png)
+
+- Grove 20X40 DIP: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/40_40dip.png)
+
+- Grove 20X40 SMD Horizontal: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/40_40smd_horizontal.png)
+
+- Grove 20X40 SMD Vertical: 
+
+![](https://github.com/SeeedDocument/GroveSystem/raw/master/images/40_40smd_vertical.png)
+
+For the detail mechnical drawing, please refer to [Grove Mechnical Drawing](https://github.com/SeeedDocument/GroveSystem/tree/master/res).
 
 
 ## How to connect Grove to your board
@@ -325,4 +359,4 @@ Want some Grove modules for your project? Here are some recommend.
 |[More Details](http://www.seeedstudio.com/Grove-Line-Finder-p-825.html)|[More Details](http://www.seeedstudio.com/Grove-Ultrasonic-Ranger-p-960.html)|[More Details](http://www.seeedstudio.com/Grove-80cm-Infrared-Proximity-Sensor-p-788.html)|
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

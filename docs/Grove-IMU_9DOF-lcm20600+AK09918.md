@@ -1,5 +1,5 @@
 ---
-title: Grove - IMU 9DOF (lcm20600+AK09918)
+name: Grove - IMU 9DOF (lcm20600+AK09918)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -24,7 +24,7 @@ tags:
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-IMU-9DOF-%28lcm20600%2BAK09918%29-p-3157.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-IMU-9DOF-%28lcm20600%2BAK09918%29-p-3157.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 
@@ -101,7 +101,7 @@ This is a typical Bi-directional level shifter circuit to connect two different 
 
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -428,6 +428,12 @@ Heading: 21.76
 |getData(int32_t *axis_x, int32_t *axis_y, int32_t *axis_z)  |You can use this function to get the magnetic force of 3-axis.|
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-IMU_9DOF-lcm20600_AK09918/raw/master/res/Grove%20-%20IMU%209DOF%20(ICM20600%20%26%20AK09918).zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
 
 ## Resources
 
@@ -452,3 +458,4 @@ This is the introduction Video of this product, simple demos, you can have a try
 
 ## Tech Support
 Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: DSO Quad
+name: DSO Quad
 category: MakerPro
 bzurl: https://www.seeedstudio.com/DSO-Quad-Aluminium-Alloy-Silver-p-1033.html?cPath=63_65
 oldwikiname:  DSO Quad
@@ -253,9 +253,7 @@ Please note that this procedure currently only works under Windows. [Instruction
 
 ###   Where to find firmware
 
-Track the latest version to firmware at:
-[http://garden.seeedstudio.com/index.php?title=DSO_Quad:Upgrading_Firmware#Firmware_List](http://garden.seeedstudio.com/index.php?title=DSO_Quad:Upgrading_Firmware#Firmware_List "DSO_Quad:Upgrading_Firmware#Firmware_List")
-you can always download the latest version of firmware
+Here is the [latest firmware](https://github.com/SeeedDocument/DSO_Quad/raw/master/res/PA1_V113.zip).
 
 You could also [build the firmware from source](/DSO_Quad-Building_Firmware "DSO Quad:Building Firmware").
 
@@ -427,3 +425,4 @@ More details and Linux instructions here: [DSO_Quad:Upgrading_Firmware](/DSO_Qua
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

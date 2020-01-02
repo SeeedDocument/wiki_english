@@ -1,5 +1,5 @@
 ---
-title: Grove - BLE (dual model) v1.0
+name: Grove - BLE (dual model) v1.0
 category: Communication
 bzurl: https://seeedstudio.com/Grove-BLE-(dual-model)-p-2407.html
 oldwikiname: Grove_-_BLE_(dual_model)_v1.0
@@ -14,7 +14,7 @@ tags: grove_uart, io_3v3, io_5v, plat_duino, plat_linkit
 
 Grove - BLE (dual model) v1.0 uses CSR dual mode Bluetooth chip. The chip is based on ARM architecture and supports AT instructions. Users can develop flexibly according to the serial baud rate, equipment name, pairing password.
 
-[![](https://raw.githubusercontent.com/SeeedDocument/common/master/Get_One_Now_Banner.png)](https://www.seeedstudio.com/Grove-BLE-(dual-model)-p-2407.html)
+[![](https://raw.githubusercontent.com/SeeedDocument/common/master/Get_One_Now_Banner.png)](https://www.seeedstudio.com/Grove-BLE-dual-model-p-2407.html)
 
 Features
 --------
@@ -47,7 +47,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Hardware Overview
@@ -1162,4 +1162,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_BLE_(dual_model)_v1.0 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

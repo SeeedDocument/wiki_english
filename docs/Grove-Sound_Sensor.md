@@ -1,5 +1,5 @@
 ---
-title: Grove - Sound Sensor
+name: Grove - Sound Sensor
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html
 oldwikiname: Grove_-_Sound_Sensor
@@ -13,7 +13,9 @@ tags: io_3v3, io_5v, plat_duino, plat_linkit, plat_bbg, plat_wio, plat_pi, plat_
 
 Grove - Sound Sensor can detect the sound intensity of the environment. The main component of the module is a simple microphone, which is based on the LM386 amplifier and an electret microphone. This module's output is analog and can be easily sampled and tested by a Seeeduino.
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/EhZ7uDvoALE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p style=":center"><a href="http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" width="200" height="38"  border=0 /></a></p>
 
 
 ## Features
@@ -48,7 +50,7 @@ Grove - Sound Sensor can detect the sound intensity of the environment. The main
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -120,7 +122,154 @@ void loop()
 
 ![](https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/images/sound_raw.png)
 
-### Play With Raspberry Pi
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Sound Sensor to port A0 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/img/cc_Sound_Sensor.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see the sound value displayed in the Serial Monitor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Sound Sensor|
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/img/page_small_1.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html)|
+
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the Grove - Sound Sensor to port A0 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/img/Sound_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the sound sensor to **any Analog Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd grove.py/grove
+python grove_sound_sensor.py 0
+
+```
+
+Following is the grove_sound_sensor.py code.
+
+```python
+
+import math
+import sys
+import time
+from grove.adc import ADC
+
+
+class GroveSoundSensor:
+
+    def __init__(self, channel):
+        self.channel = channel
+        self.adc = ADC()
+
+    @property
+    def sound(self):
+        value = self.adc.read(self.channel)
+        return value
+
+Grove = GroveSoundSensor
+
+
+def main():
+    if len(sys.argv) < 2:
+        print('Usage: {} adc_channel'.format(sys.argv[0]))
+        sys.exit(1)
+
+    sensor = GroveSoundSensor(int(sys.argv[1]))
+
+    print('Detecting sound...')
+    while True:
+        print('Sound value: {0}'.format(sensor.sound))
+        time.sleep(.3)
+
+if __name__ == '__main__':
+    main()
+
+
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result
+    
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_sound_sensor.py 0 
+Detecting sound...
+Sound value: 499
+Sound value: 525
+Sound value: 529
+Sound value: 493
+Sound value: 457
+Sound value: 457
+Sound value: 503
+Sound value: 537
+Sound value: 606
+Sound value: 614
+Sound value: 661
+^CTraceback (most recent call last):
+  File "grove_sound_sensor.py", line 67, in <module>
+    main()
+  File "grove_sound_sensor.py", line 64, in main
+    time.sleep(.3)
+KeyboardInterrupt
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+!!!Notice
+        You may have noticed that for the analog port, the silkscreen pin number is something like **A1, A0**, however in the command we use parameter **0** and **1**, just the same as digital port. So please make sure you plug the module into the correct port, otherwise there may be pin conflicts.
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 **Hardware**
 
@@ -170,6 +319,7 @@ cd yourpath/GrovePi/Software/Python/
 Here is the grove_sound_sensor.py code.
 
 ```python
+
 #!/usr/bin/env python
 #
 # GrovePi Example for using the Grove Sound Sensor and the Grove LED
@@ -252,6 +402,7 @@ sudo python grove_sound_sensor.py
 - [**PDF**][Schematic in PDF format](https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/res/Grove%20-%20Sound%20Sensor%20v1.6%20Schematic.pdf)
 - [**PDF**][PCB in PDF format](https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/res/Grove%20-%20Sound%20Sensor%20v1.6%20PCB.pdf)
 - [**Datasheet**][LM386.PDF](https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/res/LM386.pdf)
+- [**Codecraft**][CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/res/Grove_Sound_Sensor_CDC_File.zip)
 
 ## Projects
 
@@ -272,3 +423,4 @@ sudo python grove_sound_sensor.py
 
 ## Tech Support
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

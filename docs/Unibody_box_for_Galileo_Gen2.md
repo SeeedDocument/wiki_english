@@ -1,5 +1,5 @@
 ---
-title: Unibody box for Galileo Gen2
+name: Unibody box for Galileo Gen2
 category: Essentials
 bzurl: https://www.seeedstudio.com/Unibody-Box-for-Galileo-Gen2-p-2605.html
 oldwikiname:  Unibody box for Galileo Gen2
@@ -88,4 +88,4 @@ It is quite necessary to read this guide before assembling you Galileo board int
 - [CNC files](https://github.com/SeeedDocument/Unibody_box_for_Galileo_Gen2/raw/master/res/CNC_files.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

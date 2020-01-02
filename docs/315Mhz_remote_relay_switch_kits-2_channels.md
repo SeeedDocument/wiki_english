@@ -1,5 +1,5 @@
 ---
-title: 315Mhz remote relay switch kits - 2 channels
+name: 315Mhz remote relay switch kits - 2 channels
 category: MakerPro
 bzurl: https://www.seeedstudio.com/315mhz-remote-relay-switch-kits-2-channels-p-150.html?cPath=139_140
 oldwikiname:  315Mhz remote relay switch kits - 2 channels
@@ -89,4 +89,4 @@ Please refer to the simple drawing for the 315Mhz RF link. On the transimitter s
 *   [Manual for How to use](http://www.seeedstudio.com/depot/datasheet/How%20to%20Use%20315MHz%20Remote%20Relay%20Kits.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove-VOC and eCO2 Gas Sensor(SGP30)
+name: Grove-VOC and eCO2 Gas Sensor(SGP30)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -20,8 +20,10 @@ The SGP30 is a digital multi-pixel gas sensor designed for easy integration into
 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
+!!!Tip
+    We've released the [Seeed Gas Sensor Selection Guide](http://wiki.seeedstudio.com/Seeed_Gas_Sensor_Selection_Guide/), it will help you choose the gas sensor that best suits your needs.
 
 ## Features
 
@@ -40,12 +42,12 @@ The SGP30 is a digital multi-pixel gas sensor designed for easy integration into
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
 .tg .tg-eh2d{background-color:#ffffff;border-color:inherit;vertical-align:top}
-.tg .tg-xf7g{background-color:#444444;border-color:inherit;text-align:center}
+.tg .tg-xf7g{background-color:#444444;border-color:inherit;:center}
 .tg .tg-f5ry{background-color:#ffffff;border-color:inherit}
-.tg .tg-28l8{background-color:#ffffff;border-color:inherit;text-align:center}
-.tg .tg-3xi5{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-28l8{background-color:#ffffff;border-color:inherit;:center}
+.tg .tg-3xi5{background-color:#ffffff;border-color:inherit;:center;vertical-align:top}
 .tg .tg-3we0{background-color:#ffffff;vertical-align:top}
-.tg .tg-i81m{background-color:#ffffff;text-align:center;vertical-align:top}
+.tg .tg-i81m{background-color:#ffffff;:center;vertical-align:top}
 </style>
 <table class="tg" style="undefined;table-layout: fixed; width: 529px">
 <colgroup>
@@ -120,6 +122,27 @@ The SGP30 is a digital multi-pixel gas sensor designed for easy integration into
 - New house air condition monitor
 
 
+## Hardware Overview
+
+### Pin Map
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/pin.jpg)
+
+### Schematic
+
+**Power**
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/sc2.jpg)
+
+The typical operating voltage SGP30 is 1.8v, we use a power conversion chip *XC6206P182MR* to provide a stable 3.3V for the MCP9600.
+
+
+**Bi-directional level shifter circuit**
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/sc1.jpg)
+
+This is a typical Bi-directional level shifter circuit to connect two different voltage section of an I^2^C bus. The I<sup>2</sup>C bus of this sensor use 1.8V, if the I<sup>2</sup>C bus of the Arduino use 5V or 3.3V, this circuit will be needed. In the schematic above, **Q7** and **Q8** are N-Channel MOSFET [BSS138LT3G](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/BSS138.pdf), which act as a bidirectional switch. In order to better understand this part, you can refer to the [AN10441](https://github.com/SeeedDocument/Grove-I2C_High_Accuracy_Temperature_Sensor-MCP9808/raw/master/res/AN10441.pdf)
+
 
 
 ## Platforms Supported
@@ -164,7 +187,7 @@ The SGP30 is a digital multi-pixel gas sensor designed for easy integration into
 
 
 
-- **Step 1.** Connect Grove-VOC and eCO2 Gas Sensor(SGP30) to port **I2C** of Grove-Base Shield.
+- **Step 1.** Connect Grove-VOC and eCO2 Gas Sensor(SGP30) to **I2C** port  of Grove-Base Shield.
 
 - **Step 2.** Plug Grove - Base Shield into Seeeduino.
 
@@ -176,7 +199,7 @@ The SGP30 is a digital multi-pixel gas sensor designed for easy integration into
 
 
 !!!Note
-	If we don't have Grove Base Shield, We also can directly connect Grove-VOC and eCO2 Gas Sensor(SGP30) to Seeeduino as below.
+	If we don't have Grove Base Shield, We also can directly connectGrove-VOC and eCO2 Gas Sensor(SGP30) to Seeeduino as below.
 
 
 | Seeeduino     | Grove-VOC and eCO2 Gas Sensor(SGP30) |
@@ -255,13 +278,129 @@ CO2eq Concentration:502ppm
 
 
 
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove-VOC and eCO2 Gas Sensor(SGP30)|
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/thumbnail.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html)|
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect Grove-VOC and eCO2 Gas Sensor(SGP30) to port I2C of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/sgp30.jpg)
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/Seeed_Python_SGP30.git
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd Seeed_Python_SGP30
+sudo python setup.py install
+cd examples
+python sgp30_simpleread.py
+```
+
+Following is the sgp30_simpleread.py code.
+
+```python
+import seeed_sgp30
+from grove.i2c import Bus
+
+sgp30 = seeed_sgp30.grove_sgp30(Bus())
+while True:
+  data = sgp30.read_measurements()
+  co2_eq_ppm, tvoc_ppb = data.data
+  print("\r  tVOC = {} ppb CO2eq = {}  ".format(
+                               tvoc_ppb, co2_eq_ppm))
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result.
+    
+```python
+
+pi@raspberrypi:~/Seeed_Python_SGP30/examples $ python sgp30_simpleread.py
+  tVOC = 9 ppb CO2eq = 943  
+  tVOC = 9 ppb CO2eq = 931  
+  tVOC = 10 ppb CO2eq = 920  
+  tVOC = 14 ppb CO2eq = 904  
+  tVOC = 12 ppb CO2eq = 888  
+  tVOC = 13 ppb CO2eq = 873  
+  tVOC = 11 ppb CO2eq = 865  
+  tVOC = 11 ppb CO2eq = 842  
+  tVOC = 9 ppb CO2eq = 828  
+  tVOC = 10 ppb CO2eq = 814  
+  tVOC = 11 ppb CO2eq = 794  
+  tVOC = 14 ppb CO2eq = 786  
+  tVOC = 9 ppb CO2eq = 764  
+  tVOC = 12 ppb CO2eq = 744  
+  tVOC = 11 ppb CO2eq = 739  
+  tVOC = 12 ppb CO2eq = 715  
+  tVOC = 15 ppb CO2eq = 688  
+  tVOC = 13 ppb CO2eq = 669  
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+
+
+
+
+
+
+## Notice
+
+- The SGP30 uses a dynamic baseline compensation algorithm and on-chip calibration parameters to provide two complementary air quality signals. The baseline should be stored in EEPROM.When there is no baseline value in EEPROM at the first time power-ON or the baseline record is older than seven days.The sensor has to run for 12 hours until the baseline can be stored. You can refer to program flow chart blow.
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/Get%20baseline%20program%20flow%20chart%20.png)
+
+
+- The H2_Signal and Ethanol_signal,Both signals can be used to calculate gas concentrations c relative to a reference concentration cref by ln(C/Cref)=(Sref-Sout)/a with a = 512, sref the H2_signal or Ethanol_signal output at the reference concentration, and sout = Sout_H2 or Sout = Sout_EthOH.
+
+- For more accurate measurement,You can set the abslute humidity compensation,Defalt value is 11.57g/m3,A little troublesome is that you should get relatively humidity value of environment from another way,Because there is no humidity measurement part integrated in SGP30..
+
+![](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/img/absolute%20humidity%20with%20the%20formula.png)
+
+Luckly, It's not much neccessary in a normal situation
+
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/Grove-VOC_and_eCO2_Gas_Sensor%20-SGP30.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
 ## Resources
 
 - **[Zip]** [Grove-VOC and eCO2 Gas Sensor(SGP30) eagle file](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/Grove-VOC_and_eCO2_Gas_Sensor%20-SGP30.zip)
 - **[PDF]** [SGP30 Datasheet](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/Sensirion_Gas_Sensors_SGP30_Datasheet_EN.pdf)
+- **[PDF]** [BSS138L Datasheet](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/BSS138.pdf)
 - **[PDF]** [SGP30 Driver Integration Guide HW I2C](https://github.com/SeeedDocument/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/raw/master/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf)
+
 
 
 
 ## Tech Support
 Please do not hesitate to contact [techsupport@seeed.cc](techsupport@seeed.cc) if you have any technical issue. Or submit the issue into our [forum](https://forum.seeedstudio.com/).
+
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

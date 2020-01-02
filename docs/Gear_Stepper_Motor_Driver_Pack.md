@@ -1,5 +1,5 @@
 ---
-title: Gear Stepper Motor Driver Pack
+name: Gear Stepper Motor Driver Pack
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -16,7 +16,7 @@ The Gear Stepper Motor Driver Pack includes a stepper motor and a motor drive bo
 You can use this pack for position control.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Gear-Stepper-Motor-Driver-Pack-p-3200.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Gear-Stepper-Motor-Driver-Pack-p-3200.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 ## Features
@@ -61,7 +61,7 @@ You can use this pack for position control.
 
 you can click it to see the original picture.
 
-<p style="text-align:center"><a href="https://raw.githubusercontent.com/SeeedDocument/Gear-Stepper-Motor-Driver-Pack/master/img/mechanical.jpg" target="_blank"><img src="https://github.com/SeeedDocument/Gear-Stepper-Motor-Driver-Pack/raw/master/img/mechanical.jpg" /></a></p>
+<p style=":center"><a href="https://raw.githubusercontent.com/SeeedDocument/Gear-Stepper-Motor-Driver-Pack/master/img/mechanical.jpg" target="_blank"><img src="https://github.com/SeeedDocument/Gear-Stepper-Motor-Driver-Pack/raw/master/img/mechanical.jpg" /></a></p>
 
 
 
@@ -73,7 +73,7 @@ you can click it to see the original picture.
 
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -341,3 +341,4 @@ void loop ()
 ## Tech Support
 
 Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>
