@@ -1,11 +1,8 @@
+![](https://github.com/SeeedDocument/Seeed_Gas_Sensor_Selection_Guide/raw/master/img/Seeed_Gas_Sensor_Selection_Guide.jpg)
 
+Gas sensor is a device which can detect the presence of various toxic and combustible gases present in the environment. 
 
-
-
-
-
-
-
+You can refer to [Seeed Gas Sensor Selection Guide](http://wiki.seeedstudio.com/Seeed_Gas_Sensor_Selection_Guide/)
 
 - [Grove - VOC and eCO2 Gas Sensor (SGP30)](http://wiki.seeedstudio.com/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/)
 
@@ -31,4 +28,4 @@
 
 - [Grove - HCHO Sensor](http://wiki.seeedstudio.com/Grove-HCHO_Sensor/)
 
-- [Grove - Multichannel Gas Sensor](http://wiki.seeedstudio.com/Grove-Multichannel_Gas_Sensor/)
+- [Grove - Multichannel Gas Sensor](http://wiki.seeedstudio.com/Grove-Multichannel_Gas_Sensor/)<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

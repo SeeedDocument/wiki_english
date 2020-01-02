@@ -1,5 +1,5 @@
 ---
-title: 315MHz Simple RF Link Kit
+name: 315MHz Simple RF Link Kit
 category: MakerPro
 bzurl: https://www.seeedstudio.com/grove-315mhz-simple-rf-link-kit-p-1061.html?cPath=139_140
 oldwikiname:  315MHz Simple RF Link Kit
@@ -242,4 +242,4 @@ This is just a simple transmitter and receiver instance as a reference.
 *   [VirtualWire Documentation](http://www.open.com.au/mikem/arduino/VirtualWire.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

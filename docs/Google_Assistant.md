@@ -1,5 +1,5 @@
 ---
-title: Google Assistant
+name: Google Assistant
 category: Tutorial
 bzurl: 
 oldwikiname: 
@@ -179,7 +179,7 @@ sudo python -m pip install --upgrade google-assistant-sdk[samples]
 Install or update the authorization tool:
 
 ```
-sudo python -m pip install --upgrade google-auth-oauthlib[tool]
+sudo python -m pip install --upgrade google-auth-oauthlib[tool]==0.2
 ```
 
 Make the target folder.
@@ -235,14 +235,22 @@ Cope this code into your console
 Then you will see the notice `credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json`. That means everything goes well so far.
 
 
+
+
 #### Install Respeakerd
 
 Tap the commands to install respeakerd
 
 ```
 sudo apt-get install portaudio19-dev libffi-dev libssl-dev
-sudo pip install -U googleassistant_respeakerd
-
+git clone https://github.com/respeaker/googleassistant_respeakerd
+cd googleassistant_respeakerd
+sudo python setup.py install
+sudo cp script/io.respeaker.respeaker.conf /etc/dbus-1/system.d/
+# set respeakerd to pulse mode
+sudo vim /etc/respeaker/respeakerd.conf 
+# reboot to make it work
+sudo reboot
 ```
 
 
@@ -263,4 +271,4 @@ googlesamples-assistant-respeakerd --project-id respeaker-440eb --device-model-i
 
 Now, cheers!!!
 
-![](https://github.com/SeeedDocument/Google-Assitant/raw/master/img/codel.png)
+![](https://github.com/SeeedDocument/Google-Assitant/raw/master/img/codel.png)<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

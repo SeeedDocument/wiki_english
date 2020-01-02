@@ -1,5 +1,5 @@
 ---
-title: Grove - 6-Position DIP Switch
+name: Grove - 6-Position DIP Switch
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -16,9 +16,13 @@ tags:
 The Grove - 6-Position DIP Switch has 6 individual switch positions, which use I^2^C to transmit date. It works great as a multi-channel control switches.
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-6-Position-DIP-Switch-p-3137.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-6-Position-DIP-Switch-p-3137.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
+## Version
 
+| Product Version  | Changes                                                                                               | Released Date |
+|------------------|-------------------------------------------------------------------------------------------------------|---------------|
+| Grove - 6-Position DIP Switch | Initial                                                                                               | Jun 2018      |
 
 ## Features
 
@@ -36,7 +40,10 @@ The Grove - 6-Position DIP Switch has 6 individual switch positions, which use I
 |Operating voltage|3.3V / 5V|
 |Interface|I^2^C|
 |Default I^2^C Address|0x03|
-
+|Size|L: 40mm W: 20mm H: 13mm| 
+|Weight|5g|
+|Package size|L: 140mm W: 90mm H: 10mm|
+|Gross Weight|11g|
 
 ## Applications
 
@@ -61,7 +68,7 @@ The Grove - 6-Position DIP Switch has 6 individual switch positions, which use I
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg)  |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -284,6 +291,12 @@ POS 5: RAW - HIGH OFF
 POS 6: RAW - LOW ON 
 ```
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-5-Way_Switch/raw/master/res/Grove-5-Way_Switch.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
 
 ## Resources
 
@@ -299,4 +312,4 @@ This is the introduction Video of this product, simple demos, you can have a try
 
 
 ## Tech Support
-Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/).
+Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/).<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

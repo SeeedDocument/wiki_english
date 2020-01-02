@@ -1,5 +1,5 @@
 ---
-title: Grove Starter Kit for IoT based on Raspberry Pi
+name: Grove Starter Kit for IoT based on Raspberry Pi
 category: Raspberry Pi
 bzurl: https://www.seeedstudio.com/Microsoft-IoT-Grove-Kit-(Azure-Certified)-p-2694.html
 prodimagename: cover.jpg
@@ -315,4 +315,4 @@ You can see the Distance Sound Light value and relay state on the LCD Screen. Th
 * [Example Code](https://github.com/Seeed-Studio/GrovePiExamples_win10)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

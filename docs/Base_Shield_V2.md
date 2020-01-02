@@ -1,5 +1,5 @@
 ---
-title: Base Shield V2
+name: Base Shield V2
 category: Shield
 bzurl: https://www.seeedstudio.com/base-shield-v13-p-1378.html
 oldwikiname:
@@ -21,6 +21,18 @@ Arduino Uno is the most popular Arduino board so far, however it is sometimes fr
 | Base Shield V1.2 | Initial                                                                                               | Oct 2011      |
 | Base Shield V1.3 | Change the Grove connector layout and quantity                                                        | Aug 2012      |
 | Base Shield V2.0 | Change the Grove connector layout and quantity, as well as a power switch to enable both 3.3V and 5V. | Mar 2014      |
+
+## Specification
+
+| Parameter             | Value/Range  |
+|-----------------------|--------------|
+| Operating voltage     | 3.3/5V       |
+| Operation Temperature | -25℃ to +85℃ |
+| Analog Ports          | 4            |
+| Digital Ports         | 7            |
+| UART Ports            | 1            |
+| I2C Ports             | 1            |
+| Size                  | 69mm x53mm   |
 
 ## Compatible Boards
 
@@ -115,4 +127,4 @@ Please click [here](http://support.seeedstudio.com/knowledgebase/articles/182644
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

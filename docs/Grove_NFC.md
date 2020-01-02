@@ -1,5 +1,5 @@
 ---
-title: Grove - NFC
+name: Grove - NFC
 category: Communication
 bzurl: https://seeedstudio.com/Grove-NFC-p-1804.html
 oldwikiname: Grove_-_NFC
@@ -26,7 +26,7 @@ Grove NFC features a highly integrated transceiver module PN532 which handles co
 
 
 
-<p style="text-align:center"><a href="http://www.seeedstudio.com/Grove-NFC-p-1804.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="http://www.seeedstudio.com/Grove-NFC-p-1804.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
 
 ## Version
@@ -62,11 +62,13 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
 ## Hardware overview
+
+### Grove NFC v1.0
 
 ![](https://raw.githubusercontent.com/SeeedDocument/Grove-NFC/master/img/NFC_cutAndsolder.jpg)  
  
@@ -87,7 +89,11 @@ Solder following connections:
 -   TP3 to SDA
 
 
+### Grove NFC v1.1
 
+The default setting is UART, if you need to change it into I2C, then you should cut the UART connection and then solder the I2C pins as below.
+
+![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/v1.1%20hardware%20connection.png)
 
 ## Getting Started
 
@@ -95,9 +101,110 @@ Solder following connections:
     If this is the first time you work with Arduino, we strongly recommend you to see [Getting Started with Arduino](http://wiki.seeedstudio.com/Getting_Started_with_Arduino/) before the start.
 
 
-The Grove - NFC supports I2C and UART, if you use Seeeduino V4.2 or(Arduino UNO), we suggest you to use I2C. If you use Seeeduino Lite(Arduino Leonardo) or Seeeduino Mega(Arduino Mega) we suggest you to use UART.
+The Grove - NFC supports I2C and UART, [Seeed Arduino NFC Library](https://github.com/Seeed-Studio/Seeed_Arduino_NFC) supports Arduino Uno/Seeeduino v4.2, Arduino Mega/Seeeduino Mega, Arduino Zero/Seeeduino Lorawan and Arduino Leonardo/Seeeduino Lite. 
 
-### Play with Seeedunio V4.2
+
+
+### Play with Seeeduino Lite(UART)
+
+#### Hardware
+
+**Materials required**
+
+| Seeeduino Lite | Base Shield| Grove - NFC |  NFC Tags|
+|--------------|-------------|-----------------|---|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/lite.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/thumbnail.jpg)|![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/NFC-for-Marketing-Header.jpg)|
+|<a href="https://www.seeedstudio.com/Seeeduino-Lite-p-1487.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Base-Shield-V2-p-1378.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Grove-NFC-p-1804.html" target="_blank">Get One Now</a>|Please Prepare yourself|
+
+
+- **Step 1.** Connect Grove - NFC to port **UART** of Grove-Base Shield.
+
+- **Step 2.** Plug Grove - Base Shield into Seeeduino Lite.
+
+- **Step 3.** Connect Seeeduino Lite to PC via a USB cable
+
+
+
+#### Software
+
+
+- **Step 1.**  Download [Seeed Arduino NFC Library](https://github.com/Seeed-Studio/Seeed_Arduino_NFC).
+
+- **Step 2.**  Refer to [How to install library](http://wiki.seeedstudio.com/How_to_install_Arduino_Library) to install **Seeed Arduino NFC** library for Arduino.
+
+- **Step 3.**  Download [PN532 Library](https://github.com/Seeed-Studio/PN532) and put it under **C:\Program Files (x86)\Arduino\libraries\Seeed_Arduino_NFC-master\src**.
+
+- **Step 4.**  Open “ReadTag” code via the path: **File --> Examples --> ReadTag**. 
+
+- **Step 5.**  Modify the code as below to enable UART communication.
+
+```
+#if 0 // use SPI
+#include <SPI.h>
+#include <PN532/PN532_SPI/PN532_SPI.h>
+PN532_SPI pn532spi(SPI, 9);
+NfcAdapter nfc = NfcAdapter(pn532spi);
+#elif 1 // use hardware serial
+
+#include <PN532/PN532_HSU/PN532_HSU.h>
+PN532_HSU pn532hsu(Serial1);
+NfcAdapter nfc(pn532hsu);
+#elif 0  // use software serial
+
+#include <PN532/PN532_SWHSU/PN532_SWHSU.h>
+#include "SoftwareSerial.h"
+SoftwareSerial SWSerial(2, 3);
+PN532_SWHSU pn532swhsu(SWSerial);
+NfcAdapter nfc(pn532swhsu);
+#else //use I2C
+
+#include <Wire.h>
+#include <PN532/PN532_I2C/PN532_I2C.h>
+
+PN532_I2C pn532_i2c(Wire);
+NfcAdapter nfc = NfcAdapter(pn532_i2c);
+#endif
+```
+
+- **Step 7.** Upload the code. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
+
+- **Step 8.** Open the **Serial Monitor** of Arduino IDE by click **Tool-> Serial Monitor**. Or tap the ++ctrl+shift+m++ key at the same time. Set the baud Rate **9600**
+
+- **Step 9.** Use the Grove - NFC to get close to an NFC Tag. If everything goes well, you will get the NFC Tag information in the Serial Monitor.
+
+
+!!!warning
+    If you want to connect to Arduino Mega UART ports, You can change the PN532_HSU pn532hsu(Serial1) to PN532_HSU pn532hsu(SerialX). X stands for the arduino mega serial port you use. If you want to connect Grove-NFC sensors to Arduino Uno, you can use the software serial. Please follow below to configure [software serial](https://www.arduino.cc/en/Reference/softwareSerial). 
+
+```
+#if 0 // use SPI
+#include <SPI.h>
+#include <PN532/PN532_SPI/PN532_SPI.h>
+PN532_SPI pn532spi(SPI, 9);
+NfcAdapter nfc = NfcAdapter(pn532spi);
+#elif 0 // use hardware serial
+
+#include <PN532/PN532_HSU/PN532_HSU.h>
+PN532_HSU pn532hsu(Serial1);
+NfcAdapter nfc(pn532hsu);
+#elif 1  // use software serial
+
+#include <PN532/PN532_SWHSU/PN532_SWHSU.h>
+#include "SoftwareSerial.h"
+SoftwareSerial SWSerial(2, 3);
+PN532_SWHSU pn532swhsu(SWSerial);
+NfcAdapter nfc(pn532swhsu);
+#else //use I2C
+
+#include <Wire.h>
+#include <PN532/PN532_I2C/PN532_I2C.h>
+
+PN532_I2C pn532_i2c(Wire);
+NfcAdapter nfc = NfcAdapter(pn532_i2c);
+#endif
+```	
+	
+### Play with Seeedunio V4.2 (I2C)
 
 ### Hardware
 
@@ -121,139 +228,59 @@ The Grove - NFC supports I2C and UART, if you use Seeeduino V4.2 or(Arduino UNO)
 
 
 
-- **Step 1.** Connect Grove - NFC to port **I2C** of Grove-Base Shield.
+- **Step 1.** Connect Grove - NFC to port **I2C** of Grove-Base Shield. Please make sure you follow hardware overview to change the default UART setting to I2C.
 
 - **Step 2.** Plug Grove - Base Shield into Seeeduino V4.2.
 
 - **Step 3.** Connect Seeeduino V4.2 to PC via a USB cable
 
 
-If you are using Arduino UNO you can connect the signal as below.
-
-| Arduino/Arduino Mega | Grove - NFC |
-|----------------------|-------------|
-| SCL                  | RX          |
-| SDA                  | TX          |
-| GND                  | GND         |
-| 5V                   | VCC         |
-
-
-
 
 #### Software
 
-**Write the Tag**
+- **Step 1.**  Download [Seeed Arduino NFC Library](https://github.com/Seeed-Studio/Seeed_Arduino_NFC).
 
-- **Step 1.**  Download [PN532 library](https://github.com/Seeed-Studio/PN532/archive/master.zip). Extract the PN532.ZIP file and copy the 4 folders(PN532, PN532_SPI, PN532_I2C and PN532_HSU) into Arduino's libraries folder.(For example in my computer the library is located in *D:\Software\WorkWork\arduino-1.8.5\libraries*)
+- **Step 2.**  Refer to [How to install library](http://wiki.seeedstudio.com/How_to_install_Arduino_Library) to install **Seeed Arduino NFC** library for Arduino.
 
-![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/library.png)
+- **Step 3.**  Download [PN532 Library](https://github.com/Seeed-Studio/PN532) and put it under **C:\Program Files (x86)\Arduino\libraries\Seeed_Arduino_NFC-master\src**.
 
+- **Step 4.**  Open “ReadTag” code via the path: **File --> Examples --> ReadTag**. 
 
-- **Step 2.**  Download [Grove-NFC-libraries-Part](https://github.com/Seeed-Studio/Grove-NFC-libraries-Part).
-
-- **Step 3.**  Refer to [How to install library](http://wiki.seeedstudio.com/How_to_install_Arduino_Library) to install **Grove-NFC-libraries-Part** library for Arduino.
-
-- **Step 4.**  Open “WriteTag” code via the path: **File --> Examples --> Grove-NFC-libraries-Part-master --> WriteTag**. 
-
-![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/demo_write.png)
-
-- **Step 5.** Upload the code. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
-
-- **Step 6.** Open the **Serial Monitor** of Arduino IDE by click **Tool-> Serial Monitor**. Or tap the ++ctrl+shift+m++ key at the same time. Set the baud Rate **9600**
-
-- **Step 7.** Use the Grove - NFC to get close to an NFC Tag. If everything goes well, you will get the following information.
+- **Step 5.**  Modify the code as below to enable I2C communication.
 
 ```
-NDENDEF Writer
-Scan NFC tag
+#if 0 // use SPI
+#include <SPI.h>
+#include <PN532/PN532_SPI/PN532_SPI.h>
+PN532_SPI pn532spi(SPI, 9);
+NfcAdapter nfc = NfcAdapter(pn532spi);
+#elif 0 // use hardware serial
 
-Write successfully
+#include <PN532/PN532_HSU/PN532_HSU.h>
+PN532_HSU pn532hsu(Serial1);
+NfcAdapter nfc(pn532hsu);
+#elif 0  // use software serial
 
+#include <PN532/PN532_SWHSU/PN532_SWHSU.h>
+#include "SoftwareSerial.h"
+SoftwareSerial SWSerial(2, 3);
+PN532_SWHSU pn532swhsu(SWSerial);
+NfcAdapter nfc(pn532swhsu);
+#else //use I2C
+
+#include <Wire.h>
+#include <PN532/PN532_I2C/PN532_I2C.h>
+
+PN532_I2C pn532_i2c(Wire);
+NfcAdapter nfc = NfcAdapter(pn532_i2c);
+#endif
 ```
 
-**Read the Tag**
+- **Step 6.** Upload the code. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
 
-- **Step 1.**  Open “ReadTag” code via the path: **File --> Examples --> Grove-NFC-libraries-Part-master --> ReadTag**. 
+- **Step 7.** Open the **Serial Monitor** of Arduino IDE by click **Tool-> Serial Monitor**. Or tap the ++ctrl+shift+m++ key at the same time. Set the baud Rate **9600**
 
-![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/demo_write.png)
-
-- **Step 2.** Upload the code. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
-
-- **Step 3.** Open the **Serial Monitor** of Arduino IDE by click **Tool-> Serial Monitor**. Or tap the ++ctrl+shift+m++ key at the same time. Set the baud Rate **9600**
-
-- **Step 4.** Use the Grove - NFC to get close to an NFC Tag. If everything goes well, you will get the NFC Tag information in the Serial Monitor.
-
-
-
-### Play with Seeeduino Lite
-
-#### Hardware
-
-**Materials required**
-
-| Seeeduino Lite | Base Shield| Grove - NFC |  NFC Tags|
-|--------------|-------------|-----------------|---|
-|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/lite.jpg)|![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/thumbnail.jpg)|![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/NFC-for-Marketing-Header.jpg)|
-|<a href="https://www.seeedstudio.com/Seeeduino-Lite-p-1487.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Base-Shield-V2-p-1378.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Grove-NFC-p-1804.html" target="_blank">Get One Now</a>|Please Prepare yourself|
-
-
-
-
-
-- **Step 1.** Connect Grove - NFC to port **UART** of Grove-Base Shield.
-
-- **Step 2.** Plug Grove - Base Shield into Seeeduino Lite.
-
-- **Step 3.** Connect Seeeduino Lite to PC via a USB cable
-
-
-
-
-#### Software
-
-
-
-- **Step 1.**  Download [PN532 library](https://github.com/Seeed-Studio/PN532/archive/master.zip). Extract the PN532.ZIP file and copy the 4 folders(PN532, PN532_SPI, PN532_I2C and PN532_HSU) into Arduino's libraries folder.(For example in my computer the library located in *D:\Software\WorkWork\arduino-1.8.5\libraries*)
-
-![](https://github.com/SeeedDocument/Grove-NFC/raw/master/img/library.png)
-
-
-- **Step 2.**  Download [Grove-NFC-libraries-Part](https://github.com/Seeed-Studio/Grove-NFC-libraries-Part).
-- **Step 3.**  Refer to [How to install library](http://wiki.seeedstudio.com/How_to_install_Arduino_Library) to install **Grove-NFC-libraries-Part** library for Arduino.
-- **Step 4.**  Restart Arduino IDE , Copy the following code into your Arduino IDE
-
-```
-#include "PN532_HSU.h"
-#include "PN532.h"
-#include "NfcAdapter.h"
- 
-PN532_HSU interface(Serial1);
-NfcAdapter nfc = NfcAdapter(interface);
- 
-void setup(void) {
-    Serial.begin(115200);
-    Serial.println("NDEF Reader");
-    nfc.begin();
-}
- 
-void loop(void) {
-    Serial.println("\nScan a NFC tag\n");
-    if (nfc.tagPresent())
-    {
-        NfcTag tag = nfc.read();
-        tag.print();
-    }
-    delay(5000);
-}
-
-```
-
-- **Step 5.** Upload the demo. If you do not know how to upload the code, please check [How to upload code](http://wiki.seeedstudio.com/Upload_Code/).
-
-- **Step 6.** Open the **Serial Monitor** of Arduino IDE by click **Tool-> Serial Monitor**. Or tap the ++ctrl+shift+m++ key at the same time. Set the baud Rate **9600**
-
-- **Step 7.** Use the Grove - NFC to get close to an NFC Tag. If everything goes well, you will get the NFC Tag information in the Serial Monitor.
-
+- **Step 8.** Use the Grove - NFC to get close to an NFC Tag. If everything goes well, you will get the NFC Tag information in the Serial Monitor.
 
 
 ## Resources
@@ -261,6 +288,8 @@ void loop(void) {
 - **[Zip]** [Grove - NFC v1.0 EAGLE (schematic and board) files](https://raw.githubusercontent.com/SeeedDocument/Grove-NFC/master/res/Grove-NFC.zip)
 - **[Zip]** [Grove - NFC v1.1 EAGLE (schematic and board) files](https://raw.githubusercontent.com/SeeedDocument/Grove-NFC/master/res/Grove-NFC_v1.1.zip)
 - **[PDF]** [PN532 Datasheet PDF](https://raw.githubusercontent.com/SeeedDocument/Grove-NFC/master/res/PN532.pdf)
+- **[Library]** [Seeed Arduino NFC Library](https://github.com/Seeed-Studio/Seeed_Arduino_NFC)
+- **[Library]** [PN532 Library](https://github.com/Seeed-Studio/PN532)
 
 ## Project
 
@@ -271,4 +300,4 @@ void loop(void) {
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_NFC -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

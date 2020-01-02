@@ -1,5 +1,5 @@
 ---
-title: Grove - Chainable RGB LED
+name: Grove - Chainable RGB LED
 category: Actuator
 bzurl: https://seeedstudio.com/Grove-Chainable-RGB-LED-p-850.html
 oldwikiname: Grove_-_Chainable_RGB_LED
@@ -41,13 +41,13 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Usage
 -----
 
-### With [Arduino](/Arduino "Arduino")
+### Play with [Arduino](/Arduino "Arduino")
 
 When you get Grove - Chainble RGB LED, you may think how I can light up it. Now we will show you this demo: all colors of RGB cycles in an uniform way.
 
@@ -57,43 +57,48 @@ To complete this demo, you can use one or more Grove - Chainable RGB LED. Note t
 -   Open the example CycleThroughColors by the path:File->Examples->ChainableLED_master and upload it to Seeeduino.
 
 ```
-    /*
-     * Example of using the ChainableRGB library for controlling a Grove RGB.
-     * This code cycles through all the colors in an uniform way. This is accomplished using a HSB color space.
-     */
-    #include <ChainableLED.h>
 
-    #define NUM_LEDS  5
+/* 
+ * Example of using the ChainableRGB library for controlling a Grove RGB.
+ * This code cycles through all the colors in an uniform way. This is accomplished using a HSB color space. 
+ */
 
-    ChainableLED leds(7, 8, NUM_LEDS);
 
-    void setup()
-    {
-    }
+#include <ChainableLED.h>
 
-    float hue = 0.0;
-    boolean up = true;
+#define NUM_LEDS  5
 
-    void loop()
-    {
-      for (byte i=0; i<NUM_LEDS; i++)
-        leds.setColorHSB(i, hue, 1.0, 0.5);
+ChainableLED leds(7, 8, NUM_LEDS);
 
-      delay(50);
+void setup()
+{
+  leds.init();
+}
 
-      if (up)
-        hue+= 0.025;
-      else
-        hue-= 0.025;
+float hue = 0.0;
+boolean up = true;
 
-      if (hue>=1.0 && up)
-        up = false;
-      else if (hue<=0.0 && !up)
-        up = true;
-    }
+void loop()
+{
+  for (byte i=0; i<NUM_LEDS; i++)
+    leds.setColorHSB(i, hue, 1.0, 0.5);
+    
+  delay(50);
+    
+  if (up)
+    hue+= 0.025;
+  else
+    hue-= 0.025;
+    
+  if (hue>=1.0 && up)
+    up = false;
+  else if (hue<=0.0 && !up)
+    up = true;
+}
+
 ```
 
-You can observe this scene: colors of two LED will gradient consistently.
+You can observe this scene: colors of five LED will gradient consistently.
 
 **Extended application:**
 Based on [Chainable LED Library](https://github.com/pjpmarques/ChainableLED), we have designed this demo: RGB color varies with the temperature measured by Grove - temperature. The RGB color vary from green to red when the temperature is from 25 to 32. The test code is shown below. Do it if you are interested in it.
@@ -166,7 +171,33 @@ Based on [Chainable LED Library](https://github.com/pjpmarques/ChainableLED), we
     }
 ```
 
-### With Raspberry Pi
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect Grove - Chainanle RGB LED to port D7 in a Base Shield
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![](https://github.com/SeeedDocument/Grove-Chainable_RGB_LED/raw/master/img/Chainable_RGB_LED.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, you will see the LED fade in and fade out.
+
+### Play with Raspberry Pi
 
 1.You should have got a raspberry pi and a grovepi or grovepi+.
 
@@ -733,6 +764,7 @@ Resources
 
 -   **[Library]**[Chainable RGB LED Library for the P9813](https://github.com/pjpmarques/ChainableLED)
 -   **[Library]**[Github repository for Chainable RGB LED Library (new)](https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED)
+-   **[Library]** [CodeCraft Code](https://github.com/SeeedDocument/Grove-Chainable_RGB_LED/raw/master/res/Chainable%20RGB%20LED.zip)
 -   **[Eagle]**[Chainable RGB LED eagle file V1](https://github.com/SeeedDocument/Grove-Chainable_RGB_LED/raw/master/res/Chainable_RGB_LED_eagle_file%20V1.zip)
 -   **[Eagle]**[Chainable RGB LED eagle file V2](https://github.com/SeeedDocument/Grove-Chainable_RGB_LED/raw/master/res/Grove%20-%20Chainable%20RGB%20LED%20v2.0.zip)
 -   **[PDF]**[Chainable RGB LED SCH file V1](https://github.com/SeeedDocument/Grove-Chainable_RGB_LED/raw/master/res/CRGBled%20v1_SCH.pdf)
@@ -759,4 +791,4 @@ Resources
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/limanchen/security-access-using-seeeduino-lotus-7eb90f/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

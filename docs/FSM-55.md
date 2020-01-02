@@ -1,5 +1,5 @@
 ---
-title: FSM-55
+name: FSM-55
 category: MakerPro
 bzurl: https://www.seeedstudio.com/FSM-55-LED-Matrix-Display-p-2121.html
 oldwikiname:  FSM-55
@@ -126,4 +126,4 @@ Another reason for this board was I (gniibe) found that OpenOCD's SWD support is
 *   GCC ARM Embedded: [https://launchpad.net/gcc-arm-embedded](https://launchpad.net/gcc-arm-embedded)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

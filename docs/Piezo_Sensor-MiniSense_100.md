@@ -1,5 +1,5 @@
 ---
-title: Piezo Sensor - MiniSense 100
+name: Piezo Sensor - MiniSense 100
 category: MakerPro
 bzurl: https://www.seeedstudio.com/Piezo-Sensor-MiniSense-100-p-426.html
 oldwikiname:  Piezo Sensor - MiniSense 100
@@ -146,9 +146,7 @@ The MiniSense 100 is a low cost cantilever-type vibration sensor loaded by a mas
 
 ##   Resource
 
-*   [Piezo Film Sensors Technical Manua](http://www.seeedstudio.com/depot/images/product/MSI-techman.pdf)
-
-*   [MiniSense 100 Vibration Sensor Manual](http://www.seeedstudio.com/depot/images/product/MiniSense_100.pdf)
+*   [MiniSense 100 datasheet](https://github.com/SeeedDocument/Piezo-Sensor---MiniSense-100/raw/master/res/MiniSense_100.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: LTE Cat 1 Pi HAT
+name: LTE Cat 1 Pi HAT
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Infrared-Temperature-Sensor-p-1058.html
 oldwikiname: Grove_-_Infrared_Temperature_Sensor
@@ -21,12 +21,13 @@ LTE CAT.1 Pi HAT is designed for LTE Category 1 networks and with 2G fallback(EU
 LTE CAT.1 Pi HAT supports UART and USB interfaces. By UART, Raspberry Pi communicate with LTE CAT.1 Pi HAT via AT command without any special driver. It’s well suited for building prototyping rapidly.
 
 
+<iframe width="800" height="450" src="https://www.youtube.com/embed/nQmORk9_EQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 |Version|Links|
 |--|--|
-|<br>Europe</br>|<p style="text-align:center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28Europe%29-p-3060.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
-|<br>USA-AT&T</br>|<p style="text-align:center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28USA-AT%26T%29-p-3056.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
-|<br>USA-VZW<br>|<p style="text-align:center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28USA-VZW%29-p-3061.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
+|<br>Europe</br>|<p style=":center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28Europe%29-p-3060.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
+|<br>USA-AT&T</br>|<p style=":center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28USA-AT%26T%29-p-3056.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
+|<br>USA-VZW<br>|<p style=":center"><a href="https://www.seeedstudio.com/LTE-Cat-1-Pi-HAT-%28USA-VZW%29-p-3061.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/get_one_now_small.png" /></a></p>|
 
 
 ## Version
@@ -398,13 +399,20 @@ Now we have made three versions of the LTE Cat 1 Pi HAT. In addition to supporti
 
 ### Software
 
-- Step 1. Use dtoverlay=pi3-disable-bt to enable Raspberry Pi3 UART0.
+- Step 1. Use dtoverlay=pi3-disable-bt to enable Raspberry Pi3/Pi4 UART0.
 
 ```
 sudo nano /boot/config.txt
 ```
 
-Then add dtoverlay=pi3-disable-bt to bottom of the config.txt
+Then add `dtoverlay=pi3-disable-bt` and `enable_uart=1` to bottom of the config.txt. it should look like this.
+
+```bash
+[all]
+#dtoverlay=vc4-fkms-v3d
+dtoverlay=pi3-disable-bt
+enable_uart=1
+```
 
 - Step 2. Disable the system serivce to use the UART0.
 
@@ -423,7 +431,7 @@ sudo nano /boot/cmdline.txt
 
 Then delete console=serial0,115200 from the string. 
 
-- Step 4. Reboot the Raspberry Pi3
+- Step 4. Reboot the Raspberry Pi3/Pi4
 
 ```
 sudo reboot
@@ -485,6 +493,43 @@ A2: Here is [u-blox-CEL_ATCommands](https://github.com/SeeedDocument/LTE_Cat_1_P
 
 A3: Please refer to [u-blox LARA-R2 series product page](https://www.u-blox.com/en/product/lara-r2-series).
 
+**Q4: How to register to AT&T network for LARA-203?**
+
+A4: Please run below commands.
+
+```
+AT+COPS=2
+AT+UMNOCONF=2
+AT+COPS=0
+```
+
+You can try below command to verify AT&T network connection. 
+
+```
+AT+UPSD=0,1,"AT&T"
+AT+UPSDA=0,3
+AT+UPING="www.google.com"
+```
+
+**Q5: How to register to Verizon network for LARA-204?**
+
+A5: Please run below commands.
+
+```
+AT+COPS=2
+AT+UMNOCONF=3
+AT+COPS=0
+```
+
+You can try below command to verify Verizon network connection. 
+
+```
+AT+UPSD=0,1,"vzwinternet"
+AT+UPSDA=0,3
+AT+UPING="www.google.com"
+```
+
+
 ## Resource
 
 - **[PDF]** [LTE Cat.1 Pi HAT Schematic](https://github.com/SeeedDocument/LTE_Cat_1_Pi_HAT/raw/master/res/LTE%20CAT.1%20Pi%20HAT%20v1.0.pdf)
@@ -493,5 +538,12 @@ A3: Please refer to [u-blox LARA-R2 series product page](https://www.u-blox.com/
 - **[PDF]** [LARA-R2_SysIntegrManual](https://github.com/SeeedDocument/LTE_Cat_1_Pi_HAT/raw/master/res/LARA-R2_SysIntegrManual_(UBX-16010573).pdf)
 - **[PDF]** [AT-Commands Examples AppNote](https://github.com/SeeedDocument/LTE_Cat_1_Pi_HAT/raw/master/res/AT-CommandsExamples_AppNote_(UBX-13001820).pdf)
 
+
+## Projects
+
+**Face Recognization Smart Lock with LTE Pi HAT**: Face recognition is becoming more and more widely used, we can use it to make a smart lock.
+
+<iframe frameborder='0' height='327.5' scrolling='no' src='https://project.seeedstudio.com/SeeedStudio/face-recognization-smart-lock-with-lte-pi-hat-abcec9/embed' width='350'></iframe>
+
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

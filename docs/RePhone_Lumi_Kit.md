@@ -1,5 +1,5 @@
 ---
-title: RePhone Lumi Kit
+name: RePhone Lumi Kit
 category: RePhone
 bzurl: https://www.seeedstudio.com/RePhone-Lumi-Kit-p-2623.html
 oldwikiname:  RePhone Lumi Kit
@@ -285,4 +285,4 @@ Some frequently asked questions in RePhone Community are collected and answered 
 Please go the Wiki page [Xadow Duino](/Xadow_Duino) for more info.
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

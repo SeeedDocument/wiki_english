@@ -1,5 +1,5 @@
 ---
-title: Grove - Alcohol Sensor
+name: Grove - Alcohol Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Alcohol-Sensor-p-764.html
 oldwikiname: Grove_-_Alcohol_Sensor
@@ -20,6 +20,9 @@ Grove - Alcohol Sensor is a complete alcohol sensor module for Arduino or Seeedu
 <p class="admonition-title">Note</p>
 The sensor value only reflects the approximated trend of gas concentration in a permissible error range, it DOES NOT represent the exact gas concentration. The detection of certain components in the air usually requires a more precise and costly instrument, which cannot be done with a single gas sensor. If your project is aimed at obtaining the gas concentration at a very precise level, then we do not recommend this gas sensor.
 </div>
+
+!!!Tip
+    We've released the [Seeed Gas Sensor Selection Guide](http://wiki.seeedstudio.com/Seeed_Gas_Sensor_Selection_Guide/), it will help you choose the gas sensor that best suits your needs.
 
 Features
 --------
@@ -44,7 +47,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 
@@ -84,7 +87,7 @@ void setup() {
 void loop() {
     float sensor_volt;
     float RS_air; //  Get the value of RS via in a clear air
-    float sensorValue;
+    float sensorValue = 0;
 
 /*--- Get a average data by testing 100 times ---*/
     for(int x = 0 ; x < 100 ; x++)
@@ -123,7 +126,7 @@ void loop() {
     float ratio; // Get ratio RS_GAS/RS_air
     int sensorValue = analogRead(A0);
     sensor_volt=(float)sensorValue/1024*5.0;
-    RS_gas = sensor_volt/5.0-sensor_volt; // omit *R16
+    RS_gas = sensor_volt/(5.0-sensor_volt); // omit *R16
 
   /*-Replace the name "R0" with the value of R0 in the demo of First Test -*/
     ratio = RS_gas/RS_air;  // ratio = RS/R0
@@ -175,4 +178,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Alcohol_Sensor -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

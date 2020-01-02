@@ -1,5 +1,5 @@
 ---
-title: Grove - Water Atomization
+name: Grove - Water Atomization
 category: Actuator
 bzurl: https://seeedstudio.com/Grove-Water-Atomization-v1.0-p-2542.html
 oldwikiname: Grove_-_Water_Atomization
@@ -55,7 +55,7 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 Hardware Overview
@@ -112,7 +112,7 @@ We have chosen Seeeduino in this case.
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-We also need a Grove - Touch Sensor in this demo and also connect it to A5(Use as digital pin).
+We also need a Grove - Touch Sensor in this demo and also connect it to D5.
 </div>
 
 1.Copy code below to Arduino IDE editor.
@@ -171,12 +171,38 @@ Do not touch transducer interface pins directly because peak output voltage of D
 The inductor <span style="font-weight:bold">L2</span> (marked in red rectangle above) will be heated. So do not touch it directly.
 </div>
 
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect Grove - Water Atomization to port D2, and connect Grove - Button to port D5 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-Water_Atomization/master/img/cc_Water_Atomization.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, the water atomization starts atomize when you push the button.
 
 Resources
 ---------
 
 - [Schematic files in Eagle](https://raw.githubusercontent.com/SeeedDocument/Grove-Water_Atomization/master/res/Schematic_file_in_Eagle.zip)
 - [Schematic files in PDF](https://raw.githubusercontent.com/SeeedDocument/Grove-Water_Atomization/master/res/Schematic_file_in_PDF.zip)
+- [Codecraft CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-Water_Atomization/master/res/Grove_Water_Atomization_CDC_File.zip)
 
 
 ## Project
@@ -188,4 +214,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Water_Atomization -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Grove - Speech Recognizer
+name: Grove - Speech Recognizer
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Speech-Recognizer-p-2708.html
 oldwikiname:
@@ -204,10 +204,37 @@ If the blue led is light(last about 1s), that means the command was recognized c
 ![enter image description here](https://raw.githubusercontent.com/SeeedDocument/Grove_Speech_Recognizer/master/img/monitor.png)
 
 
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Speech Recognizer to port D2 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_Speech_Recognizer/master/img/cc_Speech_Recognizer.PNG)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, say Hicell to wake it up, and you can say other command when the red LED goes on.
+
 ## Resources
 
 * [Schematics in Eagle](https://github.com/SeeedDocument/Grove_Speech_Recognizer/raw/master/res/eagle.zip)
 * [Schematics in PDF](https://github.com/SeeedDocument/Grove_Speech_Recognizer/raw/master/res/Grove%20-%20Speech%20Recognizer%20v1.0.pdf)
+* [Codecraft CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_Speech_Recognizer/master/res/Grove_Speech_Recognizer_CDC_File.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: 315Mhz Wireless car key fob with key chain
+name: 315Mhz Wireless car key fob with key chain
 category: MakerPro
 bzurl: http://www.seeedstudio.com/depot/315mhz-wireless-car-key-fob-with-key-chain-battery-included-p-557.html?cPath=139_140
 oldwikiname:  315Mhz Wireless car key fob with key chain
@@ -46,4 +46,4 @@ This is a Wireless car key FOB with 4 buttons: Lock,unlock,mute and alarm on.  A
 </td></tr></table>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

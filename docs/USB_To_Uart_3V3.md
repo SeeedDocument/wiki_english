@@ -1,5 +1,5 @@
 ---
-title: USB To Uart 3V3‏‎
+name: USB To Uart 3V3‏‎
 category: Discontinued
 bzurl:
 oldwikiname: USB_To_Uart_3V3‏‎
@@ -107,4 +107,4 @@ Note that you should select the correct board type and COM port.
 - **[Datasheet]**[Datasheet of CH340](https://github.com/SeeedDocument/USB_To_Uart_3V3/raw/master/res/CH340DS1_EN.PDF)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

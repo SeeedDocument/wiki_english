@@ -1,5 +1,5 @@
 ---
-title: Grove - Step Counter(BMA456)
+name: Grove - Step Counter(BMA456)
 category: Sensor
 bzurl: 
 oldwikiname: 
@@ -17,7 +17,14 @@ The Grove - Step Counter(BMA456) is based on BMA456, which is an exetremely smal
 Relaiable, cost-effective, on top of that, it's very easy to use, you can easily add this plug and play module on your wearable devices. 
 
 
-<p style="text-align:center"><a href="https://www.seeedstudio.com/Grove-Step-Counter-(BMA456)-p-3189.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+<p style=":center"><a href="https://www.seeedstudio.com/Grove-Step-Counter-(BMA456)-p-3189.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+
+
+## Version
+
+| Product Version  | Changes                                                                                               | Released Date |
+|------------------|-------------------------------------------------------------------------------------------------------|---------------|
+| Grove - Step Counter(BMA456) | Initial                                                                                               | Oct 2018      |
 
 
 ## Features
@@ -38,7 +45,10 @@ Relaiable, cost-effective, on top of that, it's very easy to use, you can easily
 |Sensitivity|16384 @±2g<br>8192 @±4g<br>4096 @±8g<br>2048 @±16g|
 |Interface|I^2^C|
 |I^2^C Address|0x19(default) / 0x18(optional)|
-
+|Size|L: 40mm W: 20mm H: 10mm| 
+|Weight|3.2g|
+|Package size|L: 140mm W: 90mm H: 10mm|
+|Gross Weight|9g|
 
 
 ## Typical applications
@@ -88,7 +98,7 @@ This is a typical Bi-directional level shifter circuit to connect two different 
 
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 ## Getting Started
@@ -215,6 +225,13 @@ Step: 38
 ```
 
 
+## Schematic Online Viewer
+
+
+<div class="altium-ecad-viewer" data-project-src="https://github.com/SeeedDocument/Grove-Step_Counter-BMA456/raw/master/res/Grove%20-%20Step%20Counter(BMA456).zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
 ## Resources
 
 - **[Zip]** [Grove - Step Counter(BMA456) Eagle Files](https://github.com/SeeedDocument/Grove-Step_Counter-BMA456/raw/master/res/Grove%20-%20Step%20Counter(BMA456).zip)
@@ -236,4 +253,4 @@ This is the introduction Video of this product, simple demos, you can have a try
 
 ## Tech Support
 
-Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)
+Please do not hesitate to submit the issue into our [forum](https://forum.seeedstudio.com/)<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

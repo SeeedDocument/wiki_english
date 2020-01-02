@@ -1,5 +1,5 @@
 ---
-title: LinkIt Introduction
+name: LinkIt Introduction
 nointro:
 ---
 
@@ -25,3 +25,4 @@ Here is the list of the LinkIt Boards you can find in the Seeed WiKi. The list w
 - [Linkit Connect 7681](/Linkit_Connect_7681/)
 - [Sidekick Basic Kit for LinkIt ONE](/Sidekick_Basic_Kit_for_LinkIt_ONE/)
 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

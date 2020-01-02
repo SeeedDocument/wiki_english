@@ -1,5 +1,5 @@
 ---
-title: Grove - High Precision RTC
+name: Grove - High Precision RTC
 category: Communication
 bzurl: https://www.seeedstudio.com/Grove-High-Precision-RTC-p-2741.html
 oldwikiname: Grove - High Precision RTC
@@ -108,4 +108,4 @@ After upload completed, you can open the serial monitor to see the result.
 
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

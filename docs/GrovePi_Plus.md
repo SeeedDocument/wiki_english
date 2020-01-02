@@ -1,5 +1,5 @@
 ---
-title: GrovePi+
+name: GrovePi+
 category: Raspberry Pi
 bzurl: https://www.seeedstudio.com/GrovePi%2B-p-2241.html
 oldwikiname:  GrovePi+
@@ -13,6 +13,10 @@ sku:     103010002
 It adds support for the newly RaspberryPi Model B+ and Model A+.
 There are three mounting holes can perfect match all version of Raspberry Pi. Camera cable outlet hole.
 It also improves the voltage level converting sub circuits.
+
+
+<p style=":center"><a href="https://www.seeedstudio.com/GrovePi-p-2241.html" target="_blank"><img src="https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
+
 
 ##   Features
 ---
@@ -30,9 +34,32 @@ It also improves the voltage level converting sub circuits.
 
 ##   Get Started
 ---
+
 **<big>Welcome to the Quickstart Guide to the GrovePi+.</big>**
 
 If you want to know more about how it works, you can find all the design files in the designer's [Github Repository](https://github.com/DexterInd/GrovePi).
+
+
+**Grove Base Hat for Raspberry Pi Vs. GrovePi+**
+
+| Parameter                   | [Grove Base Hat for Raspberry Pi](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/)                   | [GrovePi+](http://wiki.seeedstudio.com/GrovePi_Plus/)                                                                            |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Working Voltage             | 3.3V                                                                                                              | 5V                                                                                                                               |
+| MCU                         | STM32F030F4P6                                                                                                     | ATMEGA328P                                                                                                                       |
+| Grove Ports                 | 6 Digital(3.3V)   4 Analog(3.3V)   3 I2C(3.3V)   1 PWM(3.3V)  1 RPISER(UART) connect to Raspberry Pi(3.3V)  1 SWD | 7 Digital(5V)  3 Analog(5V)  3 I2C(5V)  1 SERIAL: Connect to ATMEGA328P D0/1(5V)  1 RPISER: Connect to Raspberry Pi(3.3V)  1 ISP |
+| Grove-Digital               | Connect to Raspberry Pi directly                                                                                  | Connect to ATMEGA328P digital pins and transfer to I2C signal, then through level converter to Raspberry Pi                      |
+| Grove-Analog                | Connect to STM32F030F4P6(12bit ADC) and then transfer to I2C signal,route to Raspberry Pi directly                | Connect to ATMEGA328P analog pins(10bit ADC) and then transfer to I2C signal, then through level converter to Raspberry Pi       |
+| Grove-I2C                   | Connect to Raspberry Pi directly                                                                                  | Connect through level converter to Raspberry Pi                                                                                  |
+| Grove-PWM                   | Connect to Raspberry Pi directly                                                                                  | NA                                                                                                                               |
+| RPISER                      | Connect to Raspberry Pi directly                                                                                  | Connect to Raspberry Pi directly                                                                                                 |
+| SERIAL                      | NA                                                                                                                | Connect to ATMEGA328P digital pins D0/D1 and transfer to I2C signal, then through level converter to Raspberry Pi                |
+| SWD                         | Burn firmware to STM32F030F4P6                                                                                    | NA                                                                                                                               |
+| ISP                         | NA                                                                                                                | Burn firmware to ATMEGA328P                                                                                                      |
+| Raspberry Pi Connector Pins | 40                                                                                                                | 26                                                                                                                               |
+
+
+
+
 
 ###   Connect the GrovePi to the Raspberry Pi
 
@@ -119,4 +146,4 @@ We have developed three simple projects to illustrate how the GrovePi works.
 -   **[Document]** [Setting_Up_Software_for_GrovePi](https://github.com/SeeedDocument/GrovePi_Plus/raw/master/res/Setting_Up_Software_for_GrovePi.pdf)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

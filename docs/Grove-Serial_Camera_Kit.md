@@ -1,5 +1,5 @@
 ---
-title: Grove - Serial Camera Kit
+name: Grove - Serial Camera Kit
 category: Sensor
 bzurl: https://www.seeedstudio.com/Grove-Serial-Camera-Kit-p-1608.html
 oldwikiname:  Grove - Serial Camera Kit
@@ -87,9 +87,9 @@ Find anything different from the ceiling image previous?
 Lens screwed different depths represent different focal length, you can have a try.
 
 ##  Resources
----
-[Demo Code](https://github.com/Seeed-Studio/Grove_Serial_Camera_Kit)
 
+- **[Library]** [Demo Code](https://github.com/Seeed-Studio/Grove_Serial_Camera_Kit)
+- **[Datasheet]** [CJ OV528](https://github.com/SeeedDocument/Grove-Serial_Camera_Kit/raw/master/res/cj-ov528_protocol.pdf)
 
 ## Project
 
@@ -98,4 +98,4 @@ Lens screwed different depths represent different focal length, you can have a t
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/phpoc_man/grove-camera-phpoc-web-application-1dfd63/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: A Comparison of Different Grove Temperature Sensors
+name: A Comparison of Different Grove Temperature Sensors
 category: Tutorial
 
 ---
@@ -26,7 +26,7 @@ Temperature sensors like thermocouples have very wide measuring range and are ad
 
 |Temperature Sensor Name|Interface|Range|Accuracy|Sensitivity|Datasheet|
 |-----------------------|---------|----|---------|-----------|----|
-|[Temp&Humi Sensor](http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/) | Digital | 0~50C|+-2C|1C|[DHT11](http://wiki.seeedstudio.com/images/3/31/DHT11.pdf)|
+|[Temp&Humi Sensor](http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/) | Digital | 0~50C|+-2C|1C|[DHT11](https://github.com/SeeedDocument/Grove-TemperatureAndHumidity_Sensor/raw/master/res/DHT11.pdf)|
 |[Temp&Humi Sensor Pro](http://wiki.seeed.cc/Grove-Temperature_and_Humidity_Sensor_Pro/) | Digital | -40~80C|+-0.5C|0.1C| [DHT22/AM2302](https://github.com/SeeedDocument/Grove-Temperature_and_Humidity_Sensor_Pro/raw/master/res/AM2302.pdf) |
 |[Temperature Sensor](http://wiki.seeed.cc/Grove-Temperature_Sensor_V1.2/) | Analog | -40~125C|+-1.5C|N/A|[NCP18WF104F03RC](https://github.com/SeeedDocument/Grove-Temperature_Sensor_V1.2/raw/master/res/NCP18WF104F03RC.pdf) |
 |[One Wire Temperature Sensor](http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf) | One Wire | -55~125C|+-0.5C|0.5C|[DS18B20](http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf) |
@@ -67,4 +67,4 @@ More details please download below list.
 |[GET ONE NOW!](http://www.seeedstudio.com/Grove-Barometer-Sensor-(BMP180)-p-1840.html)|[GET ONE NOW!](http://www.seeedstudio.com/depot/Grove-Barometer-Sensor-BMP280-p-2652.html)|[GET ONE NOW!](http://www.seeedstudio.com/depot/Grove-TempHumiBarometer-Sensor-BME280-p-2653.html)|
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

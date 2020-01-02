@@ -1,5 +1,5 @@
 ---
-title: Seeeduino Stalker V3.1
+name: Seeeduino Stalker V3.1
 category: Arduino
 bzurl: http://www.seeedstudio.com/Seeeduino-Stalker-V3.1-p-2686.html
 prodimagename: cover.JPG
@@ -306,4 +306,4 @@ Here are some questions that we usually received from new users. If you have any
 > Make sure your solar panel is able to supple 4.5~6V voltage.
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

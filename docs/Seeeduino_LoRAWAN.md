@@ -1,5 +1,5 @@
 ---
-title: Seeeduino LoRaWAN
+name: Seeeduino LoRaWAN
 category: Arduino
 bzurl: http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html
 oldwikiname:
@@ -15,6 +15,8 @@ Seeeduino LoRaWAN is an Arduino development board with LoRaWan protocol embedded
 The 4 onboard standard Grove connectors allow Seeeduino LoRaWan to connect with hundreds of Grove sensors and actuators from Seeedstudio conveniently, as a result, users are able to be more focus on the application itself without worrying about the compatibility issue between different modules. In addition, the board has embedded an integrated lithium battery management chip that allows the board to be charged by USB interface. In low consumption mode, a full charged lithium battery can power the board for several months.
 
 If you want to build an IoT application quickly, Seeeduino LoRaWAN is your best choice.
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4df5kaaKa6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 |Product Version|Released Date | How to Buy|
 |-------|-------------|----------|
@@ -440,6 +442,83 @@ void loop(void)
 - Step 1. Please refer to [User Manual](https://github.com/SeeedDocument/LoRaWAN_Gateway-868MHz_Kit_with_Raspberry_Pi_3/raw/master/res/%5BRHF-UM01649%5DIoT%20Discovery%20User%20Manual-seeed-v2.1.pdf) Session 3.2.3 to setup the gateway. 
 - Step 2. For seeeduino Lorawan, Please open your Arduino IDE and click on **File > Examples > LoRaWAN > OTAA** and refer the code.
 
+```c++
+#include <LoRaWan.h>
+
+
+unsigned char data[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0xA,};
+char buffer[256];
+
+
+void setup(void)
+{
+    SerialUSB.begin(115200);
+    while(!SerialUSB);
+    
+    lora.init();
+    
+    memset(buffer, 0, 256);
+    lora.getVersion(buffer, 256, 1);
+    SerialUSB.print(buffer); 
+    
+    memset(buffer, 0, 256);
+    lora.getId(buffer, 256, 1);
+    SerialUSB.print(buffer);
+    
+    lora.setKey("2B7E151628AED2A6ABF7158809CF4F3C", "2B7E151628AED2A6ABF7158809CF4F3C", "2B7E151628AED2A6ABF7158809CF4F3C");
+    
+    lora.setDeciveMode(LWOTAA);
+    lora.setDataRate(DR0, EU868);
+    
+    lora.setChannel(0, 868.1);
+    lora.setChannel(1, 868.3);
+    lora.setChannel(2, 868.5);
+    
+    lora.setReceiceWindowFirst(0, 868.1);
+    lora.setReceiceWindowSecond(869.5, DR3);
+    
+    lora.setDutyCycle(false);
+    lora.setJoinDutyCycle(false);
+    
+    lora.setPower(14);
+    
+    while(!lora.setOTAAJoin(JOIN));
+}
+
+void loop(void)
+{   
+    bool result = false;
+    
+    result = lora.transferPacket("Hello World!", 10);
+    //result = lora.transferPacket(data, 10, 10);
+    
+    if(result)
+    {
+        short length;
+        short rssi;
+        
+        memset(buffer, 0, 256);
+        length = lora.receivePacket(buffer, 256, &rssi);
+        
+        if(length)
+        {
+            SerialUSB.print("Length is: ");
+            SerialUSB.println(length);
+            SerialUSB.print("RSSI is: ");
+            SerialUSB.println(rssi);
+            SerialUSB.print("Data is: ");
+            for(unsigned char i = 0; i < length; i ++)
+            {
+                SerialUSB.print("0x");
+                SerialUSB.print(buffer[i], HEX);
+                SerialUSB.print(" ");
+            }
+            SerialUSB.println();
+        }
+    }
+}
+```
+
 **4. GPS Data**
 
 !!!Note
@@ -734,6 +813,17 @@ Click on **Files Transfer > Ymodem > Send**, and select the .bin file we had dow
 - Step 6. Then the updating is started.
 ![](https://raw.githubusercontent.com/SeeedDocument/Seeeduino_LoRa/master/img/firmware_4.png)
 
+
+## FAQ
+
+**Q1: Seeeduino Lorawan stopped being recognized by PC**
+
+**A1:** Quickly double-tapping the reset buton to recover the board.
+
+**Q2：Seeeduino Lorawan don't have Examples > LoRaWAN**
+
+**A2:** Click [this](https://github.com/SeeedDocument/seeeduino_LoraWan) to get it.
+
 ## Resources
 
 * [Schematics in Eagle](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/202001246 Seeeduino LoRaWAN Eagle.zip)
@@ -741,9 +831,10 @@ Click on **Files Transfer > Ymodem > Send**, and select the .bin file we had dow
 * [CE certification of RHF 76-052](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/ce-rhf76-052.pdf)
 * [RHF76-052 Firmware V2.0.10](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/rhf76-052am-v2.0.10-20160923.ebin 2.bin)
 * [RHF76-052 Firmware V2.1.16](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/rhf76-052am-v2.1.16-20171203.ebin.bin)
+* [RHF76-052 Firmware V2.1.19](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/rhf76-052am-v2.1.19-20180525.ebin.bin)
 * [Datasheet of RHF76-052AM](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/rhf-ds01500_rhf76-052_datasheet_v03.pdf)
 * [Datasheet of GPS Chip L70B-M39 ](https://github.com/SeeedDocument/Seeeduino_LoRa/raw/master/res/L70B-M39.pdf)
-
+* [Azure IoT Edge LoRaWAN](https://github.com/Azure/iotedge-lorawan-starterkit/)
 
 ## Projects
 
@@ -752,4 +843,4 @@ Click on **Files Transfer > Ymodem > Send**, and select the .bin file we had dow
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/SeeedStudio/seeed-lora-iotea-solution-b5ee95/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

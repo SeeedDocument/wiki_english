@@ -1,5 +1,5 @@
 ---
-title: Grove - Touch Sensor
+name: Grove - Touch Sensor
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Touch-Sensor-p-747.html
 oldwikiname: Grove_-_Touch_Sensor
@@ -34,7 +34,7 @@ Grove - Touch Sensor enables you to replace press with touch. It can detect the 
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
 **Option features**
@@ -95,7 +95,191 @@ void loop() {
 ```
 **Step 2.** Monitor the led on and off.
 
-### Play With Raspberry Pi
+### Play with Codecraft
+
+#### Hardware
+
+**Step 1.** Connect a Grove - Touch Sensor to port D2, and connect a Grove - Red LED to port D3 of a Base Shield.
+
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove_Touch_Sensor/master/image/cc_Touch_Sensor.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, the LED will goes on when you touch the Touch Sensor.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Touch Sensor|
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-Touch_Sensor/raw/master/img/45d_small.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](http://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html)|
+
+
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the touch sensor to port 12 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-Touch_Sensor/raw/master/img/Touch_Hat.jpg)
+
+
+!!! Note
+    For step 3 you are able to connect the touch sensor to **any GPIO Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd grove.py/grove
+python grove_touch_sensor.py 12
+
+```
+
+Following is the grove_touch_sensor.py code.
+
+```python
+
+import time
+from grove.gpio import GPIO
+
+
+class GroveTouchSensor(GPIO):
+    def __init__(self, pin):
+        super(GroveTouchSensor, self).__init__(pin, GPIO.IN)
+        self._last_time = time.time()
+
+        self._on_press = None
+        self._on_release = None
+
+    @property
+    def on_press(self):
+        return self._on_press
+
+    @on_press.setter
+    def on_press(self, callback):
+        if not callable(callback):
+            return
+
+        if self.on_event is None:
+            self.on_event = self._handle_event
+
+        self._on_press = callback
+
+    @property
+    def on_release(self):
+        return self._on_release
+
+    @on_release.setter
+    def on_release(self, callback):
+        if not callable(callback):
+            return
+
+        if self.on_event is None:
+            self.on_event = self._handle_event
+
+        self._on_release = callback
+
+    def _handle_event(self, pin, value):
+        t = time.time()
+        dt, self._last_time = t - self._last_time, t
+
+        if value:
+            if callable(self._on_press):
+                self._on_press(dt)
+        else:
+            if callable(self._on_release):
+                self._on_release(dt)
+
+Grove = GroveTouchSensor
+
+
+def main():
+    import sys
+
+    if len(sys.argv) < 2:
+        print('Usage: {} pin'.format(sys.argv[0]))
+        sys.exit(1)
+
+    touch = GroveTouchSensor(int(sys.argv[1]))
+
+    def on_press(t):
+        print('Pressed')
+    def on_release(t):
+        print("Released.")
+
+    touch.on_press = on_press
+    touch.on_release = on_release
+
+    while True:
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    main()
+
+
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result
+    
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_touch_sensor.py 12
+Pressed
+Released.
+Pressed
+Released.
+Pressed
+Released.
+Pressed
+Released.
+^CTraceback (most recent call last):
+  File "grove_touch_sensor.py", line 110, in <module>
+    main()
+  File "grove_touch_sensor.py", line 106, in main
+    time.sleep(1)
+KeyboardInterrupt
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
 
 #### Hardware
 
@@ -190,6 +374,7 @@ Here is result:
 
 -  **[Eagle]** [Grove-Touch_Sensor Schematic](https://raw.githubusercontent.com/SeeedDocument/Grove-Touch_Sensor/master/res/Touch_sensor_Eagle_File.zip)
 -  **[PDF]** [TTP223](https://raw.githubusercontent.com/SeeedDocument/Grove-Touch_Sensor/master/res/TTP223.pdf)
+-  **[Codecraft]** [CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove_Touch_Sensor/master/resource/Grove_Touch_Sensor_CDC_File.zip)
 
 
 ## Projects
@@ -208,3 +393,4 @@ Here is result:
 ## Tech Support
 
 Please submit any technical issue into our [forum](http://forum.seeedstudio.com/).
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

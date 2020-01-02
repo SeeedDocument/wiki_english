@@ -1,5 +1,5 @@
 ---
-title: Wio Link Deluxe Plus Kit
+name: Wio Link Deluxe Plus Kit
 category: Wio
 bzurl: https://seeedstudio.com/Wio-Link-Deluxe-Plus-Kit-p-2616.html
 oldwikiname: Wio_Link_Deluxe_Plus_Kit
@@ -14,6 +14,10 @@ sku: 110020053
 This kit is same as **Wio Link Deluxe Kit** except that this kit additionally contains two display modules, which can add visual interfaces for the user. You can use this kit to run some real projects or do prototyping. It contains sensors(mainly), switching-function modules, servo motors, LED strip and a speaker. The most amazing part of this kit is the Wio Link development board which can be utilized for various devices: without a bit programming skill required. All the actions you want your modules performed and the flashing-code operation to Wio Link could be completed with taps in a mobile app. And you can send instructions to your devices over internet at anywhere. So Wio Link will be a perfect utility to making things around smarter for everyone. Now let us do something real!
 
 [![](https://raw.githubusercontent.com/SeeedDocument/common/master/Get_One_Now_Banner.png)](http://www.seeedstudio.com/depot/Wio-Link-Deluxe-Plus-Kit-p-2616.html)
+
+!!!Warning
+     The Wio IFTTT function is EOL. But Wio APP is available. You can use the API from Wio APP to read sensor status and control the actuator. 
+
 
 Features
 --------
@@ -81,4 +85,4 @@ Please go to Recipe for the detailed manual:
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Wio_Link_Deluxe_Plus_Kit -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

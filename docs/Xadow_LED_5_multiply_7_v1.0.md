@@ -1,5 +1,5 @@
 ---
-title: Xadow - LED 5x7 v1.0
+name: Xadow - LED 5x7 v1.0
 category: RePhone
 bzurl: https://www.seeedstudio.com/Xadow-LED-p-1518.html
 oldwikiname: Xadow - LED 5x7
@@ -181,4 +181,4 @@ You can see the belowing scene after uploading the code to Xadow Main Board.
 *   [Xadow LED Firmware](https://github.com/SeeedDocument/Xadow_LED_5_multiply_7_v1.0/raw/master/res/Xadow_LED_Firmware.zip)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

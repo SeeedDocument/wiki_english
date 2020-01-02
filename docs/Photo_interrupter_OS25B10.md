@@ -1,5 +1,5 @@
 ---
-title: Photo interrupter (OS25B10)
+name: Photo interrupter (OS25B10)
 category: MakerPro
 bzurl: https://www.seeedstudio.com/photo-interrupter-os25b10-p-541.html?cPath=144_148
 oldwikiname:  Photo interrupter (OS25B10)
@@ -321,4 +321,4 @@ The resources need to be downloaded, like Eagle file, Demo code, project or othe
 ![](https://github.com/SeeedDocument/Photo_interrupter_OS25B10/raw/master/img/OS25B10.jpg)
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

@@ -1,5 +1,5 @@
 ---
-title: Arch GPRS V2
+name: Arch GPRS V2
 category: mbed
 bzurl: https://seeedstudio.com/Arch-GPRS-V2-p-2026.html
 oldwikiname: Arch_GPRS_V2
@@ -177,4 +177,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_GPRS_V2 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

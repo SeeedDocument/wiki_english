@@ -1,5 +1,5 @@
 ---
-title: Wio Link
+name: Wio Link
 category: Wio
 bzurl: https://www.seeedstudio.com/Wio-Link-p-2604.html
 oldwikiname: Wio_Link
@@ -15,6 +15,11 @@ What's the toughest part of building IoT applications? Someone says the jump wir
 In order to simplify all these steps, at the end of 2015, Seeed Studio initiated Wio Link on [KickStarter](https://www.kickstarter.com/projects/seeed/wio-link-3-steps-5-minutes-build-your-iot-applicat?ref=nav_search), defined a new way of developing IoT applications. Wio Link is an ESP8266 SoC based open-source Wi-Fi development board, the best part of it is the associated platform that allows users to create IoT applications by virtualizing plug-n-play modules to RESTful APIs with mobile Apps. It means that there will be no hardware programming, no breadboard, no jumper wires, and no soldering, just by installing an App on your mobile phone, you are able to build a simple IoT project in 5 minutes.
 
 [![](https://github.com/SeeedDocument/Wio_Link/raw/master/image/300px-Get_One_Now_Banner.png)](https://www.seeedstudio.com/Wio-Link-p-2604.html)
+
+
+!!!Warning
+     The Wio IFTTT function is EOL. But Wio APP is available. You can use the API from Wio APP to read sensor status and control the actuator. 
+
 
 ## Features
 
@@ -425,6 +430,18 @@ Here's the list of supported Groves so far:
 |316010005 |    Grove - Servo                           |Digital   |itself                 | [link](http://www.seeedstudio.com/Grove-Servo-p-1241.html) |
 |101020067 |    Grove - CO2 Sensor                      |UART      |itself                 | [link](http://www.seeedstudio.com/Grove-CO2-Sensor-p-1863.html) |
 
+**10. Wio Link Error code and solution**
+
+| 1021 | Fail connect to Wifi     | Could not connection to Wi-Fi. Please check Wi-Fi password and try again                                                           |
+|------|--------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| 1031 | Fail connect to Wio Wifi | Could not connect to Wio wi-fi hotspot, please try again or manually choose Wio's Wi-Fi hotspot in system settings.                |
+| 1032 | Select wifi error        | Please select a Wifi like"Wio_xxxxxx"                                                                                              |
+| 1033 | Wifi Inconformity        | The current connection before the WiFi and choice of WiFi                                                                          |
+| 1041 | Send order error         | Please check your internet connection and try again.still can’t slove the problem, please try FAQ section and contact us.    |
+| 1042 | Connect error            | Your phone and device wifi disconnect                                                                                              |
+| 1043 | Fail connect to Wifi     | Please check your internet connection and try again.Or click "Setting" go to manual settings view.                                 |
+| 1044 | Connection Error         | Please check your internet connection and try again.If still can’t solve the problem, please try FAQ section and contact us. |
+
 ## Project 
 
 **LED Sound Meter using Wio-Link and Node-Red**: SeeedStudio Grove sound sensor and LED strip attached to Wio-Link being driven by a Node-Red flow.
@@ -432,4 +449,4 @@ Here's the list of supported Groves so far:
 <iframe frameborder='0' height='327.5' scrolling='no' src='https://www.hackster.io/potnik/led-sound-meter-using-wio-link-and-node-red-259e02/embed' width='350'></iframe>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

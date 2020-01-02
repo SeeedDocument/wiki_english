@@ -1,5 +1,5 @@
 ---
-title: Grove - Tilt Switch
+name: Grove - Tilt Switch
 category: Sensor
 bzurl: https://seeedstudio.com/Grove-Tilt-Switch-p-771.html
 oldwikiname: Grove_-_Tilt_Switch
@@ -107,13 +107,12 @@ Platforms Supported
 | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 !!!Caution
-    The platforms mentioned above as supported is/are an indication of the module's hardware or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
+    The platforms mentioned above as supported is/are an indication of the module's software or theoritical compatibility. We only provide software library or code examples for Arduino platform in most cases. It is not possible to provide software library / demo code for all possible MCU platforms. Hence, users have to write their own software library.
 
 
-Usage
------
+## Getting Started
 
-### With Arduino
+### Play With Arduino
 
 The SIG pin of the Grove - Tilt Switch output LOW normally. When the Tilt Switch is upright, a pair of balls inside the tilt switch will contact with the pins and the SIG pin will output HIGH.
 
@@ -156,17 +155,180 @@ void loop()
 -   Upload the code.
 -   Then the LED will light when you press the button or activate the tilt-switch. Have a try!
 
-Reference
----------
+### Play with Codecraft
 
-The operating angle of Grove-Tilt Switch as shown below:
+#### Hardware
 
-![](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/img/Tilt_Switch_Operate.jpg)
+**Step 1.** Connect a Grove - Tilt Switch to port D5, then connect a Grove - Button and Grove - Red LED to port D7 and D2 of a Base Shield.
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-The mark J1 on the Grove is the reference terminal.
-</div>
+**Step 2.** Plug the Base Shield to your Seeeduino/Arduino.
+
+**Step 3.** Link Seeeduino/Arduino to your PC via an USB cable.
+
+#### Software
+
+**Step 1.** Open [Codecraft](https://ide.chmakered.com/), add Arduino support, and drag a main procedure to working area.
+
+!!!Note
+    If this is your first time using Codecraft, see also [Guide for Codecraft using Arduino](http://wiki.seeedstudio.com/Guide_for_Codecraft_using_Arduino/).
+
+**Step 2.** Drag blocks as picture below or open the cdc file which can be downloaded at the end of this page.
+
+![cc](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/img/cc_Tilt_Switch.png)
+
+Upload the program to your Arduino/Seeeduino.
+
+!!!Success
+    When the code finishes uploaded, tilt the tilt switch or press the button, the LED will goes on.
+
+### Play With Raspberry Pi (With Grove Base Hat for Raspberry Pi)
+
+#### Hardware
+
+- **Step 1**. Things used in this project:
+
+| Raspberry pi | Grove Base Hat for RasPi| Grove - Tilt Switch |
+|--------------|-------------|-----------------|
+|![enter image description here](https://github.com/SeeedDocument/wiki_english/raw/master/docs/images/rasp.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove_Base_Hat_for_Raspberry_Pi/raw/master/img/thumbnail.jpg)|![enter image description here](https://github.com/SeeedDocument/Grove-Tilt_Switch/raw/master/img/thumbnail.jpg)|
+|[Get ONE Now](https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi-p-3186.html)|[Get ONE Now](https://www.seeedstudio.com/Grove-Tilt-Switch-p-771.html)|
+
+- **Step 2**. Plug the Grove Base Hat into Raspberry.
+- **Step 3**. Connect the tilt switch to port 12 of the Base Hat.
+- **Step 4**. Connect the Raspberry Pi to PC through USB cable.
+
+
+![](https://github.com/SeeedDocument/Grove-Tilt_Switch/raw/master/img/Tilt_Hat.jpg)
+
+!!! Note
+    For step 3 you are able to connect the tilt switch to **any GPIO Port** but make sure you change the command with the corresponding port number.
+
+
+#### Software
+
+- **Step 1**. Follow [Setting Software](http://wiki.seeedstudio.com/Grove_Base_Hat_for_Raspberry_Pi/#installation) to configure the development environment.
+- **Step 2**. Download the source file by cloning the grove.py library. 
+
+```
+cd ~
+git clone https://github.com/Seeed-Studio/grove.py
+
+```
+
+- **Step 3**. Excute below commands to run the code.
+
+```
+cd grove.py/grove
+python grove_tilt_switch.py 12
+
+```
+
+Following is the grove_tilt_switch.py code.
+
+```python
+
+import time
+from grove.gpio import GPIO
+
+
+class GroveTiltSwitch(GPIO):
+    def __init__(self, pin):
+        super(GroveTiltSwitch, self).__init__(pin, GPIO.IN)
+        self._on_trigger = None
+        self._on_release = None
+
+    @property
+    def on_trigger(self):
+        return self._on_trigger
+
+    @on_trigger.setter
+    def on_trigger(self, callback):
+        if not callable(callback):
+            return
+
+        if self.on_event is None:
+            self.on_event = self._handle_event
+
+        self._on_trigger = callback
+
+    @property
+    def on_release(self):
+        return self._on_release
+
+    @on_release.setter
+    def on_release(self, callback):
+        if not callable(callback):
+            return
+
+        if self.on_event is None:
+            self.on_event = self._handle_event
+
+        self._on_release = callback
+
+    def _handle_event(self, pin, value):
+
+        if value:
+            if callable(self._on_trigger):
+                self._on_trigger()
+        else:
+            if callable(self._on_release):
+                self._on_release()
+
+Grove = GroveTiltSwitch
+
+
+def main():
+    import sys
+
+    if len(sys.argv) < 2:
+        print('Usage: {} pin'.format(sys.argv[0]))
+        sys.exit(1)
+
+    swicth = GroveTiltSwitch(int(sys.argv[1]))
+
+    def on_trigger():
+        print('Triggered')
+    def on_release():
+        print("Released.")
+
+    swicth.on_trigger = on_trigger
+    swicth.on_release = on_release
+
+    while True:
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    main()
+
+
+```
+
+!!!success
+    If everything goes well, you will be able to see the following result when you touch the tilt switch
+
+```python
+
+pi@raspberrypi:~/grove.py/grove $ python grove_tilt_switch.py 12
+Triggered
+Released.
+Triggered
+^CTraceback (most recent call last):
+  File "grove_tilt_switch.py", line 106, in <module>
+    main()
+  File "grove_tilt_switch.py", line 102, in main
+    time.sleep(1)
+KeyboardInterrupt
+
+```
+
+
+You can quit this program by simply press ++ctrl+c++.
+
+
+
+
+### Play With Raspberry Pi (with GrovePi_Plus)
+
 
 ### With Raspberry Pi
 
@@ -206,6 +368,7 @@ The mark J1 on the Grove is the reference terminal.
 ```
 
 5.Run the demo.
+
 ```
     sudo python grove_tilt_switch.py
 ```
@@ -214,6 +377,22 @@ The mark J1 on the Grove is the reference terminal.
 
 ![](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/img/Grovepi_tilt_Switch_00.png)
 
+
+
+Reference
+---------
+
+The operating angle of Grove-Tilt Switch as shown below:
+
+![](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/img/Tilt_Switch_Operate.jpg)
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+The mark J1 on the Grove is the reference terminal.
+</div>
+
+
+
 Resources
 ---------
 
@@ -221,9 +400,10 @@ Resources
 -   [Grove - Tilt Switch v1.1 PDF File](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/res/Grove-Tilt_Switch_v1.1_PDF_File.pdf)
 -   [Grove - Tilt Switch v1.1 Eagle File](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/res/Grove-Tilt_Switch_v1.1_Eagle_File.zip)
 -   [SW200D Datasheet](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/res/SW200D_datasheet.pdf)
+-   [Codecraft CDC File](https://raw.githubusercontent.com/SeeedDocument/Grove-Tilt_Switch/master/res/Grove_Tilt_Switch_CDC_File.zip)
 
 
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Tilt_Switch -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

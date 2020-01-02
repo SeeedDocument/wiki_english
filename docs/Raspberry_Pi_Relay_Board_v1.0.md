@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi Relay Board v1.0
+name: Raspberry Pi Relay Board v1.0
 category: Raspberry Pi
 bzurl: https://seeedstudio.com/Raspberry-Pi-Relay-Board-v1.0-p-2409.html
 oldwikiname: Raspberry_Pi_Relay_Board_v1.0
@@ -20,7 +20,7 @@ The Relay Shield utilizes four high quality relays and provides NO/NC interfaces
 
 ## Features
 --------
--   Raspberry Pi compatible
+-   Raspberry Pi3B, Pi3B+, Pi4 compatible
 -   Interface: IIC, Three hardware SW1 (1, 2, 3) select the fixed I2C-bus address
 -   Relay screw terminals
 -   Standardized shield shape and design
@@ -183,11 +183,6 @@ mm
 </table>
 
 
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-Place 2 layers of electrical tape on the top of the Arduino's usb connector. This will prevent the relay shield from making contact. Do not operate voltage more than 35V DC.
-</div>
-
 ## Hardware Overview
 -----------------
 
@@ -343,4 +338,4 @@ Resources
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Raspberry_Pi_Relay_Board_v1.0 -->
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

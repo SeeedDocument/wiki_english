@@ -1,5 +1,5 @@
 ---
-title: Serial port bluetooth module(Master/Slave)‏‎
+name: Serial port bluetooth module(Master/Slave)‏‎
 category: Discontinued
 bzurl:
 oldwikiname: Serial_port_bluetooth_module_(Master/Slave)‏‎
@@ -629,4 +629,4 @@ Now share you awesome projects on with us on [Recipe](http://www.seeedstudio.com
 <font color="#FF0000">Get more information about Core User please email to: recipe@seeed.cc</font>
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

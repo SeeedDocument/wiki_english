@@ -1,5 +1,5 @@
 ---
-title: Shield Bot V1.1
+name: Shield Bot V1.1
 category: Arduino
 bzurl: https://www.seeedstudio.com/Shield-Bot-p-1380.html
 oldwikiname:  Shield Bot V1.1
@@ -347,4 +347,4 @@ Shieldbot shieldbot = Shieldbot(); //decares a Shieldbot object
 *   [358 Datasheet](http://www.ti.com/product/lmv358) Op-Amp as a comparator for reflectance sensors
 
 ## Tech Support
-Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). 
+Please submit any technical issue into our [forum](http://forum.seeedstudio.com/). <br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>

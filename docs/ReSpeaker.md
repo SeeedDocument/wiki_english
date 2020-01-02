@@ -1,5 +1,5 @@
 ---
-title: ReSpeaker Introduction
+name: ReSpeaker Introduction
 nointro:
 ---
 
@@ -56,4 +56,7 @@ Here is the list of the ReSpeaker Boards you can find in the Seeed WiKi. The lis
 - [ReSpeaker 4-Mic Linear Array Kit for Raspberry Pi](http://wiki.seeedstudio.com/ReSpeaker_4-Mic_Linear_Array_Kit_for_Raspberry_Pi/)
 - [ReSpeaker 6-Mic Circular Array kit for Raspberry Pi](http://wiki.seeedstudio.com/ReSpeaker_6-Mic_Circular_Array_kit_for_Raspberry_Pi/)
 
+## The ReSpeaker Project
 
+Please refer to [ReSpeaker.io](https://respeaker.io/) for more info. 
+<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://github.com/SeeedDocument/Wiki_Banner/raw/master/new_product.jpg" /></a></p>
