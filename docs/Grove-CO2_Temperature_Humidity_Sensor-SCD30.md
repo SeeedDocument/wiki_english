@@ -132,15 +132,17 @@ In addition to the Non-Dispersive Infrared(NDIR) measurement technology for CO2 
 
 ## Platforms Supported
 
-| Arduino                                                                                             | Raspberry Pi                                                                                             | BeagleBone                                                                                      | Wio                                                                                               | LinkIt ONE                                                                                         |
-|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
+| Arduino                                                                                               | Raspberry Pi                                                                                                 | BeagleBone                                                                                          | Wio                                                                                                 | LinkIt ONE                                                                                             |
+|-------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/arduino_logo.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/raspberry_pi_logo.jpg)   | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/bbg_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/wio_logo_n.jpg) | ![](https://raw.githubusercontent.com/SeeedDocument/wiki_english/master/docs/images/linkit_logo_n.jpg) |
 
 
 
 
 ## Getting Started
 
+* [Play With Arduino](#play-with-arduino)
+* [Play With Raspberry Pi](#play-with-raspberry-pi)
 
 ### Play With Arduino
 
@@ -282,6 +284,86 @@ void loop()
 ![](https://github.com/SeeedDocument/Grove-CO2-Temperature-Humidity-Sensor-SCD30/raw/master/img/c2.jpg)
 
 
+### Play With Raspberry Pi
+
+#### Hardware
+
+Connect the SCD30 sensor to an I2C port of the GrovePi+ as described in the [Quickstart Guide to the GrovePi+](http://wiki.seeedstudio.com/GrovePi_Plus/).
+
+#### Software
+
+**Node.js**
+
+To use the sensor in your JavaScript or TypeScript Node.js project, use the [scd30-node](https://www.npmjs.com/package/scd30-node) package.
+
+```
+npm install --save scd30-node
+```
+
+```typescript
+import {SCD30} from 'scd30-node';
+
+// ...
+
+const scd30 = await SCD30.connect();
+await scd30.startContinuousMeasurement();
+
+const measurement = await scd30.readMeasurement();
+console.log(measurement.co2Concentration);
+console.log(measurement.temperature);
+console.log(measurement.relativeHumidity);
+
+await scd30.disconnect();
+```
+
+See the [scd30-node](https://www.npmjs.com/package/scd30-node) package for full API documentation.
+
+**Command-line interface**
+
+You can also interact with the SCD30 from a command line using the [scd30-cli](https://www.npmjs.com/package/scd30-cli) package.
+
+```
+npm install -g scd30-cli
+```
+
+```
+$ scd30-cli start-continuous-measurement
+Continuous measurement started.
+Ambient pressure compensation deactivated.
+
+$ scd30-cli read-measurement
+╔═══════════════════╤══════════╗
+║ CO2 concentration │ 1054 ppm ║
+╟───────────────────┼──────────╢
+║ Temperature       │ 24.15°C  ║
+╟───────────────────┼──────────╢
+║ Humidity          │ 31.86%   ║
+╚═══════════════════╧══════════╝
+```
+
+See the [scd30-cli](https://www.npmjs.com/package/scd30-cli) package for full documentation of available commands.
+
+**Node-RED**
+
+You can read data from the SCD30 also in your Node-RED flows using the [node-red-contrib-scd30](https://www.npmjs.com/package/node-red-contrib-scd30) node.
+
+In Node-RED, open the top-right corner hamburger menu > Manage Palette > Install, search for `node-red-contrib-scd30`, and click **Install**.
+
+Find the `scd30` node in the **sensors** section and add it to your flow.
+
+![SCD30 node in Node-RED](https://github.com/rsmeral/node-red-contrib-scd30/blob/master/scd30-node.png?raw=true)
+
+The node replaces the message payload with an object containing the measured values:
+
+```typescript
+{
+  co2Concentration: <number>,
+  temperature: <number>,
+  relativeHumidity: <number>
+}
+```
+
+See the [node-red-contrib-scd30](https://www.npmjs.com/package/node-red-contrib-scd30) package for more details.
 
 ## Calibration and Placement
 
