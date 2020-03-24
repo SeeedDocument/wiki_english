@@ -25,6 +25,8 @@ Open the LED blink example sketch: **File&gt;Examples&gt;01.Basics&gt;Blink**.
 
 ###   3. Select your board
 
+Firstly, ![add Seeed boards to Arduino IDE](http://wiki.seeedstudio.com/Seeed_Arduino_Boards/).
+
 You'll need to select the entry in the Tools &gt; Board menu that corresponds to your Arduino. 在Here we need to select ATmega328.
 
 ![](https://github.com/SeeedDocument/Getting_Started_with_Seeeduino/raw/master/img/Getting_Started2.png)
