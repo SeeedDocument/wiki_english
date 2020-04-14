@@ -177,6 +177,23 @@ The Grove I2C connector has the standard layout.   Pin 1 is the SCL signal and P
 |pin3   | VCC  | Power for Grove Module, 5V/3.3V|
 |pin4	| GND  | Ground |
 
+### Grove SPI
+
+The Grove SPI connector has the standard layout that uses two grove wires. For the first wire Pin 1 is the SCK signal and Pin 2 is the MISO signal. For the second wire Pin 1 is the MOSI signal and Pin 2 is the SS signal.  Power and Ground are the same as the other connectors.
+
+|pin|Function  | Note   |
+|--------|------|-----|
+|pin1	| SCK | Master Clock |
+|pin2   | MISO| Master in Slave out|
+|pin3   | VCC  | Power for Grove Module, 5V/3.3V|
+|pin4	| GND  | Ground |
+
+|pin|Function  | Note   |
+|--------|------|-----|
+|pin1	| MOSI | Master out Slave in |
+|pin2   | SS | Slave Select |
+|pin3   | VCC  | Power for Grove Module, 5V/3.3V|
+|pin4	| GND  | Ground |
 
 ## Grove Cables
 
