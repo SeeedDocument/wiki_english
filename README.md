@@ -1,9 +1,9 @@
 
 ## How to edit Seeed Wiki
 
-We have the English and Chinese Wiki. The procedure is same. This article shows how to edit wiki step by step.
+We have the English and Chinese wiki. The procedure is same. This article shows how to edit wiki step by step.
 
-## Wiki Structure
+## Wiki Structures
 
 Seeed wiki uses [MkDocs template](https://squidfunk.github.io/mkdocs-material/) desgined by Martin Donath. It includes wiki source files and compiled html files.
 
@@ -25,7 +25,7 @@ Here is the structure of the html files.
 ### Preparation
 
 - Step 1. Install Python, Pip and Mkdocs by following [mkdocs.org](http://www.mkdocs.org/).
-- Step 2. run below command to install mkdocs-material
+- Step 2. Run the below command to install the mkdocs-material
 
 ```python
 pip install mkdocs-material
@@ -202,22 +202,22 @@ wiki **English-->mkdocs**
 ## How to update the banner
 
 - Step 1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
-- Step 2. git clone https://github.com/SeeedDocument/wiki_english.git
+- Step 2. Git clone https://github.com/SeeedDocument/wiki_english.git
 - Step 3. cd wiki_english/docs/images/
-- Step 4. modify the top_banner.png or right_banner.png
-- Step 5. modify the top_banner hyperlink by editing the wiki_english/docs/index.md @ line #1 XXXXXX.
+- Step 4. Modify the top_banner.png or right_banner.png
+- Step 5. Modify the top_banner hyperlink by editing the wiki_english/docs/index.md @ line #1 XXXXXX.
 
 ```
 <a href="https://XXXXXX" target="_blank">
 ```
 
-- Step 6. modify the right_banner hyperlink by editing the wiki_english\material\partials\toc.html @ line #32 XXXXXX.
+- Step 6. Modify the right_banner hyperlink by editing the wiki_english\material\partials\toc.html @ line #32 XXXXXX.
 
 ```
 <td align="left"><a href="XXXXXX" target="_blank">
 ```
 
-- Step 7. run below command to push the changes to github
+- Step 7. Run below command to push the changes to github
 
 ```
 git add .
@@ -225,7 +225,7 @@ git commit -m "update banner"
 git push origin master
 ```
 
-- Step 8. run below command to build the site. 
+- Step 8. Run below command to build the site. 
 
 ```
 mkdocs build --clean
