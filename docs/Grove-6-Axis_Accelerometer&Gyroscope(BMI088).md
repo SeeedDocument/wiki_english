@@ -47,7 +47,9 @@ The Grove - 6-Axis Accelerometer&Gyroscope(BMI088) is a 6 DoF(degrees of freedom
 
 ![](https://github.com/SeeedDocument/Grove-6-Axis_Accelerometer-Gyroscope-BMI088/raw/master/img/pin_out.jpg)
 
-![](https://github.com/SeeedDocument/Grove-6-Axis_Accelerometer-Gyroscope-BMI088/raw/master/img/pin_out_back.jpg)
+!!!Attention  The address change jumper for Accel is routed incorrectly.  To change the address from 0x19 to 0x18 a trace must be cut and the "High" pin soldered to ground. See image below.
+
+![](https://drive.google.com/uc?export=view&id=1sKL_shSdHQDBu0-SOb57ltgELyCfaFrT)
 
 
 ### Schemaitc
