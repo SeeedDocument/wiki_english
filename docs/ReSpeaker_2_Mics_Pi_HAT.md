@@ -73,6 +73,7 @@ Make sure that you are running [the lastest Raspbian Operating System(debian 9)]
 ```
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt-get install git
 git clone https://github.com/respeaker/seeed-voicecard.git
 cd seeed-voicecard
 sudo ./install.sh
